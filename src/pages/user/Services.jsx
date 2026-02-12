@@ -1,9 +1,15 @@
 import React from 'react'
+import Header from '../../commoncomponents/Header'
+import Footer from '../../commoncomponents/Footer'
 
-function Services() {
+
+
+export default function Services() {
   return (
-    <div>Services</div>
+    <div>
+      <Header />
+      <h1 className='text-[50px]'>Services</h1>
+      <Footer />
+    </div>
   )
 }
-
-export default Services

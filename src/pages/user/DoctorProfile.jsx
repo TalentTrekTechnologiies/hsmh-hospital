@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from '../../commoncomponents/Header'
+import Footer from '../../commoncomponents/Footer'
 
-function DoctorProfile() {
+
+export default function DoctorProfile() {
   return (
-    <div>DoctorProfile</div>
+    <div>
+      <Header />
+      <h1 className='text-[50px]'>Doctor Profile</h1>
+      <Footer />
+    </div>
   )
 }
-
-export default DoctorProfile

@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from '../../commoncomponents/Header'
+import Footer from '../../commoncomponents/Footer'
 
-function Contact() {
+
+export default function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <Header />
+      <h1 className='text-[50px]'>Contact Us</h1>
+      <Footer />
+    </div>
   )
 }
-
-export default Contact

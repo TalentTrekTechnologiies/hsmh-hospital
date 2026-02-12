@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from '../../commoncomponents/Header'
+import Footer from '../../commoncomponents/Footer'
 
-function Doctors() {
+
+export default function Doctors() {
   return (
-    <div>Doctors</div>
+    <div>
+      <Header />
+      <h1 className='text-[50px]'>Doctors Page</h1>
+      <Footer />
+    </div>
   )
 }
-
-export default Doctors

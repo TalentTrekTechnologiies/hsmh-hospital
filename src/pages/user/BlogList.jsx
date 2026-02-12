@@ -1,9 +1,15 @@
 import React from 'react'
+import Header from '../../commoncomponents/Header'
+import Footer from '../../commoncomponents/Footer'
 
-function BlogList() {
+
+
+export default function BlogList() {
   return (
-    <div>BlogList</div>
+    <div>
+      <Header />
+      <h1 className='text-[50px]'>Blog List</h1>
+      <Footer />
+    </div>
   )
 }
-
-export default BlogList
