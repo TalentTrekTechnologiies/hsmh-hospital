@@ -118,7 +118,7 @@ export default function Home() {
           <h2 className='text-3xl font-bold text-white text-center mb-10'>
             Meet Our Top Doctors
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap- max-w-6xl mx-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-4 max-w-6xl mx-auto'>
             {doctors.map((doc, i) => (
               <DoctorCard key={i} name={doc.name} specialty={doc.specialty} qualifications={doc.qualifications} image={doc.image} showButton={false} />
             ))}
