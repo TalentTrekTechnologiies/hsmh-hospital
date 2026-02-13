@@ -6,6 +6,8 @@ import hospital2 from '../../assets/hospital2.png'
 import doc1 from '../../assets/doc1.png'
 import doc2 from '../../assets/doc2.png'
 import hearticon from '../../assets/hearticon.png'
+import brainicon from '../../assets/brainicon.png'
+import boneicon from '../../assets/boneicon.png'
 
 import Header from '../../commoncomponents/Header'
 import Footer from '../../commoncomponents/Footer'
@@ -20,26 +22,29 @@ export default function Home() {
   // Dummy data for now
   const departments = [
     { title: 'Cardiology', description: 'Advanced heart care with expert cardiologists.',image: hearticon },
-    { title: 'Neurology', description: 'Comprehensive treatment for brain and nervous system.', image: hearticon},
-    { title: 'Orthopedics', description: 'Specialized care for bones, joints, and muscles.' , image: hearticon },
+    { title: 'Neurology', description: 'Comprehensive treatment for brain and nervous system.', image: brainicon},
+    { title: 'Orthopedics', description: 'Specialized care for bones, joints, and muscles.' , image: boneicon },
+    
   ]
 
   const doctors = [
-    { name: 'Dr. Ayesha Khan', specialty: 'Cardiology', image: doc2 },
-    { name: 'Dr. Ravi Mehta', specialty: 'Neurology', image: doc1 },
-    { name: 'Dr. Priya Sharma', specialty: 'Orthopedics', image: doc2 },
+    { name: 'Dr. Ayesha Khan', specialty: 'Cardiology',qualifications: 'MBBS, MD (Cardiology), FACC', image: doc2 },
+    { name: 'Dr. Ravi Mehta', specialty: 'Neurology', qualifications: 'MBBS, DM (Neurology)', image: doc1 },
+    { name: 'Dr. Priya Sharma', specialty: 'Orthopedics', qualifications: 'MBBS, MS (Orthopedics)', image: doc2 },
+    { name: 'Dr. Raghav Gupta', specialty: 'Oncology', qualifications: 'MBBS, MD (Oncology)', image: doc1 },
+    { name: 'Dr. Richa Sharma', specialty: 'Pediatrics', qualifications: 'MBBS, MD (Pediatrics)', image: doc2 }, 
   ]
 
   const blogs = [
-    { id: 1, title: 'Healthy Heart Tips', excerpt: 'Learn how to keep your heart healthy with these simple lifestyle changes.' },
-    { id: 2, title: 'Advances in Neurology', excerpt: 'Discover the latest breakthroughs in brain and nervous system care.' },
-    { id: 3, title: 'Orthopedic Care Essentials', excerpt: 'Tips for maintaining strong bones and joints.' },
+    { id: 1, title: 'Healthy Heart Tips', excerpt: 'Learn how to keep your heart healthy with these simple lifestyle changes.', image: hospital1 },
+    { id: 2, title: 'Advances in Neurology', excerpt: 'Discover the latest breakthroughs in brain and nervous system care.', image: hospital2 },
+    { id: 3, title: 'Orthopedic Care Essentials', excerpt: 'Tips for maintaining strong bones and joints.', image: doc1 },
   ]
 
   return (
-    <div className='min-h-screen bg-gray-50'>
+    <div className='min-h-screen flex flex-col bg-[#fff8f0] pt-16'> {/* bg-gray-50  info section: #faf3e0 others: #fff8f0 */ }
       <Header />
-      <main className='pt-40 md:pt-44 px-6 text-center'>
+      <main className='flex-grow pt-10 md:pt-12  text-center'>
         {/* Hero Section */}
         <section
           className="relative h-[80vh] bg-cover bg-center"
@@ -59,89 +64,97 @@ export default function Home() {
 
 
         {/*Hospital Info Section */}
-        <section className="bg-[#f5f5dc] py-16 text-center">
-          <img src={logo2} alt="HMSH Logo" className="mx-auto w-20 h-20 mb-6" />
-          <h2 className="text-3xl font-bold text-emerald-800 mb-4">Welcome to </h2>
-          <h2 className="text-3xl font-bold text-emerald-800 mb-4">Harsha Multi Speciality Hospital</h2>
-          <p className="max-w-3xl mx-auto text-gray-700 mb-10">
-            Committed to providing comprehensive medical care with compassion and personalized attention.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="text-2xl font-bold text-emerald-700">50,000+</h3>
-              <p className="text-gray-600">Patients Treated</p>
+        <section className='bg-[#faf3e0] py-16'>
+          <div className=' w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center'> {/* max-w-6xl mx-auto */ }
+            {/* Left column: logo + text */}
+            <div className='text-center '>
+              <img src={logo2} alt='HMSH Logo' className='mx-auto  w-24 h-24 mb-6' />
+              <h2 className='text-3xl font-bold text-emerald-800 mb-4'>Harsha Multi Speciality Hospital</h2>
+              <p className='text-gray-700'>
+                Committed to providing comprehensive medical care with compassion and personalized attention.
+              </p>
+            </div> 
+            {/* Right column: stats */} 
+            <div className="grid grid-cols-2 gap-8 text-center">
+              <div>
+                <h3 className="text-2xl font-bold text-emerald-700">50,000+</h3>
+                <p className="text-gray-600">Patients Treated</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-emerald-700">150+</h3>
+                <p className="text-gray-600">Expert Doctors</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-emerald-700">14+</h3>
+                <p className="text-gray-600">Years of Service</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-emerald-700">98%</h3>
+                <p className="text-gray-600">Success Rate</p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-emerald-700">150+</h3>
-              <p className="text-gray-600">Expert Doctors</p>
-            </div>
-          <div>
-            <h3 className="text-2xl font-bold text-emerald-700">14+</h3>
-            <p className="text-gray-600">Years of Service</p>
-          </div>
-          <div>
-            <h3 className="text-2xl font-bold text-emerald-700">98%</h3>
-            <p className="text-gray-600">Success Rate</p>
-          </div>
-        </div>
+          </div> 
         </section>
 
 
-        {/* Departments Section */}
-        <section className='bg-white mt-20'>
-          <h2 className='text-3xl font-bold text-emerald-800 text-center mb-10'>
-            Our Key Departments
+        {/* Centers of Excellence or Key Departments Section */}
+        <section className='bg-white py-10'> {/* className='bg-white py-16' */}
+          <h2 className='text-3xl font-bold text-emerald-800 text-center mb-2'>
+            Centers of Excellence
           </h2>
+          <p className='text-gray-700 text-center mb-4'>
+            Discover our specialized care units designed to deliver excellence in every field.
+          </p>
+
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
             {departments.map((dept, i) => (
-              <DepartmentCard key={i} title={dept.title} description={dept.description} />
+              <DepartmentCard key={i} title={dept.title} description={dept.description} image={dept.image} />
             ))}
           </div>
         </section>
 
-        {/* Doctors Section */}
-        <section className='bg-emerald-100 mt-20'>
-          <h2 className='text-3xl font-bold text-emerald-800 text-center mb-10'>
-            Meet Our Doctors
+        {/*Top Doctors Section */}
+        <section className='bg-[#005c52] py-10'>
+          <h2 className='text-3xl font-bold text-white text-center mb-10'>
+            Meet Our Top Doctors
           </h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
+          <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap- max-w-6xl mx-auto'>
             {doctors.map((doc, i) => (
-              <DoctorCard key={i} name={doc.name} specialty={doc.specialty} image={doc.image} />
+              <DoctorCard key={i} name={doc.name} specialty={doc.specialty} qualifications={doc.qualifications} image={doc.image} showButton={false} />
             ))}
           </div>
         </section>
 
         {/* Blog Section */}
-        <section className='bg-#f5f5dc mt-20'>
+        <section className='bg-[#fff8f0] py-10'>
           <h2 className='text-3xl font-bold text-emerald-800 text-center mb-10'>
-            Latest Articles
+            Latest News, Events and Blogs
           </h2>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
             {blogs.map((blog) => (
-              <BlogCard key={blog.id} id={blog.id} title={blog.title} excerpt={blog.excerpt} />
+              <BlogCard key={blog.id} id={blog.id} title={blog.title} excerpt={blog.excerpt} image={blog.image} />
             ))}
           </div>
         </section>
 
         {/*Testimonials Section */}
-        <section className="bg-emerald-100 py-16">
-          <h2 className="text-3xl font-bold text-emerald-800 text-center mb-10">Patient Testimonials</h2>
+        <section className="bg-white py-10">
+          <h2 className="text-3xl font-bold text-emerald-800 text-center mb-10">What our Patients Are Saying</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-            <blockquote className="bg-white shadow-md rounded-lg p-6">
+            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
               <p className="text-gray-700">"The staff was amazing and the care I received was outstanding."</p>
               <footer className="mt-4 text-sm text-emerald-700">— Sunita R.</footer>
             </blockquote>
-            <blockquote className="bg-white shadow-md rounded-lg p-6">
+            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
               <p className="text-gray-700">"I had a great experience with Dr. Sri Lakshmi. Highly recommend!"</p>
             <footer className="mt-4 text-sm text-emerald-700">— Rohit K.</footer>
             </blockquote>
-            <blockquote className="bg-white shadow-md rounded-lg p-6">
+            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
               <p className="text-gray-700">"Excellent service and very compassionate doctors."</p>
               <footer className="mt-4 text-sm text-emerald-700">— Anjali S.</footer>
             </blockquote>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>
