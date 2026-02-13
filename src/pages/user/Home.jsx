@@ -1,8 +1,8 @@
 import React from 'react'
 
 import logo2 from '../../assets/logo2.png'
-// import hospital1 from '../../assets/hospital1.png'
-// import hospital2 from '../../assets/hospital2.png'
+import hospital1 from '../../assets/hospital1.png'
+import hospital2 from '../../assets/hospital2.png'
 import doc1 from '../../assets/doc1.png'
 import doc2 from '../../assets/doc2.png'
 import hearticon from '../../assets/hearticon.png'
