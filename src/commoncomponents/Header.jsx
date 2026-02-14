@@ -1,43 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import Button from './Button'
 
-
 export default function Header() {
+  const announcements = [
+    "🕒 OPD: 8:00 AM - 8:00 PM",
+    "📞 000 123 456 789",
+    "🚑 Emergency: 020 123 456 789"
+  ]
+
+  const [index, setIndex] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false)
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % announcements.length)
+        setVisible(true)
+      }, 500) // fade duration
+    }, 4000) // cycle every 4s
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <header className='fixed top-0 w-full z-50'>
-      {/* Topbar with scrolling/marquee effect */}
-      <div className='bg-[#006d5b] text-white text-sm h-10 flex items-center overflow-hidden'>
-        <div className='animate-marquee whitespace-nowrap'>
-          <span className='mx-8'>🕒 OPD: 8:00 AM - 8:00 PM</span>
-          <span className='mx-8'>📞 000 123 456 789</span>
-          <span className='mx-8'>🚑 Emergency: 020 123 456 789</span>
-        </div>
+      {/* Topbar with fade-in/out announcements */}
+      <div className='bg-[#006d5b] text-white font-bold text-sm h-7 flex items-center justify-center overflow-hidden'>
+        <p className={`transition-opacity duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+          {announcements[index]}
+        </p>
       </div>
+
       {/* Navbar */}
       <Navbar />
     </header>
   )
 }
-
-/*
-{ Topbar inline }
-      <div className='bg-[#006d5b] text-white text-sm h-10 flex justify-between items-center px-6'>
-        
-        {Left Side}
-        <div className='flex items-center space-x-6'>
-          <div className='flex items-center gap-2'>
-            <span>🕒</span>
-            <span>OPD: 8:00 AM - 8:00 PM</span>
-          </div>
-          <div className='flex items-center gap-2'>
-            <span>📞</span>
-            <span>000 123 456 789</span>
-          </div>
-        </div>
-
-        {Right Side}
-        <Button text="🚑 Emergency: 020 123 456 789" variant="emergency" className="text-xs px-3 py-1" />
-      </div>
-
-*/

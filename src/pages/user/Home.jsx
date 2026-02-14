@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 import logo2 from '../../assets/logo2.png'
 import hospital1 from '../../assets/hospital1.png'
 import hospital2 from '../../assets/hospital2.png'
+import hospital3 from '../../assets/abouthero.png'
+import hospital4 from '../../assets/aboutpage2.png'
+
 import doc1 from '../../assets/doc1.png'
 import doc2 from '../../assets/doc2.png'
 import hearticon from '../../assets/hearticon.png'
@@ -41,25 +44,61 @@ export default function Home() {
     { id: 3, title: 'Orthopedic Care Essentials', excerpt: 'Tips for maintaining strong bones and joints.', image: doc1 },
   ]
 
+  const heroImages = [hospital1, hospital2, hospital3, hospital4]  // array of images
+  const [current, setCurrent] = useState(0)
+
+  // Auto-rotate every 8s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length)
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [heroImages.length])
+
+
+
   return (
     <div className='min-h-screen flex flex-col bg-[#fff8f0] pt-16'> {/* bg-gray-50  info section: #faf3e0 others: #fff8f0 */ }
       <Header />
-      <main className='flex-grow pt-10 md:pt-12  text-center'>
+      <main className='flex-grow pt-10 md:pt-10  text-center'>
         {/* Hero Section */}
-        <section
-          className="relative h-[80vh] bg-cover bg-center"
-          style={{ backgroundImage: "url('/src/assets/hospital1.png')" }}
-        >
-          <div className="absolute inset-0 bg-black/55 flex flex-col items-center justify-center text-center text-white">
-            <h1 className="text-5xl font-bold">Harsha Multi Speciality Hospital</h1>
-            <p className="mt-4 text-lg max-w-2xl">
-              Health. Hope. Happiness. Providing exceptional healthcare with compassion and innovation.
-            </p>
-            <div className="mt-6 flex space-x-4">
-              <Button text="Book Appointment" />
-              <Button text="Emergency: 020 123 456 789" variant="emergency" />
+        <section className="relative h-[85vh] bg-cover bg-center">
+          {heroImages.map((img, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-opacity duration-1500 ${
+                i === current ? 'opacity-100' : 'opacity-0'
+              } pointer-events-none`}
+              style={{
+                backgroundImage: `url(${img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+            <div className="absolute inset-0 bg-black/55 flex flex-col items-center justify-center text-center text-white">
+             <h1 className="text-5xl font-bold">Harsha Multi Speciality Hospital</h1>
+              <p className="mt-4 text-lg max-w-2xl">
+                Health. Hope. Happiness. Providing exceptional healthcare with compassion and innovation.
+              </p>
+              <div className="mt-6 flex space-x-4 relative z-10">
+               <Button text="Book Appointment" variant="primary" disabled/>
+               <Button text="Emergency: 020 123 456 789" variant="emergency"/>
+              </div>
             </div>
           </div>
+        ))}
+
+        {/* Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-1.5 h-1.5 ${ index === current ? 'bg-white' : 'bg-gray-400'} hover:bg-gray-700 hover:scale-125 `}
+              style={{borderRadius:'1.5px'}}
+           />
+         ))}
+        </div>
         </section>
 
 

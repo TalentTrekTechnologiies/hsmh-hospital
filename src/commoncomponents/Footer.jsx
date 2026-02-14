@@ -46,8 +46,8 @@ export default function Footer() {
           <p className='text-sm'>📞 000 123 456 789</p>
           <p className='text-sm'>✉️ info@hmsh.com</p>
           <div className='mt-4 flex flex-col space-y-2'>
-            <Button text="Book Appointment" variant="yellow" className='w-[200px]'/>
-            <Button text="020123456789" variant="emergency" className="mt-2 w-[200px]" />
+            <Button text="Book Appointment" variant="outline" className='w-[200px]' disabled hideWhenDisabled/>
+            <Button text="020123456789" variant="outline" className="mt-2 w-[200px]" disabled hideWhenDisabled/>
           </div>
         </div>
       </div>
