@@ -6,7 +6,7 @@ export default function PageHero({ title, subtitle, image }) {
 
   return (
     <section
-      className='relative h-[50vh] bg-cover bg-center flex items-center justify-center'
+      className='relative h-[45vh] bg-cover bg-center flex items-center justify-center'
       style={{ backgroundImage: `url("${image}")` }}
     >
       {/* Overlay */}

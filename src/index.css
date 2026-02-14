@@ -22,3 +22,39 @@ body {
   padding-left: 100%;
   animation: marquee 15s linear infinite;
 }
+
+
+
+/* Force overlay scrollbars in Chrome/Edge */
+html {
+  overflow-y: overlay; /* overlays content instead of reserving gap */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px; /* thin */
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3); /* greyed out */
+  border-radius: 3px;
+  opacity: 0; /* hidden by default */
+  transition: opacity 0.4s ease;
+}
+
+/* Show thumb only while scrolling */
+body.scrolling ::-webkit-scrollbar-thumb {
+  opacity: 1; /* fades in */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none; /* no gap when idle */
+  scrollbar-color: transparent transparent;
+}
+body.scrolling {
+  scrollbar-width: thin; /* thin scrollbar */
+  scrollbar-color: rgba(0,0,0,0.3) transparent; /* greyed out thumb */
+}

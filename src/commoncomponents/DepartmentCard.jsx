@@ -1,33 +1,37 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
-export default function DepartmentCard({ title, description, image }) {
+export default function DepartmentCard({ title, description, icon: Icon, image }) {
   return (
-    <div 
-      className="bg-[#fff8f0] shadow-md rounded-lg p-8 flex flex-col items-center
-      transform transition duration-300 hover:scale-105 hover:shadow-xl 
-      hover:bg-emerald-700/30 hover:bg-opacity-10 group"
-    > {/*bg-[#f5f5dc] */}
-      <img
-        src={image}
-        alt={title}
-        className="w-24 h-24 object-contain mb-6 transition duration-300"
-      />
-      <h3 className='text-xl font-semibold text-emerald-700'>{title}</h3>
-      <p className='mt-2 text-gray-700'>{description}</p>
+    <div
+      className="
+        relative
+        min-w-[240px] max-w-[240px]
+        h-[160px]
+        rounded-2xl
+        overflow-hidden
+        flex items-center justify-center
+        text-center
+        text-white
+        shadow-md
+        transition-transform duration-300
+        hover:-translate-y-1 hover:shadow-xl
+        group
+      "
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 group-hover:from-black/50 group-hover:to-black/70 transition" />
+
+      {/* content */}
+      <div className="relative z-10 px-3">
+        <Icon className="mx-auto mb-2 h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+        <h3 className="font-semibold text-sm leading-tight">{title}</h3>
+        <p className="text-xs opacity-90">{description}</p>
+      </div>
     </div>
   )
 }
-
-/*
-    <div className='bg-white shadow-md rounded-lg p-6 text-center'>
-        <h3 className='text-xl font-semibold text-emerald-700'>{title}</h3>
-        <p className='mt-2 text-gray-600'>{description}</p>
-    </div>
-*/
-
-/* to add link to department page via dept name on the card
-<Link to={`/department/${title.toLowerCase()}`} className='text-xl font-semibold text-emerald-700 hover:underline'>
-        <h3 className='text-xl font-semibold text-emerald-700'>{title}</h3>
-       </Link> 
-*/
