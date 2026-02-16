@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
 
-/* ✅ SAME DATA (must match BlogList ids) */
+/* ================= DATA ================= */
 
 const blogData = [
   {
@@ -87,9 +87,7 @@ Consult a pediatrician if symptoms persist or worsen.
 Early care ensures faster recovery and better child health.
     `,
   },
-
-
-    {
+  {
     id: 101,
     category: "Health Tips",
     image:
@@ -125,8 +123,9 @@ Regular exercise along with balanced nutrition significantly improves heart heal
 Always consult a healthcare professional before making major dietary changes.
     `,
   },
-
 ];
+
+/* ================= COMPONENT ================= */
 
 export default function BlogDetails() {
   const { id } = useParams();
@@ -139,15 +138,16 @@ export default function BlogDetails() {
     return (
       <>
         <Header />
-        <main className="pt-[140px] text-center py-20">
-          <h2 className="text-2xl font-bold">Blog not found</h2>
+        <main className="bg-[#fff8f0] pt-[140px] text-center py-20 min-h-screen">
+          <h2 className="text-2xl font-bold text-emerald-800">
+            Blog not found
+          </h2>
         </main>
         <Footer />
       </>
     );
   }
 
-  /* ===== NEXT / PREV ===== */
   const currentIndex = blogData.findIndex((b) => b.id === blogId);
   const prevBlog = blogData[currentIndex - 1];
   const nextBlog = blogData[currentIndex + 1];
@@ -156,62 +156,72 @@ export default function BlogDetails() {
     <>
       <Header />
 
-      <main className="bg-[#f9f9f9] pt-[140px] pb-16">
+      <main className="bg-[#fff8f0] pt-[140px] pb-20 min-h-screen">
         <div className="max-w-[900px] mx-auto px-5">
 
-          {/* CATEGORY */}
-          <div className="text-blue-600 font-bold uppercase mb-2">
-            {blog.category}
-          </div>
+          <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10">
 
-          {/* TITLE */}
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            {blog.title}
-          </h1>
+            {/* CATEGORY */}
+            <div className="text-[#005c52] font-bold uppercase mb-2 text-sm tracking-wide">
+              {blog.category}
+            </div>
 
-          {/* META */}
-          <div className="text-gray-500 mb-6">
-            {blog.author} • {blog.date}
-          </div>
+            {/* TITLE */}
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-emerald-800">
+              {blog.title}
+            </h1>
 
-          {/* IMAGE */}
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-[350px] object-cover rounded-xl mb-8 shadow-md"
-          />
+            {/* META */}
+            <div className="text-gray-500 mb-8 font-medium">
+              {blog.author} • {blog.date}
+            </div>
 
-          {/* CONTENT */}
-          <div className="text-gray-700 leading-relaxed whitespace-pre-line text-lg">
-            {blog.content}
-          </div>
+            {/* IMAGE */}
+            <div className="overflow-hidden rounded-2xl mb-8">
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-[350px] object-cover rounded-2xl hover:scale-[1.02] transition duration-500"
+              />
+            </div>
 
-          {/* NAV BUTTONS */}
-          <div className="flex justify-between mt-12 gap-4">
+            {/* CONTENT */}
+            <div className="text-gray-700 leading-relaxed whitespace-pre-line text-[17px] md:text-lg">
+              {blog.content}
+            </div>
 
-            <button
-              disabled={!prevBlog}
-              onClick={() => prevBlog && navigate(`/blog/${prevBlog.id}`)}
-              className={`px-5 py-2 rounded-lg font-semibold ${
-                prevBlog
-                  ? "bg-gray-200 hover:bg-gray-300"
-                  : "bg-gray-100 cursor-not-allowed"
-              }`}
-            >
-              ← Previous
-            </button>
+            {/* NAV */}
+            <div className="flex flex-col sm:flex-row justify-between mt-14 gap-4">
 
-            <button
-              disabled={!nextBlog}
-              onClick={() => nextBlog && navigate(`/blog/${nextBlog.id}`)}
-              className={`px-5 py-2 rounded-lg font-semibold ${
-                nextBlog
-                  ? "bg-[#004743] text-white hover:opacity-90"
-                  : "bg-gray-100 cursor-not-allowed"
-              }`}
-            >
-              Next →
-            </button>
+              <button
+                disabled={!prevBlog}
+                onClick={() =>
+                  prevBlog && navigate(`/blog/${prevBlog.id}`)
+                }
+                className={`px-6 py-3 rounded-xl font-semibold transition ${
+                  prevBlog
+                    ? "bg-gray-200 hover:bg-gray-300 text-gray-800"
+                    : "bg-gray-100 cursor-not-allowed text-gray-400"
+                }`}
+              >
+                ← Previous
+              </button>
+
+              <button
+                disabled={!nextBlog}
+                onClick={() =>
+                  nextBlog && navigate(`/blog/${nextBlog.id}`)
+                }
+                className={`px-6 py-3 rounded-xl font-semibold transition ${
+                  nextBlog
+                    ? "bg-[#005c52] text-white hover:bg-[#004743]"
+                    : "bg-gray-100 cursor-not-allowed text-gray-400"
+                }`}
+              >
+                Next →
+              </button>
+            </div>
+
           </div>
         </div>
       </main>
