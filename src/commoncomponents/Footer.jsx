@@ -42,8 +42,12 @@ export default function Footer() {
         {/* Contact Info */}
         <div className='font-medium'>
           <h2 className='text-xl font-bold mb-4'>Contact</h2>
-          <p className='text-sm'>📍 123 Health Street, Bangalore</p>
-          <p className='text-sm'>📞 000 123 456 789</p>
+          <p className="text-sm leading-relaxed">
+  📍 2/207, Bollavaram,<br />
+  Jammalamadugu Road,<br />
+  Proddatur
+</p>
+          <p className='text-sm'>📞 9640540475</p>
           <p className='text-sm'>✉️ info@hmsh.com</p>
           <div className='mt-4 flex flex-col space-y-2'>
             <Button text="Book Appointment" variant="outline" className='w-[200px]' disabled hideWhenDisabled/>

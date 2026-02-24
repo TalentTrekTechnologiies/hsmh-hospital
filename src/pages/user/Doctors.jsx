@@ -1,5 +1,6 @@
 // src/pages/user/Doctors.jsx
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../../commoncomponents/Header'
 import Footer from '../../commoncomponents/Footer'
 import Button from '../../commoncomponents/Button'
@@ -22,10 +23,43 @@ import neurologyImg from '../../assets/neurologyImg.jpg'
 import generalMedicineImg from '../../assets/generalMedicineImg.jpg'
 import dermatologyImg from '../../assets/dermatologyImg.jpg'
 
+// IMPORT YOUR REAL SPECIALIST IMAGES HERE
+import specialist1 from '../../assets/Dr.Ganesh.png'
+import specialist2 from '../../assets/Dr.Lakshmi.png'
+import specialist3 from '../../assets/Dr.Nagendra.png'
+import specialist4 from '../../assets/Dr.Revathi.png'
+import specialist5 from '../../assets/Dr.Samita.png'
+
 export default function Doctors() {
 
   const [selectedCategory, setSelectedCategory] = useState('All Doctors')
   const [selectedDoctor, setSelectedDoctor] = useState(null)
+
+  const location = useLocation()
+
+  useEffect(() => {
+  const params = new URLSearchParams(location.search)
+  const dept = params.get('department')
+
+  if (dept) {
+    if (dept.toLowerCase() === 'cardiology') {
+      setSelectedCategory('Cardiologists')
+    }
+    else if (dept.toLowerCase() === 'orthopedics') {
+      setSelectedCategory('Orthopedic Surgeons')
+    }
+    else if (dept.toLowerCase() === 'neurology') {
+      setSelectedCategory('Pulmonologist')
+    }
+    else if (dept.toLowerCase() === 'general-medicine') {
+      setSelectedCategory('General Medicine')
+    }
+    else if (dept.toLowerCase() === 'dermatology') {
+      setSelectedCategory('Dermatologist')
+    }
+  }
+}, [location])
+
 
   // categories
   const categories = [
@@ -123,11 +157,127 @@ export default function Doctors() {
     }
   }
 
-  // specialists section
+  // UPDATED: specialists section with EXACT doctor details you provided
   const availableDoctors = [
-    { name:'Dr. Kalva Vijaya Nagendra', qualifications:'MBBS, MD', experience:'+15', availability:'Mon-Fri 8AM-6PM', sundayAvailability:'Sun: 10AM-2PM', image:doc1 },
-    { name:'Dr. D Ramesh', qualifications:'MBBS, MS', experience:'+10', availability:'Mon-Sat 9AM-10PM', sundayAvailability:'Sun: 9AM-12PM', image:doc2 },
-    { name:'Dr. Suresh Reddy', qualifications:'MBBS, MD', experience:'+20', availability:'Mon-Sat 9AM-5PM', sundayAvailability:'Sun: Closed', image:doc3 }
+    { 
+      name:'Dr. Sri Lakshmi', 
+      role:'Dental Surgeon',
+      qualifications:'BDS', 
+      experience:'10+ years', 
+      availability:'Mon-Sat 9AM-6PM', 
+      sundayAvailability:'Sun: 9AM-1PM', 
+      image: specialist2, // Dr.Lakshmi.png
+      education:'Government Dental College',
+      patients:'3500+'
+    },
+    { 
+      name:'Dr. Vijaya Nagendra', 
+      role:'Interventional Pain Physician',
+      qualifications:'MBBS, MD, IDCCM, FIPM, LLB', 
+      experience:'15+ years', 
+      availability:'Mon-Fri 9AM-5PM', 
+      sundayAvailability:'Sun: 10AM-2PM', 
+      image: specialist3, // Dr.Nagendra.png
+      education:'Kakatiya Medical College',
+      patients:'5000+'
+    },
+    { 
+      name:'Dr. Revathi Reddy', 
+      role:'Pediatrician',
+      qualifications:'MBBS, DCH, PALS', 
+      experience:'12+ years', 
+      availability:'Mon-Sat 10AM-7PM', 
+      sundayAvailability:'Sun: 10AM-1PM', 
+      image: specialist4, // Dr.Revathi.png
+      education:'CMC Vellore',
+      patients:'4200+'
+    },
+    { 
+      name:'Dr. Sai Ganesh', 
+      role:'Orthopedician',
+      qualifications:'MBBS, M.S, FIJR', 
+      experience:'18+ years', 
+      availability:'Mon-Sat 9AM-8PM', 
+      sundayAvailability:'Sun: 9AM-12PM', 
+      image: specialist1, // Dr.Ganesh.png
+      education:'Osmania Medical College',
+      patients:'6800+'
+    },
+    { 
+      name:'Dr. Samita Padhi', 
+      role:'Gynecologist & Fertility Specialist',
+      qualifications:'M.S (OBG), Fellow IVF', 
+      experience:'14+ years', 
+      availability:'Mon-Sat 10AM-6PM', 
+      sundayAvailability:'Sun: 11AM-3PM', 
+      image: specialist5, // Dr.Samitha.png
+      education:'Grant Medical College',
+      patients:'5100+'
+    }
+  ]
+
+  // ONLINE AVAILABLE DOCTORS - Dummy Data (removed consultationFee and nextAvailable)
+  const onlineDoctors = [
+    { 
+      name:'Dr. Priya Sharma', 
+      specialty:'Dermatologist', 
+      qualifications:'MBBS, MD Dermatology', 
+      experience:'8+ years',
+      rating:4.8,
+      reviews:245,
+      image:doc4,
+      online: true
+    },
+    { 
+      name:'Dr. Amit Kumar', 
+      specialty:'Psychiatrist', 
+      qualifications:'MBBS, MD Psychiatry', 
+      experience:'12+ years',
+      rating:4.9,
+      reviews:389,
+      image:doc5,
+      online: true
+    },
+    { 
+      name:'Dr. Sneha Patel', 
+      specialty:'Pediatrician', 
+      qualifications:'MBBS, MD Pediatrics', 
+      experience:'10+ years',
+      rating:4.7,
+      reviews:178,
+      image:doc6,
+      online: true
+    },
+    { 
+      name:'Dr. Rajesh Khanna', 
+      specialty:'Endocrinologist', 
+      qualifications:'MBBS, MD, DM Endocrinology', 
+      experience:'15+ years',
+      rating:4.9,
+      reviews:412,
+      image:doc1,
+      online: true
+    },
+    { 
+      name:'Dr. Meera Nair', 
+      specialty:'Gynecologist', 
+      qualifications:'MBBS, MS OB/GYN', 
+      experience:'14+ years',
+      rating:4.8,
+      reviews:356,
+      image:doc2,
+      online: true
+    },
+    { 
+      name:'Dr. Vikram Singh', 
+      specialty:'Neurologist', 
+      qualifications:'MBBS, MD, DM Neurology', 
+      experience:'16+ years',
+      rating:4.9,
+      reviews:289,
+      image:doc3,
+      online: true
+    }
   ]
 
   const filteredDoctors = selectedCategory === 'All Doctors'
@@ -138,7 +288,7 @@ export default function Doctors() {
     <div className='min-h-screen bg-[#fff8f0] flex flex-col'>
       <Header/>
 
-      <main className='flex-grow pt-10 md:pt-12'>
+      <main className='flex-grow pt-10 md:pt-12 w-full'>
 
         <PageHero
           title='Our Doctors'
@@ -146,37 +296,174 @@ export default function Doctors() {
           image={herodoc}
         />
 
-        <div className='max-w-7xl mx-auto px-6 py-12'>
-          <div className='flex flex-col lg:flex-row gap-8'>
+        <div className='w-full px-4 sm:px-6 lg:px-8 py-12'>
+          <div className='max-w-[1920px] mx-auto'>
 
-            {/* LEFT */}
-            <div className='w-full lg:w-1/4'>
-              <h2 className='text-2xl font-bold text-emerald-800 mb-6 pb-2 border-b-2 border-emerald-800'>
-                Our Doctors
-              </h2>
+          {/* MEET OUR SPECIALISTS - Edge to Edge Separate Section */}
+          <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-20'>
+            <div className='bg-white py-16 lg:py-20 shadow-lg'>
+              <div className='max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8'>
+                
+                {/* Section Header - Centered */}
+                <div className='text-center mb-12'>
+                  <h2 className='text-4xl md:text-5xl font-bold text-emerald-800 mb-4'>
+                    Meet Our Specialists
+                  </h2>
+                  <p className='text-gray-600 text-lg max-w-2xl mx-auto'>
+                    Highly qualified specialists with years of experience in their respective fields
+                  </p>
+                </div>
 
-              <ul className='space-y-4'>
-                {categories.map(cat=>(
-                  <li key={cat.name}
-                    onClick={()=>setSelectedCategory(cat.name)}
-                    className={`cursor-pointer rounded-lg overflow-hidden ${
-                      selectedCategory===cat.name
-                      ? 'bg-emerald-700 text-white shadow-md'
-                      : 'bg-white text-gray-700 hover:bg-emerald-50 border border-gray-200'
-                    }`}>
-                    <div className='flex items-center'>
-                      <img src={cat.image} className='w-16 h-16 object-cover'/>
-                      <div className='px-4 font-medium'>{cat.name}</div>
+                {/* Horizontal Scroll Container */}
+                <div className='flex gap-8 overflow-x-auto whitespace-nowrap scroll-smooth pb-4 no-scrollbar'>
+                  {availableDoctors.map((doctor, index) => (
+                    <div
+                      key={index}
+                      className='inline-block min-w-[320px] bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300'
+                    >
+                      {/* Doctor Image */}
+                      <div className='h-80 overflow-hidden'>
+                        <img
+                          src={doctor.image}
+                          alt={doctor.name}
+                          className='w-full h-full object-cover hover:scale-110 transition duration-500'
+                        />
+                      </div>
+
+                      {/* Doctor Info */}
+                      <div className='p-6'>
+                        <h3 className='text-xl font-bold text-emerald-800 mb-1'>
+                          {doctor.name}
+                        </h3>
+                        <p className='text-emerald-600 font-medium text-sm mb-2'>
+                          {doctor.role}
+                        </p>
+                        <p className='text-gray-600 text-sm mb-1'>
+                          {doctor.qualifications}
+                        </p>
+                        <p className='text-gray-600 text-sm mb-1'>
+                          {doctor.education}
+                        </p>
+                        <p className='text-gray-700 font-medium text-sm mt-2'>
+                          Experience: {doctor.experience}
+                        </p>
+                        <p className='text-gray-700 font-medium text-sm'>
+                          Patients: {doctor.patients}
+                        </p>
+                        <div className='mt-3 pt-3 border-t border-gray-200'>
+                          <p className='text-gray-500 text-sm'>
+                            {doctor.availability}
+                          </p>
+                          <p className='text-gray-500 text-sm'>
+                            {doctor.sundayAvailability}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
+              </div>
             </div>
+          </div>
 
-            {/* RIGHT */}
-            <div className='w-full lg:w-3/4'>
-              <div className='bg-white rounded-lg shadow-lg p-6 md:p-8'>
-                <h1 className='text-3xl font-bold text-emerald-800 mb-6'>{selectedCategory}</h1>
+          {/* ONLINE AVAILABLE DOCTORS - Edge to Edge Section */}
+          <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-20'>
+            <div className='bg-gradient-to-r from-emerald-50 to-teal-50 py-16 lg:py-20 shadow-lg'>
+              <div className='max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8'>
+                
+                {/* Section Title with Online Badge */}
+                <div className='text-center mb-12'>
+                  <div className='inline-flex items-center gap-3 bg-emerald-100 px-6 py-2 rounded-full mb-4'>
+                    <span className='relative flex h-3 w-3'>
+                      <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75'></span>
+                      <span className='relative inline-flex rounded-full h-3 w-3 bg-emerald-500'></span>
+                    </span>
+                    <span className='text-emerald-700 font-semibold'>Available Now</span>
+                  </div>
+                  <h2 className='text-4xl font-bold text-emerald-800 mb-4'>
+                    Online Consultation
+                  </h2>
+                  <p className='text-gray-600 max-w-2xl mx-auto'>
+                    Consult with our experienced doctors from the comfort of your home. 
+                    Video consultations available 24/7.
+                  </p>
+                </div>
+
+                {/* Online Doctors Grid */}
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+                  {onlineDoctors.map((doctor, index) => (
+                    <div
+                      key={index}
+                      className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-emerald-100'
+                    >
+                      {/* Online Status Indicator */}
+                      <div className='relative'>
+                        <div className='h-48 overflow-hidden'>
+                          <img
+                            src={doctor.image}
+                            alt={doctor.name}
+                            className='w-full h-full object-cover'
+                          />
+                        </div>
+                        <div className='absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1'>
+                          <span className='relative flex h-2 w-2'>
+                            <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75'></span>
+                            <span className='relative inline-flex rounded-full h-2 w-2 bg-white'></span>
+                          </span>
+                          Online
+                        </div>
+                      </div>
+
+                      {/* Doctor Details */}
+                      <div className='p-5'>
+                        <div className='flex justify-between items-start mb-2'>
+                          <h3 className='text-lg font-bold text-emerald-800'>
+                            {doctor.name}
+                          </h3>
+                          <div className='flex items-center gap-1 bg-emerald-50 px-2 py-1 rounded'>
+                            <span className='text-yellow-500'>★</span>
+                            <span className='text-sm font-semibold text-gray-700'>{doctor.rating}</span>
+                            <span className='text-xs text-gray-500'>({doctor.reviews})</span>
+                          </div>
+                        </div>
+                        
+                        <p className='text-emerald-600 font-medium text-sm mb-1'>
+                          {doctor.specialty}
+                        </p>
+                        <p className='text-gray-500 text-xs'>
+                          {doctor.qualifications} • {doctor.experience}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ALL DOCTORS - Edge to Edge Section */}
+          <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'>
+            <div className='bg-white py-16 lg:py-20 shadow-lg'>
+              <div className='max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8'>
+                <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4'>
+                  
+                  <h1 className='text-3xl md:text-4xl font-bold text-emerald-800'>
+                    All Doctors
+                  </h1>
+
+                  {/* SELECT DEPARTMENT DROPDOWN */}
+                  <select
+                    value={selectedCategory}
+                    onChange={(e)=>setSelectedCategory(e.target.value)}
+                    className='border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 min-w-[200px]'
+                  >
+                    {categories.map((cat)=>(
+                      <option key={cat.name} value={cat.name}>
+                        {cat.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   {filteredDoctors.map((doc,i)=>(
@@ -203,46 +490,19 @@ export default function Doctors() {
                 </div>
               </div>
             </div>
-
           </div>
 
-          {/* OUR SPECIALISTS */}
-          <div className='mt-12'>
-            <h2 className='text-2xl font-bold text-emerald-800 mb-6 pb-2 border-b-2 border-emerald-800'>
-              Our Specialists
-            </h2>
-
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-              {availableDoctors.map((doctor,index)=>(
-                <div key={index} className='bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition'>
-                  <div className='flex gap-4'>
-                    <img src={doctor.image} className='w-24 h-24 rounded-lg object-cover'/>
-
-                    <div className='flex-1'>
-                      <h3 className='text-xl font-bold'>{doctor.name}</h3>
-                      <p className='text-gray-600 text-sm'>{doctor.qualifications}</p>
-
-                      <p className='text-gray-700 text-sm'><b>Experience:</b> {doctor.experience}</p>
-                      <p className='text-gray-700 text-sm'>{doctor.availability}</p>
-                      <p className='text-gray-700 text-sm'>{doctor.sundayAvailability}</p>
-
-                      {/* disabled button */}
-                      <div className='mt-4'>
-                        <Button text="Book Appointment" variant="primary" disabled hideWhenDisabled/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-
         </div>
       </main>
 
       {/* MODAL */}
       {selectedDoctor && (
-        <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm'
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center 
+          bg-black/40 backdrop-blur-sm 
+          transition-opacity duration-300 
+          ${selectedDoctor ? "opacity-100" : "opacity-0 pointer-events-none"}`}
           onClick={()=>setSelectedDoctor(null)}>
 
           <div className='bg-white rounded-2xl shadow-2xl w-[92%] max-w-3xl p-10 relative'
@@ -275,7 +535,6 @@ export default function Doctors() {
             <div className='mt-8'>
               <Button text="Book Appointment" variant="primary" disabled hideWhenDisabled/>
             </div>
-
           </div>
         </div>
       )}

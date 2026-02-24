@@ -5,8 +5,8 @@ import Button from './Button'
 export default function Header() {
   const announcements = [
     "🕒 OPD: 8:00 AM - 8:00 PM",
-    "📞 000 123 456 789",
-    "🚑 Emergency: 020 123 456 789"
+    "📞 964 054 0475",
+    "🚑 Emergency: 964 054 0475 " 
   ]
 
   const [index, setIndex] = useState(0)

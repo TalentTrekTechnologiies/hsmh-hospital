@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
 
@@ -88,6 +89,42 @@ Early care ensures faster recovery and better child health.
     `,
   },
   {
+    id: 5,
+    category: "Neurology",
+    image:
+      "https://tse1.mm.bing.net/th/id/OIP.dbtx8NJ4hwJ26gWdzDOJyQHaD_?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+    title: "Migraine vs Headache: Know the Difference",
+    author: "Dr. Rakesh Verma",
+    date: "Jan 20, 2026",
+    content: `
+Many people confuse migraines with normal headaches.
+
+Migraines often include severe throbbing pain, nausea, and sensitivity to light.
+
+Identifying triggers such as stress, lack of sleep, and certain foods helps prevention.
+
+Consult a neurologist if headaches are frequent or severe.
+    `,
+  },
+  {
+    id: 6,
+    category: "Diabetology",
+    image:
+      "https://tse3.mm.bing.net/th/id/OIP.qD5O2NLClvaG6hg5K7mwUQHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3",
+    title: "Early Signs of Diabetes You Should Not Ignore",
+    author: "Dr. Kavita Rao",
+    date: "Jan 18, 2026",
+    content: `
+Diabetes often develops silently in early stages.
+
+Common warning signs include frequent urination, excessive thirst, and fatigue.
+
+Healthy diet, weight management, and regular checkups help control diabetes.
+
+Early diagnosis prevents long-term complications.
+    `,
+  },
+  {
     id: 101,
     category: "Health Tips",
     image:
@@ -138,8 +175,8 @@ export default function BlogDetails() {
     return (
       <>
         <Header />
-        <main className="bg-[#fff8f0] pt-[140px] text-center py-20 min-h-screen">
-          <h2 className="text-2xl font-bold text-emerald-800">
+        <main className="bg-[#fff8f0] pt-[120px] min-h-screen flex items-center justify-center">
+          <h2 className="text-xl sm:text-2xl font-bold text-emerald-800">
             Blog not found
           </h2>
         </main>
@@ -154,54 +191,59 @@ export default function BlogDetails() {
 
   return (
     <>
+      <Helmet>
+        <title>{blog.title} | Hospital Blog</title>
+        <meta name="description" content={blog.title} />
+      </Helmet>
+
       <Header />
 
-      <main className="bg-[#fff8f0] pt-[140px] pb-20 min-h-screen">
-        <div className="max-w-[900px] mx-auto px-5">
+      <main className="bg-[#fff8f0] pt-[110px] pb-16 min-h-screen">
+        <div className="max-w-[920px] mx-auto px-4 sm:px-6">
 
-          <div className="bg-white rounded-3xl shadow-lg p-6 md:p-10">
+          <article className="bg-white rounded-3xl shadow-lg p-5 sm:p-8 md:p-10">
 
             {/* CATEGORY */}
-            <div className="text-[#005c52] font-bold uppercase mb-2 text-sm tracking-wide">
+            <div className="text-[#005c52] font-bold uppercase mb-2 text-xs sm:text-sm tracking-wide">
               {blog.category}
             </div>
 
             {/* TITLE */}
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-emerald-800">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-emerald-800">
               {blog.title}
             </h1>
 
             {/* META */}
-            <div className="text-gray-500 mb-8 font-medium">
+            <div className="text-gray-500 mb-6 sm:mb-8 font-medium text-sm sm:text-base">
               {blog.author} • {blog.date}
             </div>
 
             {/* IMAGE */}
-            <div className="overflow-hidden rounded-2xl mb-8">
+            <div className="overflow-hidden rounded-2xl mb-6 sm:mb-8">
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-[350px] object-cover rounded-2xl hover:scale-[1.02] transition duration-500"
+                className="w-full h-[220px] sm:h-[300px] md:h-[360px] object-cover rounded-2xl hover:scale-[1.02] transition duration-500"
               />
             </div>
 
             {/* CONTENT */}
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line text-[17px] md:text-lg">
+            <div className="text-gray-700 leading-relaxed whitespace-pre-line text-[15px] sm:text-[17px] md:text-lg">
               {blog.content}
             </div>
 
-            {/* NAV */}
-            <div className="flex flex-col sm:flex-row justify-between mt-14 gap-4">
+            {/* NAVIGATION */}
+            <div className="flex flex-col sm:flex-row justify-between mt-12 gap-4">
 
               <button
                 disabled={!prevBlog}
                 onClick={() =>
                   prevBlog && navigate(`/blog/${prevBlog.id}`)
                 }
-                className={`px-6 py-3 rounded-xl font-semibold transition ${
+                className={`px-5 py-3 rounded-full font-semibold transition border ${
                   prevBlog
-                    ? "bg-gray-200 hover:bg-gray-300 text-gray-800"
-                    : "bg-gray-100 cursor-not-allowed text-gray-400"
+                    ? "bg-white border-gray-300 hover:bg-gray-100"
+                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
               >
                 ← Previous
@@ -212,17 +254,18 @@ export default function BlogDetails() {
                 onClick={() =>
                   nextBlog && navigate(`/blog/${nextBlog.id}`)
                 }
-                className={`px-6 py-3 rounded-xl font-semibold transition ${
+                className={`px-5 py-3 rounded-full font-semibold transition border ${
                   nextBlog
                     ? "bg-[#005c52] text-white hover:bg-[#004743]"
-                    : "bg-gray-100 cursor-not-allowed text-gray-400"
+                    : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
               >
                 Next →
               </button>
+
             </div>
 
-          </div>
+          </article>
         </div>
       </main>
 

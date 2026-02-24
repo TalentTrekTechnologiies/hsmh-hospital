@@ -1,295 +1,516 @@
-import React, {useState, useEffect} from 'react'
-import { ChevronLeft, ChevronRight, MapPin, Phone, Mail, Clock } from 'lucide-react'
+// src/pages/user/Home.jsx
+import { Link } from "react-router-dom";
 
-import logo2 from '../../assets/logo2.png'
-import hospital1 from '../../assets/hospital1.png'
-import hospital2 from '../../assets/hospital2.png'
-import hospital3 from '../../assets/abouthero.png'
-import hospital4 from '../../assets/aboutpage2.png'
+import React, { useState, useEffect, useRef } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Star,
+  Ambulance
+} from "lucide-react";
 
-import doc1 from '../../assets/doc1.png'
-import doc2 from '../../assets/doc2.png'
-//import hearticon from '../../assets/hearticon.png'
-//import brainicon from '../../assets/brainicon.png'
-//import boneicon from '../../assets/boneicon.png'
+import logo2 from "../../assets/logo2.png";
+import hospital1 from "../../assets/hospital1.png";
+import hospital2 from "../../assets/hospital2.png";
+import hospital3 from "../../assets/abouthero.png";
+import hospital4 from "../../assets/aboutpage2.png";
 
 import {
-  HeartPulse, Brain, Bone, Baby, Activity,
-  Stethoscope, Microscope, Ear, Droplet, Wind
-} from 'lucide-react'
+  HeartPulse,
+  Brain,
+  Bone,
+  Baby,
+  Activity,
+  Stethoscope,
+  Microscope,
+  Ear,
+  Droplet,
+  Wind,
+} from "lucide-react";
 
-import Header from '../../commoncomponents/Header'
-import Footer from '../../commoncomponents/Footer'
-import Button from '../../commoncomponents/Button'
-import DepartmentCard from '../../commoncomponents/DepartmentCard'
-import DoctorCard from '../../commoncomponents/DoctorCard'
-import BlogCard from '../../commoncomponents/BlogCard'
-
-
+import Header from "../../commoncomponents/Header";
+import Footer from "../../commoncomponents/Footer";
+import Button from "../../commoncomponents/Button";
+import DepartmentCard from "../../commoncomponents/DepartmentCard";
 
 export default function Home() {
-  // Dummy data for now
+
+    /* ================= DATA ================= */
+
   const departments = [
-  { title: "Cardiology", description: "Heart & vascular care", icon: HeartPulse, image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=800&q=60" },
-  { title: "Neurology", description: "Brain & spine care", icon: Brain, image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" },
-  { title: "Orthopedics", description: "Bone & joint care", icon: Bone, image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=60" },
-  { title: "Pediatrics", description: "Child health specialists", icon: Baby, image: "https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=800&q=60" },
-  { title: "Oncology", description: "Cancer diagnosis & therapy", icon: Microscope, image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=60" },
-  { title: "Dermatology", description: "Skin & cosmetic care", icon: Droplet, image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=60" },
-  { title: "Pulmonology", description: "Respiratory care", icon: Wind, image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=60" },
-  { title: "ENT", description: "Ear, nose & throat", icon: Ear, image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=60" },
-  { title: "General Medicine", description: "Primary care", icon: Stethoscope, image: "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=60" },
-  { title: "Critical Care", description: "24/7 ICU support", icon: Activity, image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=800&auto=format&fit=crop" },
+  {
+    title: "Cardiology",
+    description: "Advanced heart & vascular care with modern cath lab facilities.",
+    icon: HeartPulse,
+    image: hospital1,
+  },
+  {
+    title: "Neurology",
+    description: "Comprehensive brain & spine treatment with expert neurologists.",
+    icon: Brain,
+    image: hospital2,
+  },
+  {
+    title: "Orthopedics",
+    description: "Joint replacement, trauma care & sports injury specialists.",
+    icon: Bone,
+    image: hospital3,
+  },
+  {
+    title: "Pediatrics",
+    description: "Complete child healthcare & vaccination services.",
+    icon: Baby,
+    image: hospital4,
+  },
+  {
+    title: "ENT",
+    description: "Ear, nose & throat specialists with modern diagnostics.",
+    icon: Ear,
+    image: hospital2,
+  },
+  {
+    title: "General Medicine",
+    description: "Primary healthcare & chronic disease management.",
+    icon: Stethoscope,
+    image: hospital3,
+  },
+  {
+    title: "Nephrology",
+    description: "Kidney care, dialysis & renal treatment solutions.",
+    icon: Droplet,
+    image: hospital1,
+  },
+  {
+    title: "Gastroenterology",
+    description: "Digestive system care with advanced endoscopy.",
+    icon: Activity,
+    image: hospital3,
+  },
+  {
+    title: "Dermatology",
+    description: "Skin, hair & cosmetic dermatology treatments.",
+    icon: HeartPulse,
+    image: hospital4,
+  },
+];ss
+  const blogs = [
+    { id: 1, title: "Healthy Heart Tips", excerpt: "Simple lifestyle changes for a stronger heart.", image: hospital1 },
+    { id: 2, title: "Advances in Neurology", excerpt: "Latest breakthroughs in brain care.", image: hospital2 },
+    { id: 3, title: "Orthopedic Care Essentials", excerpt: "Maintain strong bones and joints.", image: hospital3 },
+  ];
+
+/* ================= Testimonials ================= */
+
+  const testimonials = [
+  {
+    name: "Sunita R.",
+    role: "Cardiac Care Patient",
+    rating: 4,
+    date: "Dec 2025",
+    review:
+      "Doctors explained my heart condition clearly and guided us patiently. Waiting time was slightly longer, but treatment quality was very good."
+  },
+  {
+    name: "Rohit K.",
+    role: "Orthopedic Surgery Patient",
+    rating: 5,
+    date: "Jan 2026",
+    review:
+      "Had knee surgery here. The doctors and physiotherapy team supported me throughout recovery. Facilities were clean and well maintained."
+  },
+  {
+    name: "Anjali S.",
+    role: "Neurology Consultation",
+    rating: 4,
+    date: "Nov 2025",
+    review:
+      "Consulted for migraine treatment. Specialist listened carefully and adjusted medication properly. Improvement seen within few weeks."
+  },
+  {
+    name: "Imran T.",
+    role: "Emergency Care Patient",
+    rating: 4,
+    date: "Oct 2025",
+    review:
+      "Emergency team responded quickly during a late-night situation. Staff handled everything professionally."
+  },
+  {
+    name: "Lakshmi P.",
+    role: "Pediatrics Visit",
+    rating: 5,
+    date: "Jan 2026",
+    review:
+      "Visited for my child's vaccination. Doctor was friendly and explained everything clearly. Good experience overall."
+  }
 ];
 
+  const insurancePartners = [
+    "Vidal Health Insurance TPA",
+    "Vipul Medicare Insurance TPA",
+    "Ericson Insurance TPA",
+    "SBI General Insurance TPA",
+  ];
 
-  const doctors = [
-    { name: 'Dr. Ayesha Khan', specialty: 'Cardiology', qualifications: 'MBBS, MD (Cardiology), FACC', image: doc2 },
-    { name: 'Dr. Ravi Mehta', specialty: 'Neurology', qualifications: 'MBBS, DM (Neurology)', image: doc1 },
-    { name: 'Dr. Priya Sharma', specialty: 'Orthopedics', qualifications: 'MBBS, MS (Orthopedics)', image: doc2 },
-    { name: 'Dr. Raghav Gupta', specialty: 'Oncology', qualifications: 'MBBS, MD (Oncology)', image: doc1 },
-    { name: 'Dr. Richa Sharma', specialty: 'Pediatrics', qualifications: 'MBBS, MD (Pediatrics)', image: doc2 },
-    { name: "Dr. Kavya Iyer", specialty: "ENT Specialist", qualifications: "MS ENT", image: doc2 },
-    { name: "Dr. Vikram Singh", specialty: "Pulmonologist", qualifications: "MD Pulmonary Medicine", image: doc1 }
-  ]
+  const heroImages = [hospital1, hospital2, hospital3, hospital4];
+  const [current, setCurrent] = useState(0);
 
-  const blogs = [
-    { id: 1, title: 'Healthy Heart Tips', excerpt: 'Simple lifestyle changes for a stronger heart.', image: hospital1 },
-    { id: 2, title: 'Advances in Neurology', excerpt: 'Latest breakthroughs in brain care.', image: hospital2 },
-    { id: 3, title: 'Orthopedic Care Essentials', excerpt: 'Maintain strong bones and joints.', image: doc1 },
-  ]
-
-  const heroImages = [hospital1, hospital2, hospital3, hospital4]  // array of images
-  const [current, setCurrent] = useState(0)
-
-  // Auto-rotate every 8s
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % heroImages.length)
-    }, 8000)
-    return () => clearInterval(interval)
-  }, [heroImages.length])
-
-
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [])
 
   return (
-    <div className='min-h-screen flex flex-col bg-[#fff8f0] pt-16'> {/* bg-gray-50  info section: #faf3e0 others: #fff8f0 */ }
+    <div className="min-h-screen flex flex-col bg-[#fff8f0] pt-16">
       <Header />
-      <main className='flex-grow pt-10 md:pt-10  text-center'>
-        {/* Hero Section */}
-        <section className="relative h-[85vh] bg-cover bg-center">
+      <main className="flex-grow">
+        
+
+        {/* ================= HERO ================= */}
+        <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+
           {heroImages.map((img, i) => (
             <div
               key={i}
-              className={`absolute inset-0 transition-opacity duration-1500 ${
-                i === current ? 'opacity-100' : 'opacity-0'
-              } pointer-events-none`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
               style={{
                 backgroundImage: `url(${img})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
-            <div className="absolute inset-0 bg-black/55 flex flex-col items-center justify-center text-center text-white">
-             <h1 className="text-5xl font-bold">Harsha Multi Speciality Hospital</h1>
-              <p className="mt-4 text-lg max-w-2xl">
-                Health. Hope. Happiness. Providing exceptional healthcare with compassion and innovation.
-              </p>
-              <div className="mt-6 flex space-x-4 relative z-10">
-               <Button text="Book Appointment" variant="primary" disabled hideWhenDisabled/>
-               <Button text="Emergency: 020 123 456 789" variant="emergency" disabled hideWhenDisabled/>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40 flex flex-col justify-center items-center text-center text-white px-4 sm:px-6">
+
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-tight">
+                  Trusted Medical Excellence <br />
+                  <span className="text-emerald-400">For Every Generation</span>
+                </h1>
+
+                <p className="mt-4 sm:mt-6 max-w-2xl text-sm sm:text-base md:text-lg text-gray-200 px-4">
+                  Compassionate Care. Advanced Technology. Trusted by Families Across Proddatur.
+                </p>
+
+                {/* Glass Trust Panel */}
+                <div className="mt-6 sm:mt-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 sm:px-8 py-4 sm:py-6 flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm md:text-base">
+                  <span>✔ NABH Accredited</span>
+                  <span>✔ 25+ Years Experience</span>
+                  <span>✔ 50,000+ Patients Treated</span>
+                </div>
+
+                <div className="mt-6 sm:mt-8">
+                  <Link to="/departments">
+                    <Button text="View Departments" />
+                  </Link>
+                </div>
+
               </div>
             </div>
-          </div>
-        ))}
-
-        {/* Dots */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-1.5 h-1.5 ${ index === current ? 'bg-white' : 'bg-gray-400'} hover:bg-gray-700 hover:scale-125 `}
-              style={{borderRadius:'1.5px'}}
-           />
-         ))}
-        </div>
+          ))}
         </section>
 
-         {/* STATS STRIP */}
-        <section className="bg-emerald-700 text-white py-6">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div><p className="text-3xl font-bold">25+</p><p className="text-sm">Years of Excellence</p></div>
-            <div><p className="text-3xl font-bold">150+</p><p className="text-sm">Specialist Doctors</p></div>
-            <div><p className="text-3xl font-bold">50K+</p><p className="text-sm">Patients Treated</p></div>
-            <div><p className="text-3xl font-bold">24/7</p><p className="text-sm">Emergency Care</p></div>
+        {/* ================= STATS ================= */}
+        <section className="bg-emerald-700 text-white py-10 sm:py-14">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-6 sm:gap-8 divide-x divide-emerald-500">
+            <div>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">25+</p>
+              <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Years of Clinical Excellence</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">150+</p>
+              <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Specialist Doctors</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">50K+</p>
+              <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Successful Treatments</p>
+            </div>
+            <div>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">24/7</p>
+              <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Emergency Services</p>
+            </div>
           </div>
         </section>
 
-        {/* Hospital Info Section */}
-<section className="bg-[#faf3e0] py-16">
-  <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        {/* ================= FEATURED DEPARTMENTS ================= */}
+        <section className="bg-white py-12 sm:py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 mb-2 sm:mb-4">
+              Specialized Medical Departments
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">
+              Dedicated teams delivering advanced and compassionate healthcare.
+            </p>
 
-    {/* LEFT – Logo + Hospital Name */}
-    <div className="text-center md:text-left">
-      <img
-        src={logo2}
-        alt="HMSH Logo"
-        className="mx-auto md:mx-0 w-24 h-24 mb-6"
-      />
+            <div className="relative">
 
-      <h2 className="text-3xl font-bold text-emerald-800 mb-4">
-        Harsha Multi Speciality Hospital
-      </h2>
+              {/* Left Arrow - Hidden on mobile */}
+              <button
+                onClick={() =>
+                  document.getElementById("deptScroll").scrollBy({
+                    left: -350,
+                    behavior: "smooth",
+                  })
+                }
+                className="hidden sm:block absolute -left-6 top-1/2 -translate-y-1/2 z-10 
+                bg-white shadow-md p-2 rounded-full hover:bg-emerald-100 transition"
+              >
+                <ChevronLeft size={24} />
+              </button>
 
-      <p className="text-gray-700 max-w-md">
-        Committed to providing comprehensive medical care with compassion and
-        personalized attention.
-      </p>
-    </div>
+              {/* Scroll Container */}
+              <div
+                id="deptScroll"
+                className="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto scroll-smooth px-4 sm:px-10 no-scrollbar pb-4"
+              >
+                {departments.map((dept, i) => (
+                  <div
+                    key={i}
+                    className="min-w-[200px] sm:min-w-[240px] md:min-w-[260px] flex-shrink-0 transition hover:-translate-y-2 hover:shadow-xl duration-300"
+                  >
+                    <DepartmentCard {...dept} />
+                  </div>
+                ))}
+              </div>
 
-    {/* RIGHT – Contact Details */}
-    <div className="space-y-7 text-medium text-gray-700">
+              {/* Right Arrow - Hidden on mobile */}
+              <button
+                onClick={() =>
+                  document.getElementById("deptScroll").scrollBy({
+                    left: 350,
+                    behavior: "smooth",
+                  })
+                }
+                className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 z-10 
+                bg-white shadow-md p-2 rounded-full hover:bg-emerald-100 transition"
+              >
+                <ChevronRight size={24} />
+              </button>
 
-      <p className="flex items-start gap-3">
-        <MapPin size={22} className="mt-0.5 text-emerald-700" />
-        <span>
-          Bollavaram, Jagannathapuram Road,
-          Proddatur – 516361
-        </span>
-      </p>
+            </div>
+          </div>
+        </section>
 
-      <p className="flex items-center gap-3">
-        <Phone size={22} className="text-emerald-700" />
-        +91 789654123
-      </p>
+        {/* ================= BLOG ================= */}
+        <section className="bg-[#faf3e0] py-12 sm:py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 mb-8 sm:mb-12">
+              Health Insights & Updates
+            </h2>
 
-      <p className="flex items-center gap-3">
-        <Phone size={22} className="text-emerald-700" />
-        +91 988744455
-      </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              {blogs.map((blog) => (
+                <div key={blog.id} className="bg-white rounded-xl shadow hover:shadow-2xl transition overflow-hidden">
+                  <img src={blog.image} alt={blog.title} className="w-full h-48 sm:h-52 object-cover hover:scale-105 transition duration-500"/>
+                  <div className="p-4 sm:p-6 text-left">
+                    <h3 className="text-base sm:text-lg font-semibold">{blog.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm mt-2 sm:mt-3">{blog.excerpt}</p>
+                    <button className="mt-3 sm:mt-4 text-emerald-700 font-semibold hover:underline text-sm sm:text-base">
+                      Read More →
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <p className="flex items-center gap-3">
-        <Mail size={22} className="text-emerald-700" />
-        info@harshahospital.com
-      </p>
+        {/* ================= TESTIMONIALS ================= */}
+        <section className="bg-white py-12 sm:py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center relative">
 
-      <p className="flex items-center gap-3">
-        <Clock size={22} className="text-emerald-700" />
-        Mon – Sat: 8:00 AM – 10:00 PM
-      </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 mb-2 sm:mb-4">
+              Patient Experiences
+            </h2>
 
-    </div>
+            <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">
+              Genuine feedback from our patients
+            </p>
 
-  </div>
-</section>
+            <div className="relative">
 
+              {/* Left Arrow - Hidden on mobile */}
+              <button
+                onClick={() =>
+                  document.getElementById("reviewScroll").scrollBy({
+                    left: -300,
+                    behavior: "smooth",
+                  })
+                }
+                className="hidden sm:block absolute -left-6 top-1/2 -translate-y-1/2 z-10 
+                bg-white shadow-md p-2 rounded-full hover:bg-emerald-100 transition"
+              >
+                <ChevronLeft size={22} />
+              </button>
 
+              {/* Scroll Container */}
+              <div
+                id="reviewScroll"
+                className="flex gap-4 sm:gap-6 md:gap-8 overflow-x-auto scroll-smooth no-scrollbar pb-4"
+              >
+                {testimonials.map((t, index) => (
+                  <div
+                    key={index}
+                    className="w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 flex-shrink-0"
+                  >
+                    <div className="bg-[#faf3e0] p-4 sm:p-6 rounded-xl shadow hover:shadow-xl transition flex flex-col h-full">
 
-        {/* CENTERS OF EXCELLENCE */}
-        <section className='bg-white py-12 relative'>
-          <h2 className='text-3xl font-bold text-emerald-800'>Centers of Excellence</h2>
-          <p className='text-gray-600 text-sm mb-6'>
-            Discover our specialized care units designed to deliver excellence in every field.
-          </p>
+                      {/* Rating */}
+                      <div className="flex justify-center mb-2 sm:mb-3">
+                        {[...Array(5)].map((_, index) => (
+                          <Star
+                            key={index}
+                            size={14}
+                            className={
+                              index < t.rating
+                                ? "text-yellow-500 fill-yellow-500"
+                                : "text-gray-300"
+                            }
+                          />
+                        ))}
+                      </div>
 
-          <div className="relative max-w-6xl mx-auto">
-            <button
-              onClick={() => document.getElementById('deptSlider').scrollBy({ left: -300, behavior: 'smooth' })}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-            >
-              <ChevronLeft size={20} />
-            </button>
+                      {/* Review */}
+                      <p className="text-gray-700 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 flex-grow text-left">
+                        "{t.review}"
+                      </p>
 
-            <div id="deptSlider" className="flex gap-6 overflow-x-auto scroll-smooth px-10 py-6 no-scrollbar">
-              {departments.map((dept, i) => (
-                <DepartmentCard key={i} {...dept} />
+                      {/* Name + Role */}
+                      <div className="text-center mt-2 sm:mt-4">
+                        <p className="font-semibold text-emerald-700 text-xs sm:text-sm">
+                          {t.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {t.role}
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Arrow - Hidden on mobile */}
+              <button
+                onClick={() =>
+                  document.getElementById("reviewScroll").scrollBy({
+                    left: 300,
+                    behavior: "smooth",
+                  })
+                }
+                className="hidden sm:block absolute -right-6 top-1/2 -translate-y-1/2 z-10 
+                bg-white shadow-md p-2 rounded-full hover:bg-emerald-100 transition"
+              >
+                <ChevronRight size={22} />
+              </button>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ================= INSURANCE PARTNERS ================= */}
+        <section className="bg-[#faf3e0] py-12 sm:py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 text-center mb-2 sm:mb-4">
+              Insurance Partners
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-12">
+              Cashless treatment available with all major insurance providers
+            </p>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+              {insurancePartners.map((insurance, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-3 sm:p-4 md:p-5 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center border border-emerald-100 hover:border-emerald-300"
+                >
+                  <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800">
+                    {insurance}
+                  </p>
+                </div>
               ))}
             </div>
 
-            <button
-              onClick={() => document.getElementById('deptSlider').scrollBy({ left: 300, behavior: 'smooth' })}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </section>
-
-        {/* DOCTORS */}
-        <section className='bg-[#005c52] py-12 relative'>
-          <h2 className='text-3xl font-bold text-white'>Meet Our Specialists</h2>
-          <p className='text-emerald-100 text-sm mb-6'>
-            Experienced consultants across all major disciplines.
-          </p>
-
-          <div className="relative max-w-6xl mx-auto">
-            <button
-              onClick={() => document.getElementById('docSlider').scrollBy({ left: -300, behavior: 'smooth' })}
-              className="absolute -left-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <div id="docSlider" className="flex gap-6 overflow-x-auto scroll-smooth px-8 py-4 no-scrollbar">
-              {doctors.map((doc, i) => (
-                <DoctorCard key={i} {...doc} showButton={false} />
-              ))}
+            <div className="text-center mt-8 sm:mt-10">
+             
+<Link to="/services#insurance-partners">
+  <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-6 sm:px-8 rounded-md transition duration-300 text-sm sm:text-base">
+    View All Insurance Partners →
+  </button>
+</Link>
+              <p className="text-xs sm:text-sm text-gray-600 mt-4">
+                For insurance queries, contact our front office at{" "}
+                <a href="tel:9704100136" className="text-emerald-700 font-semibold hover:underline">
+                  9704100136
+                </a>
+              </p>
             </div>
-
-            <button
-              onClick={() => document.getElementById('docSlider').scrollBy({ left: 300, behavior: 'smooth' })}
-              className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-            >
-              <ChevronRight size={20} />
-            </button>
           </div>
         </section>
 
-        {/* Blog Section */}
-        <section className='bg-[#fff8f0] py-10'>
-          <h2 className='text-3xl font-bold text-emerald-800 text-center mb-10'>
-            Latest News, Events and Blogs
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto'>
-            {blogs.map((blog) => (
-              <BlogCard key={blog.id} id={blog.id} title={blog.title} excerpt={blog.excerpt} image={blog.image} />
-            ))}
-          </div>
-        </section>
+        {/* ================= ELITE EMERGENCY SECTION ================= */}
+        <section className="relative bg-emerald-700 py-12 sm:py-16 md:py-24 overflow-hidden">
 
-        {/*Testimonials Section */}
-        <section className="bg-white py-10">
-          <h2 className="text-3xl font-bold text-emerald-800 text-center mb-10">What our Patients Are Saying</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
-              <p className="text-gray-700">"The staff was amazing and the care I received was outstanding."</p>
-              <footer className="mt-4 text-sm text-emerald-700">— Sunita R.</footer>
-            </blockquote>
-            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
-              <p className="text-gray-700">"I had a great experience with Dr. Sri Lakshmi. Highly recommend!"</p>
-            <footer className="mt-4 text-sm text-emerald-700">— Rohit K.</footer>
-            </blockquote>
-            <blockquote className="bg-[#fff8f0] shadow-md rounded-lg p-6">
-              <p className="text-gray-700">"Excellent service and very compassionate doctors."</p>
-              <footer className="mt-4 text-sm text-emerald-700">— Anjali S.</footer>
-            </blockquote>
+          {/* Subtle Background Texture */}
+          <div className="absolute inset-0 opacity-5 pointer-events-none">
+            <div className="w-full h-full 
+              bg-[radial-gradient(circle_at_25%_25%,white_1px,transparent_1px)] 
+              bg-[length:40px_40px]">
+            </div>
           </div>
-        </section>
 
-        {/* CTA BAND */}
-        <section className='bg-emerald-700 text-white py-10'>
-          <h2 className='text-2xl font-bold'>Need immediate medical assistance?</h2>
-          <p className='text-sm mb-4'>Our emergency team is available 24/7.</p>
-          <div className='flex justify-center gap-4'>
-            <Button text="Call Emergency" variant="emergency" />
-            <Button text="Book Appointment" variant="primary" />
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
+
+            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-14 text-center relative overflow-hidden">
+
+              {/* Elegant Top Accent Line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-red-600"></div>
+
+              {/* Heading */}
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-emerald-800">
+                24/7 Emergency & Critical Care
+              </h2>
+
+              {/* Description - Updated with correct info */}
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
+                Emergency & Critical Care, Obstetrics & Gynaecology, and General Medicine serving since 15 years. 
+                All other departments staffed with highly qualified and experienced doctors. 
+                Immediate medical assistance available round the clock with rapid response teams 
+                and fully equipped emergency facilities.
+              </p>
+
+              {/* Trust Line */}
+              <p className="mt-4 sm:mt-6 text-xs sm:text-sm font-medium text-emerald-700 tracking-wide">
+                ISO Certified &nbsp; | &nbsp; NABH Accredited &nbsp; | &nbsp; 15+ Years of Excellence
+              </p>
+
+              {/* CTA Section */}
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+
+                {/* Emergency Call */}
+                <a
+                  href="tel:9640540475"
+                  className="inline-block border-2 border-red-600 text-red-600 px-6 sm:px-8 py-2 sm:py-3 rounded-md font-semibold text-sm sm:text-base
+                  hover:bg-red-600 hover:text-white transition duration-300"
+                >
+                  Call Emergency: 9640540475
+                </a>
+
+                {/* Front Office */}
+              
+
+              </div>
+
+            </div>
           </div>
         </section>
 
       </main>
+
       <Footer />
     </div>
-
-  )
+  );
 }
