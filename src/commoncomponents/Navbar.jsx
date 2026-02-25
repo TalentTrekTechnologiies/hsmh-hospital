@@ -34,8 +34,10 @@ export default function Navbar() {
 
         {/* CTA (desktop) */}
         <div className='hidden md:block'>
-          <Button text="Book Appointment" variant="primary" className="px-4 py-2 rounded transition" disabled hideWhenDisabled/>
-        </div>
+          <Link to="/book-appointment">
+             <Button text="Book Appointment" variant="primary" className="px-4 py-2 rounded hover:bg-emerald-800 transition" />
+         </Link>
+         </div>
 
         {/* Hamburger (mobile) */}
         <button
@@ -56,7 +58,7 @@ export default function Navbar() {
           <Link to='/services' className='block text-emerald-800'>Services</Link>
           <Link to='/blog' className='block text-emerald-800'>Blog</Link>
           <Link to='/contact' className='block text-emerald-800'>Contact Us</Link>
-          <Button text="Book Appointment" variant="primary" className="w-full" disabled={true} hideWhenDisabled/>
+          <Button text="Book Appointment" variant="primary" className="w-full"/>
         </div>
       )}
     </nav>

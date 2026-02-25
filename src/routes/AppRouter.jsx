@@ -10,6 +10,8 @@ import BlogList from '../pages/user/BlogList'
 import BlogDetails from '../pages/user/BlogDetails'
 import Departments from '../pages/user/Departments'
 import DepartmentDetails from '../pages/user/DepartmentDetails'
+import BookAppointment from '../pages/auth/BookAppointment'
+
 
 
 export default function AppRouter() {
@@ -25,6 +27,7 @@ export default function AppRouter() {
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/departments" element={<Departments />} />
         <Route path="/departments/:id" element={<DepartmentDetails />} />  
+        <Route path="/book-appointment" element={<BookAppointment/>} />
     </Routes>
   )
 }

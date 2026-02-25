@@ -1,6 +1,6 @@
+// src/pages/user/BlogDetails.jsx
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
 
@@ -189,18 +189,24 @@ export default function BlogDetails() {
   const prevBlog = blogData[currentIndex - 1];
   const nextBlog = blogData[currentIndex + 1];
 
+  // Handle keyboard navigation
+  const handleKeyDown = (e, direction) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (direction === 'prev' && prevBlog) {
+        navigate(`/blog/${prevBlog.id}`);
+      } else if (direction === 'next' && nextBlog) {
+        navigate(`/blog/${nextBlog.id}`);
+      }
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>{blog.title} | Hospital Blog</title>
-        <meta name="description" content={blog.title} />
-      </Helmet>
-
       <Header />
 
-      <main className="bg-[#fff8f0] pt-[110px] pb-16 min-h-screen">
+      <main className="bg-[#fff8f0] pt-[100px] sm:pt-[110px] pb-16 min-h-screen">
         <div className="max-w-[920px] mx-auto px-4 sm:px-6">
-
           <article className="bg-white rounded-3xl shadow-lg p-5 sm:p-8 md:p-10">
 
             {/* CATEGORY */}
@@ -224,6 +230,10 @@ export default function BlogDetails() {
                 src={blog.image}
                 alt={blog.title}
                 className="w-full h-[220px] sm:h-[300px] md:h-[360px] object-cover rounded-2xl hover:scale-[1.02] transition duration-500"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = 'https://via.placeholder.com/900x600?text=Image+Not+Found';
+                }}
               />
             </div>
 
@@ -234,35 +244,35 @@ export default function BlogDetails() {
 
             {/* NAVIGATION */}
             <div className="flex flex-col sm:flex-row justify-between mt-12 gap-4">
-
               <button
                 disabled={!prevBlog}
-                onClick={() =>
-                  prevBlog && navigate(`/blog/${prevBlog.id}`)
-                }
+                onClick={() => prevBlog && navigate(`/blog/${prevBlog.id}`)}
+                onKeyDown={(e) => handleKeyDown(e, 'prev')}
                 className={`px-5 py-3 rounded-full font-semibold transition border ${
                   prevBlog
-                    ? "bg-white border-gray-300 hover:bg-gray-100"
+                    ? "bg-white border-gray-300 hover:bg-gray-100 text-gray-700 focus:ring-2 focus:ring-[#005c52] focus:outline-none"
                     : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
+                aria-label="Previous article"
+                tabIndex={prevBlog ? 0 : -1}
               >
                 ← Previous
               </button>
 
               <button
                 disabled={!nextBlog}
-                onClick={() =>
-                  nextBlog && navigate(`/blog/${nextBlog.id}`)
-                }
+                onClick={() => nextBlog && navigate(`/blog/${nextBlog.id}`)}
+                onKeyDown={(e) => handleKeyDown(e, 'next')}
                 className={`px-5 py-3 rounded-full font-semibold transition border ${
                   nextBlog
-                    ? "bg-[#005c52] text-white hover:bg-[#004743]"
+                    ? "bg-[#005c52] text-white hover:bg-[#004743] focus:ring-2 focus:ring-emerald-300 focus:outline-none"
                     : "bg-gray-100 text-gray-400 cursor-not-allowed"
                 }`}
+                aria-label="Next article"
+                tabIndex={nextBlog ? 0 : -1}
               >
                 Next →
               </button>
-
             </div>
 
           </article>
