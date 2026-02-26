@@ -50,6 +50,11 @@ const Login = () => {
     }
   };
 
+  // ✅ New function to navigate to signup page
+  const handleCreateAccount = () => {
+    navigate("/signup"); // signup path మీ router config లో సెట్ చేసినట్లు
+  };
+
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-fixed relative flex items-center justify-center"
@@ -185,9 +190,10 @@ const Login = () => {
               Login to Dashboard
             </button>
 
+            {/* ✅ Updated button with navigation */}
             <button
               type="button"
-              onClick={() => alert("Redirect to new account creation (demo).")}
+              onClick={handleCreateAccount}
               className="w-full py-3.5 rounded-lg font-semibold border-2 border-[#0f5132] text-[#0f5132] hover:bg-[#0f5132] hover:text-white transition"
             >
               Create New Account
