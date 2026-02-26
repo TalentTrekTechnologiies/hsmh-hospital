@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+
 import Home from '../pages/user/Home'
 import About from '../pages/user/About'
 import Contact from '../pages/user/Contact'
@@ -11,23 +12,23 @@ import BlogDetails from '../pages/user/BlogDetails'
 import Departments from '../pages/user/Departments'
 import DepartmentDetails from '../pages/user/DepartmentDetails'
 import BookAppointment from '../pages/auth/BookAppointment'
-
-
+import Login from '../pages/auth/Login'  
 
 export default function AppRouter() {
   return (
-    <Routes>   
+    <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />  
+        <Route path="/services" element={<Services />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/doctors/:id" element={<DoctorProfile />} />
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/departments" element={<Departments />} />
-        <Route path="/departments/:id" element={<DepartmentDetails />} />  
-        <Route path="/book-appointment" element={<BookAppointment/>} />
+        <Route path="/departments/:id" element={<DepartmentDetails />} />
+        <Route path="/book-appointment" element={<BookAppointment />} />
+        <Route path="/login" element={<Login />} />   
     </Routes>
   )
 }
