@@ -12,7 +12,8 @@ import BlogDetails from '../pages/user/BlogDetails'
 import Departments from '../pages/user/Departments'
 import DepartmentDetails from '../pages/user/DepartmentDetails'
 import BookAppointment from '../pages/auth/BookAppointment'
-import Login from '../pages/auth/Login'  
+
+
 
 export default function AppRouter() {
   return (
@@ -26,9 +27,8 @@ export default function AppRouter() {
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/departments" element={<Departments />} />
-        <Route path="/departments/:id" element={<DepartmentDetails />} />
-        <Route path="/book-appointment" element={<BookAppointment />} />
-        <Route path="/login" element={<Login />} />   
+        <Route path="/departments/:id" element={<DepartmentDetails />} />  
+        <Route path="/book-appointment" element={<BookAppointment/>} />
     </Routes>
   )
 }
