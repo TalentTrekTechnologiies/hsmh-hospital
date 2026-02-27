@@ -358,15 +358,15 @@ export default function Services() {
         <section className="bg-emerald-700 text-white py-6 sm:py-8">
           <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center px-4">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">25+</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0</h3>
               <p className="text-xs sm:text-sm text-white-600">Expert Doctors</p>
             </div>
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">50K+</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0+</h3>
               <p className="text-xs sm:text-sm text-white-600">Happy Patients</p>
             </div>
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">15+</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0</h3>
               <p className="text-xs sm:text-sm text-white-600">Years Experience</p>
             </div>
             <div>

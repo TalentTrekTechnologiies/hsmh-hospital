@@ -216,69 +216,87 @@ export default function Doctors() {
     }
   ]
 
-  // ONLINE AVAILABLE DOCTORS - Dummy Data (removed consultationFee and nextAvailable)
-  const onlineDoctors = [
-    { 
-      name:'Dr. Priya Sharma', 
-      specialty:'Dermatologist', 
-      qualifications:'MBBS, MD Dermatology', 
-      experience:'8+ years',
-      rating:4.8,
-      reviews:245,
-      image:doc4,
-      online: true
-    },
-    { 
-      name:'Dr. Amit Kumar', 
-      specialty:'Psychiatrist', 
-      qualifications:'MBBS, MD Psychiatry', 
-      experience:'12+ years',
-      rating:4.9,
-      reviews:389,
-      image:doc5,
-      online: true
-    },
-    { 
-      name:'Dr. Sneha Patel', 
-      specialty:'Pediatrician', 
-      qualifications:'MBBS, MD Pediatrics', 
-      experience:'10+ years',
-      rating:4.7,
-      reviews:178,
-      image:doc6,
-      online: true
-    },
-    { 
-      name:'Dr. Rajesh Khanna', 
-      specialty:'Endocrinologist', 
-      qualifications:'MBBS, MD, DM Endocrinology', 
-      experience:'15+ years',
-      rating:4.9,
-      reviews:412,
-      image:doc1,
-      online: true
-    },
-    { 
-      name:'Dr. Meera Nair', 
-      specialty:'Gynecologist', 
-      qualifications:'MBBS, MS OB/GYN', 
-      experience:'14+ years',
-      rating:4.8,
-      reviews:356,
-      image:doc2,
-      online: true
-    },
-    { 
-      name:'Dr. Vikram Singh', 
-      specialty:'Neurologist', 
-      qualifications:'MBBS, MD, DM Neurology', 
-      experience:'16+ years',
-      rating:4.9,
-      reviews:289,
-      image:doc3,
-      online: true
-    }
-  ]
+  // ONLINE AVAILABLE DOCTORS - Updated with status, slots & timings
+const onlineDoctors = [
+  { 
+    name:'Dr. Priya Sharma', 
+    specialty:'Dermatologist', 
+    qualifications:'MBBS, MD Dermatology', 
+    experience:'8+ years',
+    rating:4.8,
+    reviews:245,
+    image:doc4,
+    status: "Online", // Online | Busy | Offline
+    timings: "09:00 AM - 01:00 PM",
+    consultationType: "Video / Chat",
+    availableSlots: ["09:30 AM", "10:00 AM", "11:30 AM", "12:30 PM"]
+  },
+  { 
+    name:'Dr. Amit Kumar', 
+    specialty:'Psychiatrist', 
+    qualifications:'MBBS, MD Psychiatry', 
+    experience:'12+ years',
+    rating:4.9,
+    reviews:389,
+    image:doc5,
+    status: "Busy",
+    timings: "10:00 AM - 04:00 PM",
+    consultationType: "Video",
+    availableSlots: ["02:00 PM", "03:30 PM"]
+  },
+  { 
+    name:'Dr. Sneha Patel', 
+    specialty:'Pediatrician', 
+    qualifications:'MBBS, MD Pediatrics', 
+    experience:'10+ years',
+    rating:4.7,
+    reviews:178,
+    image:doc6,
+    status: "Online",
+    timings: "08:00 AM - 12:00 PM",
+    consultationType: "Video / Chat",
+    availableSlots: ["08:30 AM", "09:00 AM", "11:00 AM"]
+  },
+  { 
+    name:'Dr. Rajesh Khanna', 
+    specialty:'Endocrinologist', 
+    qualifications:'MBBS, MD, DM Endocrinology', 
+    experience:'15+ years',
+    rating:4.9,
+    reviews:412,
+    image:doc1,
+    status: "Online",
+    timings: "11:00 AM - 05:00 PM",
+    consultationType: "Video",
+    availableSlots: ["11:30 AM", "01:00 PM", "03:00 PM", "04:30 PM"]
+  },
+  { 
+    name:'Dr. Meera Nair', 
+    specialty:'Gynecologist', 
+    qualifications:'MBBS, MS OB/GYN', 
+    experience:'14+ years',
+    rating:4.8,
+    reviews:356,
+    image:doc2,
+    status: "Offline",
+    timings: "09:00 AM - 02:00 PM",
+    consultationType: "Video / Chat",
+    availableSlots: []
+  },
+  { 
+    name:'Dr. Vikram Singh', 
+    specialty:'Neurologist', 
+    qualifications:'MBBS, MD, DM Neurology', 
+    experience:'16+ years',
+    rating:4.9,
+    reviews:289,
+    image:doc3,
+    status: "Online",
+    timings: "01:00 PM - 07:00 PM",
+    consultationType: "Video",
+    availableSlots: ["02:00 PM", "04:00 PM", "06:30 PM"]
+  }
+];
 
   const filteredDoctors = selectedCategory === 'All Doctors'
     ? allDoctors
@@ -366,81 +384,116 @@ export default function Doctors() {
             </div>
           </div>
 
-          {/* ONLINE AVAILABLE DOCTORS - Edge to Edge Section */}
-          <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-20'>
-            <div className='bg-gradient-to-r from-emerald-50 to-teal-50 py-16 lg:py-20 shadow-lg'>
-              <div className='max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8'>
-                
-                {/* Section Title with Online Badge */}
-                <div className='text-center mb-12'>
-                  <div className='inline-flex items-center gap-3 bg-emerald-100 px-6 py-2 rounded-full mb-4'>
-                    <span className='relative flex h-3 w-3'>
-                      <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75'></span>
-                      <span className='relative inline-flex rounded-full h-3 w-3 bg-emerald-500'></span>
-                    </span>
-                    <span className='text-emerald-700 font-semibold'>Available Now</span>
-                  </div>
-                  <h2 className='text-4xl font-bold text-emerald-800 mb-4'>
-                    Online Consultation
-                  </h2>
-                  <p className='text-gray-600 max-w-2xl mx-auto'>
-                    Consult with our experienced doctors from the comfort of your home. 
-                    Video consultations available 24/7.
-                  </p>
-                </div>
+          {/* Online Doctors Grid */}
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+  {onlineDoctors.map((doctor, index) => {
 
-                {/* Online Doctors Grid */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                  {onlineDoctors.map((doctor, index) => (
-                    <div
-                      key={index}
-                      className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-emerald-100'
-                    >
-                      {/* Online Status Indicator */}
-                      <div className='relative'>
-                        <div className='h-48 overflow-hidden'>
-                          <img
-                            src={doctor.image}
-                            alt={doctor.name}
-                            className='w-full h-full object-cover'
-                          />
-                        </div>
-                        <div className='absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1'>
-                          <span className='relative flex h-2 w-2'>
-                            <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75'></span>
-                            <span className='relative inline-flex rounded-full h-2 w-2 bg-white'></span>
-                          </span>
-                          Online
-                        </div>
-                      </div>
+    const statusStyles =
+      doctor.status === "Online"
+        ? "bg-emerald-500 text-white"
+        : doctor.status === "Busy"
+        ? "bg-yellow-500 text-white"
+        : "bg-gray-400 text-white"
 
-                      {/* Doctor Details */}
-                      <div className='p-5'>
-                        <div className='flex justify-between items-start mb-2'>
-                          <h3 className='text-lg font-bold text-emerald-800'>
-                            {doctor.name}
-                          </h3>
-                          <div className='flex items-center gap-1 bg-emerald-50 px-2 py-1 rounded'>
-                            <span className='text-yellow-500'>★</span>
-                            <span className='text-sm font-semibold text-gray-700'>{doctor.rating}</span>
-                            <span className='text-xs text-gray-500'>({doctor.reviews})</span>
-                          </div>
-                        </div>
-                        
-                        <p className='text-emerald-600 font-medium text-sm mb-1'>
-                          {doctor.specialty}
-                        </p>
-                        <p className='text-gray-500 text-xs'>
-                          {doctor.qualifications} • {doctor.experience}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+    return (
+      <div
+        key={index}
+        className='bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 border border-emerald-100'
+      >
+        {/* Image + Dynamic Status */}
+        <div className='relative'>
+          <div className='h-48 overflow-hidden'>
+            <img
+              src={doctor.image}
+              alt={doctor.name}
+              className='w-full h-full object-cover'
+            />
+          </div>
+
+          <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${statusStyles}`}>
+            {doctor.status}
+          </div>
+        </div>
+
+        {/* Doctor Details */}
+        <div className='p-5'>
+          <div className='flex justify-between items-start mb-2'>
+            <h3 className='text-lg font-bold text-emerald-800'>
+              {doctor.name}
+            </h3>
+
+            <div className='flex items-center gap-1 bg-emerald-50 px-2 py-1 rounded'>
+              <span className='text-yellow-500'>★</span>
+              <span className='text-sm font-semibold text-gray-700'>
+                {doctor.rating}
+              </span>
+              <span className='text-xs text-gray-500'>
+                ({doctor.reviews})
+              </span>
             </div>
           </div>
 
+          <p className='text-emerald-600 font-medium text-sm mb-1'>
+            {doctor.specialty}
+          </p>
+
+          <p className='text-gray-500 text-xs mb-3'>
+            {doctor.qualifications} • {doctor.experience}
+          </p>
+
+          {/* Timings */}
+          <div className='text-sm text-gray-600 space-y-1 mb-3'>
+            <p><span className='font-semibold'>Timings:</span> {doctor.timings}</p>
+            <p><span className='font-semibold'>Consultation:</span> {doctor.consultationType}</p>
+          </div>
+
+          {/* Available Slots */}
+          <div className='mb-4'>
+            <p className='text-sm font-semibold text-gray-700 mb-2'>
+              Available Slots:
+            </p>
+
+            {doctor.availableSlots && doctor.availableSlots.length > 0 ? (
+              <div className='flex flex-wrap gap-2'>
+                {doctor.availableSlots.map((slot, i) => (
+                  <span
+                    key={i}
+                    className='px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full'
+                  >
+                    {slot}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <p className='text-xs text-gray-400'>No slots available</p>
+            )}
+          </div>
+
+          {/* Book Button */}
+          <button
+            disabled={doctor.status !== "Online"}
+            className={`w-full py-2 rounded-lg font-semibold transition
+              ${
+                doctor.status === "Online"
+                  ? "bg-emerald-600 hover:bg-emerald-700 text-white"
+                  : doctor.status === "Busy"
+                  ? "bg-yellow-400 text-white cursor-not-allowed"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }
+            `}
+          >
+            {doctor.status === "Online"
+              ? "Book Now"
+              : doctor.status === "Busy"
+              ? "Currently Busy"
+              : "Offline"}
+          </button>
+
+        </div>
+      </div>
+    )
+  })}
+</div><br /><br />
           {/* ALL DOCTORS - Edge to Edge Section */}
           <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]'>
             <div className='bg-white py-16 lg:py-20 shadow-lg'>

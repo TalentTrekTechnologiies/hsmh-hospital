@@ -260,8 +260,8 @@ export default function Home() {
                 {/* Glass Trust Panel */}
                 <div className="mt-6 sm:mt-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 sm:px-8 py-4 sm:py-6 flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm md:text-base">
                   <span>✔ NABH Accredited</span>
-                  <span>✔ 25+ Years Experience</span>
-                  <span>✔ 50,000+ Patients Treated</span>
+                  <span>✔ 0 Years Experience</span>
+                  <span>✔ 0 Patients Treated</span>
                 </div>
 
                 <div className="mt-6 sm:mt-8">
@@ -278,15 +278,15 @@ export default function Home() {
         <section className="bg-emerald-700 text-white py-10 sm:py-14">
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-6 sm:gap-8">
             <div>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">25+</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">1+</p>
               <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Years of Clinical Excellence</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">150+</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">10+</p>
               <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Specialist Doctors</p>
             </div>
             <div>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">50K+</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold">1k+</p>
               <p className="text-xs sm:text-sm mt-1 sm:mt-2 px-2">Successful Treatments</p>
             </div>
             <div>
