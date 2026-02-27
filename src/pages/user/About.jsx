@@ -213,15 +213,15 @@ export default function About() {
         <section className="bg-emerald-700 text-white py-8">
           <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <h3 className="text-3xl font-bold text-white">0</h3>
+              <h3 className="text-3xl font-bold text-white">10+</h3>
               <p className="text-sm text-white/80">Expert Doctors</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-white">0</h3>
+              <h3 className="text-3xl font-bold text-white">10K+</h3>
               <p className="text-sm text-white/80">Happy Patients</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-white">0</h3>
+              <h3 className="text-3xl font-bold text-white">13+</h3>
               <p className="text-sm text-white/80">Years Experience</p>
             </div>
             <div>

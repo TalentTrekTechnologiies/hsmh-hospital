@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 /* IMAGES */
 import servicesHero from "../../assets/services.png";
-import radiologyImg from "../../assets/labtest.jpg";
-import orthoImg from "../../assets/doctor consultation.jpg";
-import dentalImg from "../../assets/Image3.png";
-import emergencyImg from "../../assets/image4.png";
-import pharmacyImg from "../../assets/Ambulnace.jpeg";
-import homecareImg from "../../assets/Image1.png";
+import radiologyImg from "../../assets/radiology.png";
+import orthoImg from "../../assets/Orthopaedic.png";
+import dentalImg from "../../assets/dental.png";
+import emergencyImg from "../../assets/emergency.png";
+import pharmacyImg from "../../assets/pharmacy.jpeg";
+import homecareImg from "../../assets/homecare.png";
 
 /* VIDEOS (keep <5MB each) */
 import serviceVideo1 from "../../assets/video2.mp4";
@@ -358,15 +358,15 @@ export default function Services() {
         <section className="bg-emerald-700 text-white py-6 sm:py-8">
           <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center px-4">
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">10+</h3>
               <p className="text-xs sm:text-sm text-white-600">Expert Doctors</p>
             </div>
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0+</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">10K+</h3>
               <p className="text-xs sm:text-sm text-white-600">Happy Patients</p>
             </div>
             <div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">0</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white-800">13+</h3>
               <p className="text-xs sm:text-sm text-white-600">Years Experience</p>
             </div>
             <div>
