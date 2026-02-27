@@ -19,21 +19,20 @@ import video1 from '../../assets/video1.mp4'
 const video2 = video1;
 const video3 = video1;
 
+// Import all department images based on your Downloads folder
 import cardiologyImg from '../../assets/cardiologyImg.jpg'
 import orthopedicsImg from '../../assets/orthopedicsImg.jpg'
-import neurologyImg from '../../assets/neurologyImg.jpg'
+import neurologyImg from '../../assets/Neurology&Neurosurgery.png'
 import generalMedicineImg from '../../assets/generalMedicineImg.jpg'
-import dermatologyImg from '../../assets/dermatologyImg.jpg'
-
-// Create fallback images for departments that don't have specific images
-const emergencyImg = cardiologyImg;
-const anesthesiaImg = neurologyImg;
-const infertilityImg = dermatologyImg;
-const obstetricsImg = orthopedicsImg;
-const pediatricsImg = generalMedicineImg;
-const urologyImg = neurologyImg;
-const dentistryImg = dermatologyImg;
-const oncologyImg = cardiologyImg;
+import generalSurgeryImg from '../../assets/GeneralSurgery.png'
+import urologyImg from '../../assets/Urology&Nephrology.png'
+import dentistryImg from '../../assets/Dentistry.png'
+import oncologyImg from '../../assets/SurgicalOncology.png'
+import emergencyImg from '../../assets/Emergency&Critical Care.png'
+import anesthesiaImg from '../../assets/Anesthesia&PainMedicine.png'
+import infertilityImg from '../../assets/Infertility&ReproductiveMedicine.png'
+import obstetricsImg from '../../assets/Obstetrics&Gynecology.png'
+import pediatricsImg from '../../assets/Pediatrics&Neonatology.png'
 
 export default function Departments() {
   const videoRefs = useRef([])
@@ -44,7 +43,7 @@ export default function Departments() {
     { name: 'Cardiology', image: cardiologyImg },
     { name: 'Orthopedics and Trauma Care', image: orthopedicsImg },
     { name: 'General Medicine', image: generalMedicineImg },
-    { name: 'General Surgery', image: orthopedicsImg },
+    { name: 'General Surgery', image: generalSurgeryImg },
     { name: 'Urology and Nephrology', image: urologyImg },
     { name: 'Neurology and Neurosurgery', image: neurologyImg },
     { name: 'Dentistry and Oro Maxillofacial Surgery', image: dentistryImg },
