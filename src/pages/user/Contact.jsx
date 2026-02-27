@@ -12,7 +12,7 @@ import {
 
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
-import hospitalBuilding from "../../assets/contact Us 1.jpeg";
+import hospitalBuilding from "../../assets/ContactUs.png";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -97,34 +97,37 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fff8f0] flex flex-col">
+    <div className="min-h-screen bg-[#f8f5ef] flex flex-col">
       <Header />
 
-      <main className="flex-grow bg-[#f8f5ef]">
+      <main className="flex-grow">
 
         {/* HERO SECTION */}
         <section className="relative w-full">
-          <div className="relative h-[300px] md:h-[360px] w-full overflow-hidden">
+          <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden">
             <img
               src={hospitalBuilding}
               alt="Hospital Building"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
               onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/1200x360?text=Hospital+Building';
+                e.target.src = 'https://via.placeholder.com/1200x500?text=Hospital+Building';
               }}
             />
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/40" />
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-              <h1 className="text-4xl md:text-5xl font-bold text-white">
-                Contact & Location
-              </h1>
-              <p className="text-white/90 mt-3 max-w-2xl text-base md:text-lg">
-                We are committed to providing compassionate, responsive and
-                round-the-clock medical care. Reach out to us anytime.
-              </p>
-            </div>
+            {/* Centered Hero Content */}
+<div className="absolute inset-0 flex items-center justify-center">
+  <div className="text-center px-6 max-w-4xl mx-auto">
+    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+     Find Us
+    </h1>
+    <p className="text-white/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto">
+      Your health and safety are our highest priority. Experience world-class healthcare 
+      delivered with compassion, integrity, and excellence.
+    </p>
+  </div>
+</div>
           </div>
         </section>
 

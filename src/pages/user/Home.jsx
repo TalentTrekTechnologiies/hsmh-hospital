@@ -9,6 +9,25 @@ import hospital2 from "../../assets/hospital2.png";
 import hospital3 from "../../assets/abouthero.png";
 import hospital4 from "../../assets/aboutpage2.png";
 
+//Blogs 
+import heartBlogImg from '../../assets/heart-blog.jpeg'
+import neuroBlogImg from '../../assets/neurology-blog.png'
+import orthoBlogImg from '../../assets/orthopedic-blog.png'
+
+// Import all department images (same as Departments.jsx)
+import orthopedicsImg from '../../assets/orthopedicsImg.jpg'
+import neurologyImg from '../../assets/Neurology&Neurosurgery.png'
+import generalMedicineImg from '../../assets/generalMedicineImg.jpg'
+import generalSurgeryImg from '../../assets/GeneralSurgery.png'
+import urologyImg from '../../assets/Urology&Nephrology.png'
+import dentistryImg from '../../assets/Dentistry.png'
+import oncologyImg from '../../assets/SurgicalOncology.png'
+import emergencyImg from '../../assets/Emergency&Critical Care.png'
+import anesthesiaImg from '../../assets/Anesthesia&PainMedicine.png'
+import infertilityImg from '../../assets/Infertility&ReproductiveMedicine.png'
+import obstetricsImg from '../../assets/Obstetrics&Gynecology.png'
+import pediatricsImg from '../../assets/Pediatrics&Neonatology.png'
+
 import {
   ChevronLeft,
   ChevronRight,
@@ -17,19 +36,7 @@ import {
   Mail,
   Clock,
   Star,
-  HeartPulse,
-  Bone,
-  Stethoscope,
-  Activity,
-  Droplet,
-  Brain,
-  Smile,
-  Ribbon,
   Ambulance,
-  Syringe,
-  Heart,
-  UserRound,
-  Baby,
 } from "lucide-react";
 
 import Header from "../../commoncomponents/Header";
@@ -42,108 +49,90 @@ export default function Home() {
 
   const departments = [
     {
-      title: "Cardiology",
-      description: "Comprehensive heart care with advanced diagnostics and cath lab facilities.",
-      icon: HeartPulse,
-      image: hospital1,
-    },
-    {
-      title: "Orthopedics and Trauma Care",
-      description: "Expert care for fractures, joint replacements, and trauma management.",
-      icon: Bone,
-      image: hospital2,
-    },
-    {
-      title: "General Medicine",
-      description: "Primary healthcare and chronic disease management services.",
-      icon: Stethoscope,
-      image: hospital3,
-    },
-    {
-      title: "General Surgery",
-      description: "Advanced surgical procedures with modern operation theatres.",
-      icon: Activity,
-      image: hospital4,
-    },
-    {
-      title: "Urology and Nephrology",
-      description: "Comprehensive kidney and urinary tract treatment including dialysis.",
-      icon: Droplet,
-      image: hospital1,
-    },
-    {
-      title: "Neurology and Neurosurgery",
-      description: "Specialized brain, spine, and nervous system treatments.",
-      icon: Brain,
-      image: hospital2,
-    },
-    {
-      title: "Dentistry and Oro Maxillofacial Surgery",
-      description: "Complete dental care and facial surgical procedures.",
-      icon: Smile,
-      image: hospital3,
-    },
-    {
-      title: "Surgical Oncology",
-      description: "Advanced cancer surgeries and comprehensive oncology care.",
-      icon: Ribbon,
-      image: hospital4,
+      title: "Anesthesia and Pain Medicine",
+      description: "Safe anesthesia services and chronic pain management solutions.",
+      image: anesthesiaImg,
     },
     {
       title: "Emergency and Critical Care",
       description: "24/7 emergency services with fully equipped ICU facilities.",
-      icon: Ambulance,
-      image: hospital1,
-    },
-    {
-      title: "Anesthesia and Pain Medicine",
-      description: "Safe anesthesia services and chronic pain management solutions.",
-      icon: Syringe,
-      image: hospital2,
+      image: emergencyImg,
     },
     {
       title: "Infertility and Reproductive Medicine",
       description: "Advanced fertility treatments and reproductive health services.",
-      icon: Heart,
-      image: hospital3,
+      image: infertilityImg,
     },
     {
       title: "Obstetrics and Gynecology",
-      description: "Comprehensive women’s healthcare including maternity services.",
-      icon: UserRound,
-      image: hospital4,
+      description: "Comprehensive women's healthcare including maternity services.",
+      image: obstetricsImg,
     },
     {
       title: "Pediatrics and Neonatology",
       description: "Complete child and newborn healthcare services.",
-      icon: Baby,
-      image: hospital1,
+      image: pediatricsImg,
+    },
+    {
+      title: "Orthopedics and Trauma Care",
+      description: "Expert care for fractures, joint replacements, and trauma management.",
+      image: orthopedicsImg,
+    },
+    {
+      title: "General Medicine",
+      description: "Primary healthcare and chronic disease management services.",
+      image: generalMedicineImg,
+    },
+    {
+      title: "General Surgery",
+      description: "Advanced surgical procedures with modern operation theatres.",
+      image: generalSurgeryImg,
+    },
+    {
+      title: "Urology and Nephrology",
+      description: "Comprehensive kidney and urinary tract treatment including dialysis.",
+      image: urologyImg,
+    },
+    {
+      title: "Neurology and Neurosurgery",
+      description: "Specialized brain, spine, and nervous system treatments.",
+      image: neurologyImg,
+    },
+    {
+      title: "Dentistry and Oro Maxillofacial Surgery",
+      description: "Complete dental care and facial surgical procedures.",
+      image: dentistryImg,
+    },
+    {
+      title: "Surgical Oncology",
+      description: "Advanced cancer surgeries and comprehensive oncology care.",
+      image: oncologyImg,
     },
   ];
 
   const blogs = [
-    { 
-      id: 1, 
-      title: "Healthy Heart Tips", 
-      excerpt: "Simple lifestyle changes for a stronger heart.", 
-      image: hospital1,
-      slug: "healthy-heart-tips"
-    },
-    { 
-      id: 2, 
-      title: "Advances in Neurology", 
-      excerpt: "Latest breakthroughs in brain care.", 
-      image: hospital2,
-      slug: "advances-in-neurology"
-    },
-    { 
-      id: 3, 
-      title: "Orthopedic Care Essentials", 
-      excerpt: "Maintain strong bones and joints.", 
-      image: hospital3,
-      slug: "orthopedic-care-essentials"
-    },
-  ];
+  { 
+    id: 1, 
+    title: "Healthy Heart Tips", 
+    excerpt: "Simple lifestyle changes for a stronger heart.", 
+    image: heartBlogImg,
+    slug: "healthy-heart-tips"
+  },
+  { 
+    id: 2, 
+    title: "Advances in Neurology", 
+    excerpt: "Latest breakthroughs in brain care.", 
+    image: neuroBlogImg,
+    slug: "advances-in-neurology"
+  },
+  { 
+    id: 3, 
+    title: "Orthopedic Care Essentials", 
+    excerpt: "Maintain strong bones and joints.", 
+    image: orthoBlogImg,
+    slug: "orthopedic-care-essentials"
+  },
+];
 
   /* ================= Testimonials ================= */
 

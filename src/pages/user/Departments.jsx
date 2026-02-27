@@ -40,57 +40,24 @@ export default function Departments() {
   const [muted, setMuted] = useState(true)
 
   const departments = [
-    { name: 'Cardiology', image: cardiologyImg },
-    { name: 'Orthopedics and Trauma Care', image: orthopedicsImg },
-    { name: 'General Medicine', image: generalMedicineImg },
-    { name: 'General Surgery', image: generalSurgeryImg },
-    { name: 'Urology and Nephrology', image: urologyImg },
-    { name: 'Neurology and Neurosurgery', image: neurologyImg },
-    { name: 'Dentistry and Oro Maxillofacial Surgery', image: dentistryImg },
-    { name: 'Surgical Oncology', image: oncologyImg },
-    { name: 'Emergency and Critical Care', image: emergencyImg },
-    { name: 'Anesthesia and Pain Medicine', image: anesthesiaImg },
-    { name: 'Infertility and Reproductive Medicine', image: infertilityImg },
-    { name: 'Obstetrics and Gynecology', image: obstetricsImg },
-    { name: 'Pediatrics and Neonatology', image: pediatricsImg }
-  ]
+  { name: 'Anesthesia and Pain Medicine', image: anesthesiaImg },
+  { name: 'Emergency and Critical Care', image: emergencyImg },
+  { name: 'Infertility and Reproductive Medicine', image: infertilityImg },
+  { name: 'Obstetrics and Gynecology', image: obstetricsImg },
+  { name: 'Pediatrics and Neonatology', image: pediatricsImg },
+  { name: 'Orthopedics and Trauma Care', image: orthopedicsImg },
+  { name: 'General Medicine', image: generalMedicineImg },
+  { name: 'General Surgery', image: generalSurgeryImg },
+  { name: 'Urology and Nephrology', image: urologyImg },
+  { name: 'Neurology and Neurosurgery', image: neurologyImg },
+  { name: 'Dentistry and Oro Maxillofacial Surgery', image: dentistryImg },
+  { name: 'Surgical Oncology', image: oncologyImg }
+]
 
-  const [selectedDept, setSelectedDept] = useState('Cardiology')
+const [selectedDept, setSelectedDept] = useState('Anesthesia and Pain Medicine')
 
   // Videos data with local video files
   const departmentVideos = {
-    Cardiology: [
-      {
-        id: 1,
-        title: "Understanding Heart Health",
-        description: "Learn about heart health and preventive measures",
-        videoFile: video1,
-        duration: "4:32",
-        views: "15K views",
-        date: "2 months ago",
-        category: "Cardiology"
-      },
-      {
-        id: 2,
-        title: "Latest Advancements in Cardiac Surgery",
-        description: "Modern surgical techniques for better outcomes",
-        videoFile: video1,
-        duration: "8:15",
-        views: "8.2K views",
-        date: "1 month ago",
-        category: "Cardiology"
-      },
-      {
-        id: 3,
-        title: "Patient Success Story: Heart Bypass",
-        description: "Real patient journey and recovery story",
-        videoFile: video1,
-        duration: "6:47",
-        views: "22K views",
-        date: "3 months ago",
-        category: "Cardiology"
-      }
-    ],
     'Orthopedics and Trauma Care': [
       {
         id: 1,
