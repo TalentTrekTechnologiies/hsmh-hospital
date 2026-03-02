@@ -6,7 +6,7 @@ import Footer from '../../commoncomponents/Footer'
 import Button from '../../commoncomponents/Button'
 import PageHero from '../../commoncomponents/PageHero'
 
-import herodoc from '../../assets/herodoc.jpg'
+import herodoc from '../../assets/Our Doctors page.jpg'
 
 // Doctor images
 import doc1 from '../../assets/doc1.png'

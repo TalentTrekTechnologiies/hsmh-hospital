@@ -7,7 +7,9 @@ import Footer from '../../commoncomponents/Footer'
 import PageHero from '../../commoncomponents/PageHero'
 import DoctorCard from '../../commoncomponents/DoctorCard'
 
-import aboutImage from '../../assets/abouthero.png'
+import aboutImage from '../../assets/About US.png'
+
+
 import doc1 from '../../assets/Dr.Lakshmi.png'
 import doc2 from '../../assets/Dr.Nagendra.png'
 import doc4 from '../../assets/Dr.Ganesh.png'

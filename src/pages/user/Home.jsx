@@ -15,18 +15,18 @@ import neuroBlogImg from '../../assets/neurology-blog.png'
 import orthoBlogImg from '../../assets/orthopedic-blog.png'
 
 // Import all department images (same as Departments.jsx)
-import orthopedicsImg from '../../assets/orthopedicsImg.jpg'
-import neurologyImg from '../../assets/Neurology&Neurosurgery.png'
-import generalMedicineImg from '../../assets/generalMedicineImg.jpg'
-import generalSurgeryImg from '../../assets/GeneralSurgery.png'
-import urologyImg from '../../assets/Urology&Nephrology.png'
-import dentistryImg from '../../assets/Dentistry.png'
-import oncologyImg from '../../assets/SurgicalOncology.png'
-import emergencyImg from '../../assets/Emergency&Critical Care.png'
-import anesthesiaImg from '../../assets/Anesthesia&PainMedicine.png'
-import infertilityImg from '../../assets/Infertility&ReproductiveMedicine.png'
-import obstetricsImg from '../../assets/Obstetrics&Gynecology.png'
-import pediatricsImg from '../../assets/Pediatrics&Neonatology.png'
+import orthopedicsImg from '../../assets/Orthopedics and Trauma CareHome.jpg'
+import neurologyImg from '../../assets/Neurology&Neurosurgery home.png' //
+import generalMedicineImg from '../../assets/General MedicineHome.png'
+import generalSurgeryImg from '../../assets/General SurgeryHome.png'
+import urologyImg from '../../assets/Urology and NephrologyHome.png'
+import dentistryImg from '../../assets/Dentistry and Oro Maxillofacial Surgery.Home.jpg'
+import oncologyImg from '../../assets/surgery Oncology home.jpg'  
+import emergencyImg from '../../assets/Emergency and Critical Home.png' 
+import anesthesiaImg from '../../assets/Anesthesia and Pain Home.jpg'
+import infertilityImg from '../../assets/Infertility and Reproductive Home.png'
+import obstetricsImg from '../../assets/Obstetrics and GynecologyHome.jpg'
+import pediatricsImg from '../../assets/Pediatrics and NeonatologyHome.jpg'
 
 import {
   ChevronLeft,

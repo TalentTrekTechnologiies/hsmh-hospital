@@ -5,7 +5,9 @@ import { Play, Volume2, VolumeX } from "lucide-react";
 import { Link } from "react-router-dom";
 
 /* IMAGES */
-import servicesHero from "../../assets/services.png";
+import servicesHero from "../../assets/Services.jpg";
+
+
 import radiologyImg from "../../assets/radiology.png";
 import orthoImg from "../../assets/Orthopaedic.png";
 import dentalImg from "../../assets/dental.png";

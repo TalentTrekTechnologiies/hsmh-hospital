@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import Header from '../../commoncomponents/Header'
 import Footer from '../../commoncomponents/Footer'
 import PageHero from '../../commoncomponents/PageHero'
-import herodept from '../../assets/herodept.jpg'
+
+import herodept from '../../assets/Department page.png'
 
 // IMPORT THE SAME SPECIALIST IMAGES FROM DOCTORS PAGE
 import specialist1 from '../../assets/Dr.Ganesh.png'
@@ -20,19 +21,21 @@ const video2 = video1;
 const video3 = video1;
 
 // Import all department images based on your Downloads folder
-import cardiologyImg from '../../assets/cardiologyImg.jpg'
-import orthopedicsImg from '../../assets/orthopedicsImg.jpg'
-import neurologyImg from '../../assets/Neurology&Neurosurgery.png'
-import generalMedicineImg from '../../assets/generalMedicineImg.jpg'
-import generalSurgeryImg from '../../assets/GeneralSurgery.png'
-import urologyImg from '../../assets/Urology&Nephrology.png'
-import dentistryImg from '../../assets/Dentistry.png'
-import oncologyImg from '../../assets/SurgicalOncology.png'
-import emergencyImg from '../../assets/Emergency&Critical Care.png'
-import anesthesiaImg from '../../assets/Anesthesia&PainMedicine.png'
-import infertilityImg from '../../assets/Infertility&ReproductiveMedicine.png'
-import obstetricsImg from '../../assets/Obstetrics&Gynecology.png'
-import pediatricsImg from '../../assets/Pediatrics&Neonatology.png'
+import anesthesiaImg from '../../assets/Anesthesia and Pain Medicine.Main.png'                    //
+import emergencyImg from '../../assets/Emergency and Critical Care main.jpg'                     //
+import infertilityImg from '../../assets/Infertility and Reproductive main 2.png'               //
+import obstetricsImg from '../../assets/Obstetrics&Gynecology main 1.jpg'                      //
+import pediatricsImg from '../../assets/Pediatrics and Neonatology Main1.png'                 //
+import orthopedicsImg from '../../assets/Orthopedics & Trauma main.png'                      //
+import generalMedicineImg from '../../assets/General Medicine main.jpg'                     //
+import generalSurgeryImg from '../../assets/General Surgery Main.jpg'                      //
+import urologyImg from '../../assets/Urology&Nephrology main.png'                         //
+import neurologyImg from '../../assets/Neurology&Neurosurgery main 1.jpg'                 //
+import dentistryImg from '../../assets/Dentistry and Oro Maxillofacial Surgery main.jpg' //
+import oncologyImg from '../../assets/surgery Oncology main.jpg'                        //
+
+
+
 
 export default function Departments() {
   const videoRefs = useRef([])
