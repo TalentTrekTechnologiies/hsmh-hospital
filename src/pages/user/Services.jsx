@@ -10,7 +10,7 @@ import servicesHero from "../../assets/Services.jpg";
 
 import radiologyImg from "../../assets/radiology.png";
 import orthoImg from "../../assets/Orthopaedic.png";
-import dentalImg from "../../assets/dental.png";
+import dentalImg from "../../assets/dentalservice page.png";
 import emergencyImg from "../../assets/emergency.png";
 import pharmacyImg from "../../assets/pharmacy.jpeg";
 import homecareImg from "../../assets/homecare.png";

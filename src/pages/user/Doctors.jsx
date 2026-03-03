@@ -216,47 +216,8 @@ export default function Doctors() {
     }
   ]
 
-  // ONLINE AVAILABLE DOCTORS - Updated with status, slots & timings
+  // ONLINE AVAILABLE DOCTORS - Only 3 doctors as requested
 const onlineDoctors = [
-  { 
-    name:'Dr. Priya Sharma', 
-    specialty:'Dermatologist', 
-    qualifications:'MBBS, MD Dermatology', 
-    experience:'8+ years',
-    rating:4.8,
-    reviews:245,
-    image:doc4,
-    status: "Online", // Online | Busy | Offline
-    timings: "09:00 AM - 01:00 PM",
-    consultationType: "Video / Chat",
-    availableSlots: ["09:30 AM", "10:00 AM", "11:30 AM", "12:30 PM"]
-  },
-  { 
-    name:'Dr. Amit Kumar', 
-    specialty:'Psychiatrist', 
-    qualifications:'MBBS, MD Psychiatry', 
-    experience:'12+ years',
-    rating:4.9,
-    reviews:389,
-    image:doc5,
-    status: "Busy",
-    timings: "10:00 AM - 04:00 PM",
-    consultationType: "Video",
-    availableSlots: ["02:00 PM", "03:30 PM"]
-  },
-  { 
-    name:'Dr. Sneha Patel', 
-    specialty:'Pediatrician', 
-    qualifications:'MBBS, MD Pediatrics', 
-    experience:'10+ years',
-    rating:4.7,
-    reviews:178,
-    image:doc6,
-    status: "Online",
-    timings: "08:00 AM - 12:00 PM",
-    consultationType: "Video / Chat",
-    availableSlots: ["08:30 AM", "09:00 AM", "11:00 AM"]
-  },
   { 
     name:'Dr. Rajesh Khanna', 
     specialty:'Endocrinologist', 
@@ -384,7 +345,7 @@ const onlineDoctors = [
             </div>
           </div>
 
-          {/* Online Doctors Grid */}
+          {/* Online Doctors Grid - Now showing only 3 doctors */}
 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
   {onlineDoctors.map((doctor, index) => {
 

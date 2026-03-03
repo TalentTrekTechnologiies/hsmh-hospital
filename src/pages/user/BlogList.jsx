@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
 
-import blogHero from "../../assets/blogs.png";
+import blogHero from "../../assets/Hospital blog cover.png";
 
 // Import your blog images (use your actual image names)
 import anaesthesiaImg from "../../assets/anesthesia blog.jpeg";
@@ -51,18 +51,27 @@ const BlogModal = ({ isOpen, onClose, article }) => {
             ×
           </button>
           
-          {/* Content */}
+                    {/* Content */}
           <div className="px-6 sm:px-8 pb-8 pt-16">
             {/* Category */}
             <div className="text-sm text-[#005c52] font-bold uppercase mb-2">
               {article.category}
             </div>
             
+            {/* Featured Image */}
+            <div className="mb-6">
+              <img 
+                src={article.featuredImage} 
+                alt={article.articleTitle}
+                className="w-full h-[300px] object-cover rounded-xl shadow-md"
+              />
+            </div>
+            
             {/* Title */}
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
               {article.articleTitle}
             </h2>
-            
+          
             {/* Author and Date */}
             <div className="text-sm text-gray-500 font-medium mb-6 pb-6 border-b border-gray-200">
               {article.authorName} | {article.publishDate}
@@ -369,31 +378,104 @@ Let's welcome the monsoon with awareness and care, ensuring that the only thing 
 /* ================= MOST READ ================= */
 
 const mostReadData = [
-  {
-       id: 2,
+   {
+    id: 2,
     category: "Cardiology",
     featuredImage: cardiologyImg,
     articleTitle: "Protecting Your Heart: Warning Signs, Prevention, Cholesterol & Stress Management",
-    preview: "Heart disease is affecting younger people. Learn about warning signs and prevention strategies.",
-    description: "Understanding heart health, warning signs, and prevention strategies.",
+    preview: "Heart disease is no longer a problem that affects only older people. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health in individuals in their 30s and 40s.",
+    description: "Learn about heart health, warning signs, prevention strategies, and managing cholesterol and stress.",
     authorName: "Dr. Rajesh Sharma",
     publishDate: "Mar 01, 2026",
     fullContent: `Heart disease is no longer a problem that affects only older people. In recent years, we are seeing more heart-related issues in individuals in their 30s and 40s. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health. The concerning part is that many people do not realize there is a problem until a serious event occurs.
 
-Understanding your heart and taking preventive steps early can make a life-saving difference.`
+Understanding your heart and taking preventive steps early can make a life-saving difference.
+
+Let us first talk about something everyone should be aware of the warning signs of a heart attack.
+
+A heart attack does not always begin with sudden, severe chest pain. In many cases, symptoms can be mild and confusing. The most common sign is discomfort in the chest a feeling of heaviness, pressure, tightness, or squeezing in the center of the chest. This discomfort may last for a few minutes or may come and go.
+
+Pain may also spread to the left arm, both arms, neck, jaw, shoulder, or back. Some people experience shortness of breath, unusual sweating, nausea, dizziness, or unexplained fatigue. Women and people with diabetes sometimes experience less typical symptoms such as breathlessness, indigestion-like discomfort, or extreme tiredness without obvious chest pain.
+
+These warning signs should never be ignored. The first hour after a heart attack is critical. Seeking immediate medical help can significantly reduce heart damage and improve survival chances. Delaying treatment can lead to serious complications.
+
+While recognizing symptoms is important, prevention is even more powerful especially in your 30s and 40s.
+
+Many young adults assume heart disease is something to worry about later in life. However, lifestyle patterns established in early adulthood strongly influence heart health. Sedentary jobs, excessive screen time, irregular meals, processed foods, smoking, alcohol consumption, and unmanaged stress all increase the risk of high blood pressure, diabetes, obesity, and high cholesterol.
+
+Simple preventive measures can protect your heart for decades.
+
+Regular health check-ups are essential. Even if you feel perfectly healthy, checking your blood pressure, blood sugar, and cholesterol levels once a year after the age of 30 can help detect problems early.
+
+Physical activity is one of the best gifts you can give your heart. At least 30 minutes of moderate exercise five days a week such as brisk walking, cycling, swimming, or yoga improves blood circulation and strengthens heart muscles.
+
+Healthy eating also plays a crucial role. Prefer home-cooked meals with plenty of vegetables, fruits, whole grains, pulses, and lean proteins. Reduce intake of fried foods, bakery products, excess salt, and sugary beverages. Small daily choices add up over time.
+
+Understanding cholesterol is another important step toward heart protection.
+
+Cholesterol is a fatty substance naturally present in the body. It is essential for building cells and producing certain hormones. However, problems arise when cholesterol levels become imbalanced.
+
+There are two main types: LDL and HDL.
+
+LDL, often called "bad cholesterol," can build up inside the walls of arteries, forming plaques that narrow blood vessels. This increases the risk of heart attack and stroke. HDL, known as "good cholesterol," helps remove excess cholesterol from the bloodstream and transports it to the liver for elimination.
+
+High LDL levels and low HDL levels increase cardiovascular risk. Diets high in saturated and trans fats — such as deep-fried snacks, processed foods, and certain packaged items raise LDL levels. On the other hand, regular exercise, nuts, seeds, healthy oils, and a balanced diet help improve HDL levels.
+
+Routine blood tests help monitor cholesterol levels. If lifestyle modifications are not sufficient, doctors may recommend medications to keep cholesterol under control.
+
+Another major factor that often goes unnoticed is stress.
+
+In today's fast-paced life, stress has become almost constant. Work deadlines, financial responsibilities, family pressures everything contributes. When you are stressed, your body releases hormones that temporarily increase heart rate and blood pressure. While short-term stress is manageable, long-term stress can damage blood vessels and increase the risk of heart disease.
+
+Managing stress does not require drastic changes. Simple daily practices such as deep breathing exercises, meditation, yoga, spending quality time with loved ones, and maintaining proper sleep can significantly reduce stress levels. Even taking short breaks during work hours can help relax the mind.
+
+Adequate sleep around 7 to 8 hours each night is equally important. Poor sleep habits are linked to high blood pressure and increased heart risk.
+
+Your heart works tirelessly every single moment. Taking care of it should not be postponed until a problem arises. Recognizing warning signs, adopting preventive habits early, maintaining healthy cholesterol levels, and managing stress can greatly reduce the risk of heart disease.
+
+A healthy heart is built through consistent, mindful choices made every day.`
   },
-  {
+   {
     id: 6,
     category: "General Medicine",
     featuredImage: generalMedicineImg,
     articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
-    preview: "Essential tips for preventing monsoon-related illnesses and staying healthy during rainy season.",
-    description: "Stay healthy during monsoon with these essential prevention tips.",
+    preview: "The monsoon brings relief from heat but also brings seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.",
+    description: "Essential tips for preventing monsoon-related illnesses and maintaining good health during rainy season.",
     authorName: "Dr. Monica Mahajan",
     publishDate: "Feb 20, 2026",
-    fullContent: `The first showers of the monsoon are always special, but they also bring seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.`
+    fullContent: `The first showers of the monsoon are always special, aren't they? After months of heat and dust, the cool breeze feels like a blessing. The smell of wet soil, children playing in puddles, hot tea in the evening it's a season many of us look forward to every year. But here in our city, we also know that the rainy season brings more than just relief from the summer. It quietly brings a wave of seasonal illnesses.
+
+Suddenly, someone in the family has a cold that refuses to go away. A neighbour is down with high fever. Schools report viral infections spreading among children. Pharmacies become crowded. While this may feel routine every year, it's important to understand why it happens and what we can do to protect ourselves and our loved ones.
+
+During monsoon, the air becomes humid and temperatures fluctuate frequently. This creates an ideal environment for viruses and bacteria to multiply. At the same time, waterlogging in certain areas becomes common. Stagnant water becomes a breeding ground for mosquitoes, increasing the risk of diseases like dengue and malaria. Contaminated water sources can also lead to stomach infections, typhoid, and hepatitis A.
+
+The good news is that most monsoon-related illnesses can be prevented with simple and consistent habits.
+
+Let's start with water safety one of the most important precautions during this season. Always drink boiled or properly purified water at home. Even if the water looks clean, contamination can occur due to damaged pipelines or mixing of drainage water during heavy rains. If you are travelling or outside for long hours, carry your own water bottle. Avoid consuming water or juices from roadside vendors unless you are absolutely sure of their hygiene standards.
+
+Food hygiene is equally important. During monsoon, our digestive system tends to be more sensitive. Avoid raw salads, cut fruits from street stalls, and uncovered food items that may have been exposed to flies and moisture. Instead, prefer freshly prepared, hot meals. Steam-cooked foods like idlis, upma, khichdi, or soups are gentle on the stomach. If you enjoy snacks like samosas or pakoras during rainy evenings, make sure they are freshly fried and from a trusted place. Heat helps kill many harmful microorganisms.
+
+Mosquito control should become a weekly routine at home. Take five to ten minutes every Sunday to inspect your surroundings. Empty flower pots, buckets, coolers, coconut shells, or any container that may collect rainwater. Ensure overhead tanks are covered properly. Use mosquito nets or repellents, especially for children and elderly family members. These small preventive steps can significantly reduce the risk of mosquito-borne illnesses.
+
+Personal hygiene should never be compromised. Wash your hands frequently with soap, especially before eating and after returning home. Keep your feet clean and dry to prevent fungal infections, which are common during humid weather. Change out of wet clothes as soon as possible to avoid skin infections and colds.
+
+Another important aspect is immunity. Many people fall sick during monsoon because their immunity is already low. Ensure your diet includes seasonal fruits (properly washed and peeled), green vegetables, lentils, and adequate protein. Stay hydrated, even if you don't feel as thirsty as in summer. Warm soups and herbal drinks can be comforting and beneficial. Proper sleep and regular light exercise at home can also strengthen your immune system.
+
+Despite precautions, if you develop symptoms like persistent fever, severe body pain, headache behind the eyes, vomiting, loose motions, or unusual fatigue, do not ignore them. High fever lasting more than two days needs medical evaluation. Avoid self-medication, especially antibiotics. Taking leftover medicines from a previous illness or following advice from neighbours can sometimes worsen the condition or delay proper diagnosis.
+
+Viral fevers, dengue, malaria, typhoid each requires different treatment approaches. A simple blood test and timely consultation with a physician can help identify the exact cause and start appropriate care. Early diagnosis not only ensures faster recovery but also prevents complications.
+
+Special care should be taken for children, elderly individuals, pregnant women, and people with chronic conditions like diabetes, hypertension, or asthma. Their bodies may not respond to infections as quickly, and even mild symptoms should be evaluated promptly.
+
+The monsoon season is meant to be enjoyed watching the rain from your balcony, sharing hot snacks with family, and celebrating festivals that fall during this time. Illness should not become a part of that experience.
+
+By following simple precautions safe water, hygienic food, mosquito control, good personal hygiene, and timely medical consultation you can keep most seasonal illnesses away. Prevention truly is better than cure, especially during the rainy months.
+
+Let's welcome the monsoon with awareness and care, ensuring that the only thing spreading this season is joy not infection.`
   }
 ];
+
 
 /* ================= COMPONENT ================= */
 

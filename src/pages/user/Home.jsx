@@ -1,5 +1,5 @@
 // src/pages/user/Home.jsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 
 // images
@@ -9,10 +9,10 @@ import hospital2 from "../../assets/hospital2.png";
 import hospital3 from "../../assets/abouthero.png";
 import hospital4 from "../../assets/aboutpage2.png";
 
-//Blogs 
-import heartBlogImg from '../../assets/heart-blog.jpeg'
-import neuroBlogImg from '../../assets/neurology-blog.png'
-import orthoBlogImg from '../../assets/orthopedic-blog.png'
+//Blogs - Import from your blog assets
+import cardiologyBlogImg from '../../assets/Cardiolody blog .jpeg';
+import generalMedicineBlogImg from '../../assets/General medicine blog.jpeg';
+import orthoBlogImg from '../../assets/ortho.jpeg';
 
 // Import all department images (same as Departments.jsx)
 import orthopedicsImg from '../../assets/Orthopedics and Trauma CareHome.jpg'
@@ -45,6 +45,8 @@ import Button from "../../commoncomponents/Button";
 import DepartmentCard from "../../commoncomponents/DepartmentCard";
 
 export default function Home() {
+  const navigate = useNavigate();
+  
   /* ================= DATA ================= */
 
   const departments = [
@@ -110,29 +112,47 @@ export default function Home() {
     },
   ];
 
-  const blogs = [
-  { 
-    id: 1, 
-    title: "Healthy Heart Tips", 
-    excerpt: "Simple lifestyle changes for a stronger heart.", 
-    image: heartBlogImg,
-    slug: "healthy-heart-tips"
-  },
-  { 
-    id: 2, 
-    title: "Advances in Neurology", 
-    excerpt: "Latest breakthroughs in brain care.", 
-    image: neuroBlogImg,
-    slug: "advances-in-neurology"
-  },
-  { 
-    id: 3, 
-    title: "Orthopedic Care Essentials", 
-    excerpt: "Maintain strong bones and joints.", 
-    image: orthoBlogImg,
-    slug: "orthopedic-care-essentials"
-  },
-];
+  // Updated blogs with your top 3 from the blog list
+  const blog = [
+    { 
+      id: 2, 
+      title: "Protecting Your Heart: Warning Signs & Prevention", 
+      excerpt: "Heart disease is affecting people in their 30s and 40s. Learn warning signs, prevention tips, and stress management for a healthy heart.", 
+      image: cardiologyBlogImg,
+      category: "Cardiology",
+      author: "Dr. Rajesh Sharma",
+      date: "Mar 01, 2026"
+    },
+    { 
+      id: 6, 
+      title: "Beating the Monsoon Blues", 
+      excerpt: "Essential tips for preventing monsoon-related illnesses. Learn how to protect yourself and your family from seasonal infections.", 
+      image: generalMedicineBlogImg,
+      category: "General Medicine",
+      author: "Dr. Monica Mahajan",
+      date: "Feb 20, 2026"
+    },
+    { 
+      id: 5, 
+      title: "That Nagging Knee Pain: When to Rest and When to See a Doctor", 
+      excerpt: "Understanding knee pain, warning signs, and treatment options. Learn when home care is enough and when to consult a specialist.", 
+      image: orthoBlogImg,
+      category: "Orthopaedics",
+      author: "Dr. Rakesh Verma",
+      date: "Feb 22, 2026"
+    },
+  ];
+
+  // Function to handle blog click
+  const handleBlogClick = (blogId, category) => {
+    // Navigate to blogs page with state to open specific blog
+    navigate('/blog', { 
+      state: { 
+        openBlogId: blogId,
+        category: category 
+      } 
+    });
+  };
 
   /* ================= Testimonials ================= */
 
@@ -342,32 +362,58 @@ export default function Home() {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-              {blogs.map((blog) => (
-                <Link 
-                  to={`/blog/${blog.id}`} 
+              {blog.map((blog) => (
+                <div 
                   key={blog.id}
-                  className="bg-white rounded-xl shadow hover:shadow-2xl transition overflow-hidden group focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  onClick={() => handleBlogClick(blog.id, blog.category)}
+                  className="bg-white rounded-xl shadow hover:shadow-2xl transition-all duration-300 overflow-hidden group focus:ring-2 focus:ring-emerald-500 focus:outline-none cursor-pointer"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleBlogClick(blog.id, blog.category);
+                    }
+                  }}
                 >
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden relative">
                     <img 
                       src={blog.image} 
                       alt={blog.title} 
                       className="w-full h-48 sm:h-52 object-cover group-hover:scale-105 transition duration-500"
                       loading="lazy"
-                      onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/600x400?text=Blog+Image';
-                      }}
                     />
+                    <div className="absolute top-3 left-3 bg-emerald-600 text-white text-xs px-2 py-1 rounded">
+                      {blog.category}
+                    </div>
                   </div>
                   <div className="p-4 sm:p-6 text-left">
-                    <h3 className="text-base sm:text-lg font-semibold">{blog.title}</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm mt-2 sm:mt-3">{blog.excerpt}</p>
-                    <span className="inline-block mt-3 sm:mt-4 text-emerald-700 font-semibold hover:underline text-sm sm:text-base">
-                      Read More →
-                    </span>
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-800 line-clamp-2">
+                      {blog.title}
+                    </h3>
+                    <p className="text-gray-600 text-xs sm:text-sm mt-2 sm:mt-3 line-clamp-3">
+                      {blog.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between mt-3 sm:mt-4">
+                      <span className="text-xs text-gray-500">
+                        {blog.author}
+                      </span>
+                      <span className="text-emerald-700 font-semibold hover:underline text-sm sm:text-base inline-flex items-center gap-1">
+                        Read More 
+                        <span className="text-lg">→</span>
+                      </span>
+                    </div>
                   </div>
-                </Link>
+                </div>
               ))}
+            </div>
+            
+            {/* View All Blogs Button */}
+            <div className="mt-10 sm:mt-12">
+              <Link to="/blog">
+                <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-6 sm:px-8 rounded-md transition duration-300 text-sm sm:text-base focus:ring-2 focus:ring-emerald-300 focus:outline-none">
+                  View All Articles →
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -551,6 +597,18 @@ export default function Home() {
         .no-scrollbar {
           -ms-overflow-style: none;
           scrollbar-width: none;
+        }
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       `}</style>
     </div>
