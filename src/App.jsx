@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import AppRouter from './routes/AppRouter'
+import HospitalChatbot from './commoncomponents/HospitalChatbot' // ✅ MUST
 import './App.css'
 import { useEffect } from 'react';
 
@@ -11,7 +12,7 @@ function App() {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         document.body.classList.remove('scrolling');
-      }, 800); // fade out after 0.8s idle
+      }, 800);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -20,6 +21,10 @@ function App() {
   return (
     <BrowserRouter>
       <AppRouter />
+
+      {/* ✅ GLOBAL CHATBOT */}
+      <HospitalChatbot />
+
     </BrowserRouter>
   ) 
 }
