@@ -3,106 +3,396 @@ import { useNavigate } from "react-router-dom";
 import Helmet from "react-helmet";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
+
 import blogHero from "../../assets/blogs.png";
+
+// Import your blog images (use your actual image names)
+import anaesthesiaImg from "../../assets/anesthesia blog.jpeg";
+import cardiologyImg from "../../assets/Cardiolody blog .jpeg";
+import paediatricsImg from "../../assets/pediatrics blog.jpeg";
+import gynaecologyImg from "../../assets/gynaecology blog.jpeg";
+import orthopaedicsImg from "../../assets/ortho.jpeg";
+import generalMedicineImg from "../../assets/General medicine blog.jpeg";
+
+
+
+
+/* ================= MODAL COMPONENT ================= */
+
+const BlogModal = ({ isOpen, onClose, article }) => {
+  if (!isOpen || !article) return null;
+
+  // Function to format content with paragraphs
+  const formatContent = (content) => {
+    return content.split('\n\n').map((paragraph, index) => (
+      <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+        {paragraph}
+      </p>
+    ));
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 overflow-y-auto">
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/50 transition-opacity"
+        onClick={onClose}
+      />
+      
+      {/* Modal */}
+      <div className="relative min-h-screen flex items-center justify-center p-4">
+        <div className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="sticky top-4 float-right z-10 mr-4 mt-4 w-10 h-10 rounded-full bg-white shadow-md hover:shadow-lg flex items-center justify-center text-2xl"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          
+          {/* Content */}
+          <div className="px-6 sm:px-8 pb-8 pt-16">
+            {/* Category */}
+            <div className="text-sm text-[#005c52] font-bold uppercase mb-2">
+              {article.category}
+            </div>
+            
+            {/* Title */}
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              {article.articleTitle}
+            </h2>
+            
+            {/* Author and Date */}
+            <div className="text-sm text-gray-500 font-medium mb-6 pb-6 border-b border-gray-200">
+              {article.authorName} | {article.publishDate}
+            </div>
+            
+            {/* Full Content */}
+            <div className="prose max-w-none">
+              {formatContent(article.fullContent)}
+            </div>
+            
+            {/* Disclaimer */}
+            <div className="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600 italic border-l-4 border-[#005c52]">
+              This article is for informational purposes only. For medical advice, diagnosis, or treatment, 
+              please consult a qualified healthcare professional from our {article.category} Department.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 
 /* ================= DATA ================= */
 
 export const recentArticlesData = [
   {
     id: 1,
-    category: "WORLD CANCER DAY",
-    featuredImage:
-      "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80",
-    articleTitle:
-      "World Cancer Day 2026: Awareness is the Best Defence",
-    description:
-      "Cancer is a major global health issue, especially in developing countries such as India.",
+    category: "Anaesthesia and Pain Medicine",
+    featuredImage: anaesthesiaImg, 
+    articleTitle: "Safe Surgery and Comfortable Recovery – Understanding Anaesthesia and Pain Care",
+    preview: "For many patients, the thought of surgery brings one major fear – 'Will I be awake?' or 'Will it hurt?' Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear.",
+    description: "Understanding anaesthesia and pain management for safe surgery and comfortable recovery.",
     authorName: "Dr. Meenu Walia",
-    publishDate: "Feb 03, 2026",
+    publishDate: "Mar 03, 2026",
+    fullContent: `For many patients, the thought of surgery brings one major fear "Will I be awake?" or "Will it hurt?" It is completely natural to feel anxious about anaesthesia. In fact, many people worry more about anaesthesia than the surgery itself. Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear and build confidence before any procedure.
+
+Anaesthesia is a specialized branch of medicine focused on relieving pain and ensuring patient safety during surgical or medical procedures. An anaesthesiologist is a trained doctor who carefully monitors you before, during, and after surgery. Their role is not limited to "putting you to sleep." They are responsible for managing your breathing, heart rate, blood pressure, oxygen levels, and overall stability throughout the procedure.
+
+There are different types of anaesthesia, and the choice depends on the type of surgery, your health condition, and your doctor's recommendation.
+
+The first type is general anaesthesia. This is used for major surgeries. Under general anaesthesia, you are completely unconscious and do not feel pain during the procedure. Medications are given through an injection or through a mask to make you sleep. Throughout the surgery, the anaesthesiologist continuously monitors your vital signs to ensure everything remains stable.
+
+The second type is regional anaesthesia, such as spinal or epidural anaesthesia. This is commonly used for procedures involving the lower half of the body, such as caesarean sections, orthopaedic surgeries, or certain abdominal operations. In this method, medication is injected near the spinal nerves to numb a specific part of the body. You may remain awake, but you will not feel pain in the surgical area.
+
+The third type is local anaesthesia, which is used for minor procedures like stitching a wound or removing a small lump. Only a small area is numbed, and you remain fully awake.
+
+Many patients worry about safety. It is important to know that modern anaesthesia is extremely safe. Before surgery, you will undergo a pre-anaesthesia check-up. During this consultation, the anaesthesiologist reviews your medical history, allergies, previous surgeries, ongoing medications, and existing conditions like diabetes, hypertension, asthma, or heart disease. This assessment helps plan the safest anaesthesia approach tailored specifically for you.
+
+You may be advised to avoid eating or drinking for several hours before surgery. This is to prevent complications such as vomiting while under anaesthesia. Following these instructions carefully is very important for your safety.
+
+After surgery, some patients may experience mild side effects such as nausea, sore throat, dizziness, or temporary confusion. These are usually short-lived and manageable. Serious complications are rare, especially when the procedure is conducted in a properly equipped hospital under expert supervision.
+
+Apart from surgical anaesthesia, pain medicine is another vital part of this department.
+
+Pain is not something that should simply be tolerated. Whether it is post-surgical pain, back pain, joint pain, nerve pain, or cancer-related pain, effective management improves quality of life significantly. Chronic pain can affect sleep, mood, appetite, and daily functioning. Addressing it properly allows patients to return to their normal routines faster.
+
+Modern pain medicine offers various treatment options. These include medications, nerve blocks, physiotherapy guidance, epidural injections, and minimally invasive procedures. The goal is not just to mask pain temporarily but to identify its cause and treat it appropriately.
+
+For example, patients suffering from chronic lower back pain due to slipped discs or arthritis may benefit from targeted injections that reduce inflammation around the affected nerves. Similarly, nerve blocks can help patients with severe nerve pain by interrupting pain signals.
+
+Post-operative pain management is equally important. Today, hospitals use multimodal pain relief techniques. This means combining different types of medications and methods to control pain effectively while minimizing side effects. Good pain control helps patients move earlier, breathe better, and recover faster after surgery.
+
+In recent years, patient comfort and safety have become the central focus of anaesthesia and pain care. Continuous monitoring systems, advanced medications, and trained specialists ensure high standards of care.
+
+Communication is key. If you are scheduled for surgery, do not hesitate to ask questions. Inform your anaesthesiologist about any fears, previous reactions to anaesthesia, or medical conditions. Being open helps the medical team provide safer and more personalized care.
+
+It is also important not to ignore persistent pain. Many people continue suffering silently, assuming pain is a normal part of ageing or recovery. Seeking consultation early can prevent pain from becoming chronic and difficult to treat.
+
+Anaesthesia and pain medicine work quietly behind the scenes, but their role is crucial in modern healthcare. They make surgeries possible, reduce suffering, and ensure comfort during some of life's most challenging medical moments.
+
+With proper evaluation, expert care, and open communication, patients can approach surgery and pain treatment with confidence rather than fear.`
   },
   {
     id: 2,
-    category: "Internal Medicine",
-    featuredImage:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-    articleTitle:
-      "What is Nipah Virus: Symptoms, Transmission and Prevention Tips",
-    description:
-      "The Nipah virus, a zoonotic virus, has become a recurring public health concern.",
-    authorName: "Dr. Monica Mahajan",
-    publishDate: "Feb 02, 2026",
+    category: "Cardiology",
+    featuredImage: cardiologyImg,
+    articleTitle: "Protecting Your Heart: Warning Signs, Prevention, Cholesterol & Stress Management",
+    preview: "Heart disease is no longer a problem that affects only older people. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health in individuals in their 30s and 40s.",
+    description: "Learn about heart health, warning signs, prevention strategies, and managing cholesterol and stress.",
+    authorName: "Dr. Rajesh Sharma",
+    publishDate: "Mar 01, 2026",
+    fullContent: `Heart disease is no longer a problem that affects only older people. In recent years, we are seeing more heart-related issues in individuals in their 30s and 40s. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health. The concerning part is that many people do not realize there is a problem until a serious event occurs.
+
+Understanding your heart and taking preventive steps early can make a life-saving difference.
+
+Let us first talk about something everyone should be aware of the warning signs of a heart attack.
+
+A heart attack does not always begin with sudden, severe chest pain. In many cases, symptoms can be mild and confusing. The most common sign is discomfort in the chest a feeling of heaviness, pressure, tightness, or squeezing in the center of the chest. This discomfort may last for a few minutes or may come and go.
+
+Pain may also spread to the left arm, both arms, neck, jaw, shoulder, or back. Some people experience shortness of breath, unusual sweating, nausea, dizziness, or unexplained fatigue. Women and people with diabetes sometimes experience less typical symptoms such as breathlessness, indigestion-like discomfort, or extreme tiredness without obvious chest pain.
+
+These warning signs should never be ignored. The first hour after a heart attack is critical. Seeking immediate medical help can significantly reduce heart damage and improve survival chances. Delaying treatment can lead to serious complications.
+
+While recognizing symptoms is important, prevention is even more powerful especially in your 30s and 40s.
+
+Many young adults assume heart disease is something to worry about later in life. However, lifestyle patterns established in early adulthood strongly influence heart health. Sedentary jobs, excessive screen time, irregular meals, processed foods, smoking, alcohol consumption, and unmanaged stress all increase the risk of high blood pressure, diabetes, obesity, and high cholesterol.
+
+Simple preventive measures can protect your heart for decades.
+
+Regular health check-ups are essential. Even if you feel perfectly healthy, checking your blood pressure, blood sugar, and cholesterol levels once a year after the age of 30 can help detect problems early.
+
+Physical activity is one of the best gifts you can give your heart. At least 30 minutes of moderate exercise five days a week such as brisk walking, cycling, swimming, or yoga improves blood circulation and strengthens heart muscles.
+
+Healthy eating also plays a crucial role. Prefer home-cooked meals with plenty of vegetables, fruits, whole grains, pulses, and lean proteins. Reduce intake of fried foods, bakery products, excess salt, and sugary beverages. Small daily choices add up over time.
+
+Understanding cholesterol is another important step toward heart protection.
+
+Cholesterol is a fatty substance naturally present in the body. It is essential for building cells and producing certain hormones. However, problems arise when cholesterol levels become imbalanced.
+
+There are two main types: LDL and HDL.
+
+LDL, often called "bad cholesterol," can build up inside the walls of arteries, forming plaques that narrow blood vessels. This increases the risk of heart attack and stroke. HDL, known as "good cholesterol," helps remove excess cholesterol from the bloodstream and transports it to the liver for elimination.
+
+High LDL levels and low HDL levels increase cardiovascular risk. Diets high in saturated and trans fats — such as deep-fried snacks, processed foods, and certain packaged items raise LDL levels. On the other hand, regular exercise, nuts, seeds, healthy oils, and a balanced diet help improve HDL levels.
+
+Routine blood tests help monitor cholesterol levels. If lifestyle modifications are not sufficient, doctors may recommend medications to keep cholesterol under control.
+
+Another major factor that often goes unnoticed is stress.
+
+In today's fast-paced life, stress has become almost constant. Work deadlines, financial responsibilities, family pressures everything contributes. When you are stressed, your body releases hormones that temporarily increase heart rate and blood pressure. While short-term stress is manageable, long-term stress can damage blood vessels and increase the risk of heart disease.
+
+Managing stress does not require drastic changes. Simple daily practices such as deep breathing exercises, meditation, yoga, spending quality time with loved ones, and maintaining proper sleep can significantly reduce stress levels. Even taking short breaks during work hours can help relax the mind.
+
+Adequate sleep around 7 to 8 hours each night is equally important. Poor sleep habits are linked to high blood pressure and increased heart risk.
+
+Your heart works tirelessly every single moment. Taking care of it should not be postponed until a problem arises. Recognizing warning signs, adopting preventive habits early, maintaining healthy cholesterol levels, and managing stress can greatly reduce the risk of heart disease.
+
+A healthy heart is built through consistent, mindful choices made every day.`
   },
   {
     id: 3,
-    category: "Cardiology",
-    featuredImage:
-      "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=600&q=80",
-    articleTitle:
-      "Understanding Heart Attacks: Signs You Should Never Ignore",
-    description:
-      "Heart attacks can happen suddenly. Knowing early signs can save lives.",
-    authorName: "Dr. Rajesh Sharma",
-    publishDate: "Jan 28, 2026",
+    category: "Paediatrics",
+    featuredImage: paediatricsImg,
+    articleTitle: "Growing Up Strong: A Guide to Your Child's Health in the Early Years",
+    preview: "The first few years of a child's life are filled with wonder. Understanding nutrition, active play, vaccinations, and regular check-ups can help you make confident decisions during these important early years.",
+    description: "Essential guide to nutrition, active play, vaccinations, and health check-ups for your child's early years.",
+    authorName: "Dr. Anita Desai",
+    publishDate: "Feb 28, 2026",
+    fullContent: `The first few years of a child's life are filled with wonder. One day they are tiny and completely dependent on you, and before you know it, they are crawling across the floor, taking their first steps, and speaking their first words. Every smile feels special. Every small achievement feels like a celebration. As parents, nothing matters more than seeing our children healthy, active, and happy.
+
+In our city, where families are closely connected and advice flows from every direction grandparents, neighbours, relatives raising a child becomes a shared experience. While traditional wisdom is valuable, understanding a few basic principles of child health can help you make confident decisions during these important early years.
+
+The first and most important pillar of a child's health is nutrition.
+
+For newborns and infants, mother's milk is truly the best start in life. Breast milk contains the perfect balance of nutrients, along with antibodies that protect babies from infections. Exclusive breastfeeding is recommended for the first six months of life, unless advised otherwise by a doctor. It not only supports physical growth but also strengthens emotional bonding between mother and baby.
+
+After six months, babies gradually need additional nutrition along with breast milk. This stage, called complementary feeding, should begin with soft, easily digestible foods. You don't need expensive baby foods or fancy products. Simple, home-cooked meals work beautifully. Well-cooked and mashed dal rice, khichdi, mashed vegetables like carrot, pumpkin, and potato, soft fruits like banana or chikoo, and lightly mashed curd rice are excellent options.
+
+Introduce one new food at a time and observe for any allergies or digestive issues. As your child grows, gradually include a variety of grains, pulses, vegetables, fruits, and proteins. Avoid adding too much salt or sugar. Packaged snacks, biscuits, chips, and sugary drinks should be limited as much as possible. These early food habits shape your child's preferences for life. A child who learns to enjoy simple, balanced meals is more likely to maintain healthy eating habits as an adult.
+
+Hydration is also important. Offer clean, boiled, and cooled water once your baby starts solid foods. Ensure utensils and feeding bowls are properly cleaned to avoid infections.
+
+The second pillar of healthy growth is active play.
+
+In today's fast-moving world, it can be tempting to hand over a mobile phone or tablet to keep children quiet. While occasional screen time may be unavoidable, real-world play is essential for healthy development. Physical play helps build strong bones and muscles, improves balance and coordination, and supports overall growth.
+
+Encourage your child to crawl, walk, run, climb, and explore safely. Simple games like hide-and-seek, playing with balls, stacking blocks, drawing with crayons, or riding a small bicycle are more beneficial than hours spent watching videos. Outdoor play in a safe park environment provides fresh air and sunlight, which is important for Vitamin D and bone health.
+
+Play is not just physical it is also emotional and intellectual. When children play with other kids, they learn sharing, patience, communication, and problem-solving. Talking to your child, reading stories, singing rhymes, and answering their endless "why" questions helps develop language and thinking skills.
+
+The third and most critical pillar of early childhood health is vaccination.
+
+Many parents have questions or concerns about vaccines. It is completely natural to want the best and safest options for your child. Vaccines are carefully tested and have been used for decades worldwide to protect children from serious diseases like measles, polio, diphtheria, and whooping cough. These diseases can cause severe complications if not prevented.
+
+Vaccination works by preparing your child's immune system to fight infections. Mild fever or swelling at the injection site may occur, but these are temporary and far less risky than the diseases themselves. Your paediatrician will provide a vaccination schedule tailored to your child's age. Keeping track of these dates through a small diary or phone reminder ensures no dose is missed.
+
+Regular health check-ups are equally important. Even if your child appears healthy, periodic visits allow doctors to monitor growth, weight, height, and developmental milestones. Early detection of concerns whether related to nutrition, speech, or behaviour allows timely guidance and support.
+
+Sleep also plays a vital role in growth. Babies and toddlers need adequate sleep for brain development and physical repair. Create a calm bedtime routine and limit screen exposure before sleep.
+
+Finally, never underestimate the importance of love, patience, and emotional security. A child who feels safe and supported at home develops confidence and resilience.
+
+The early years pass quickly. The tiny hands that once held your finger will soon hold school books. By focusing on balanced nutrition, encouraging active play, ensuring timely vaccinations, and attending regular check-ups, you are building a strong foundation for your child's future.
+
+Healthy habits formed today create healthier adults tomorrow.`
   },
   {
     id: 4,
-    category: "Pediatrics",
-    featuredImage:
-      "https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=600&q=80",
-    articleTitle:
-      "Common Childhood Illnesses: A Guide for Parents",
-    description:
-      "From fevers to rashes, learn how to identify and manage illnesses.",
-    authorName: "Dr. Anita Desai",
-    publishDate: "Jan 25, 2026",
+    category: "Obstetrics & Gynaecology",
+    featuredImage: gynaecologyImg,
+    articleTitle: "Your First Pregnancy: A Gentle Guide for the Journey Ahead",
+    preview: "Finding out that you're pregnant is one of the most magical moments in life. Understanding nutrition, regular check-ups, and emotional well-being can help you embrace this journey with confidence.",
+    description: "A comprehensive guide to nutrition, prenatal care, and emotional well-being during your first pregnancy.",
+    authorName: "Dr. Kavita Rao",
+    publishDate: "Feb 25, 2026",
+    fullContent: `Finding out that you're pregnant is one of the most magical and emotional moments in life. The two lines on the test kit can bring tears of joy, excitement, nervousness, and sometimes even a little fear all at the same time. Suddenly, everything feels different. Along with happiness, a hundred questions begin to fill your mind. What should I eat? Is this discomfort normal? When should I see a doctor? Am I doing everything right?
+
+If you are experiencing your first pregnancy, especially in a close-knit city where family support is strong, you may receive plenty of advice from mothers, grandmothers, aunts, and neighbours. While their love and experience are valuable, it is important to balance traditional wisdom with proper medical guidance. Pregnancy is a beautiful journey, and understanding what lies ahead can help you embrace it with confidence and calmness.
+
+The very first step after a positive home pregnancy test is to visit a qualified gynaecologist. A urine test at home gives an early indication, but a clinical confirmation is essential. During your first appointment usually scheduled around 6 to 8 weeks your doctor may perform a scan to confirm the pregnancy, check the baby's heartbeat, and estimate your due date. This visit also allows you to discuss your medical history and begin necessary supplements such as folic acid, which is crucial for your baby's early development.
+
+Once the news settles in, the most common question becomes: "What should I eat?"
+
+The good news is that you don't need a complicated or expensive diet plan. The basic principle is simple eat fresh, balanced, and nutritious meals. Home cooked food is always the safest option. Include a mix of carbohydrates, proteins, healthy fats, vitamins, and minerals in your daily meals. Traditional meals like dal, roti, rice, vegetables, and curd provide excellent nutrition when prepared hygienically.
+
+Protein plays a vital role in your baby's growth. Include foods such as lentils, chickpeas, paneer, milk, curd, nuts, seeds, and eggs (if you consume them). Green leafy vegetables provide iron and folic acid, which help prevent anaemia a common issue during pregnancy. Calcium is equally important for your baby's bone and teeth development, so make sure you drink milk or consume other dairy products daily.
+
+At the same time, it is wise to avoid certain foods. Stay away from undercooked meat, unpasteurized dairy products, and street food that may not be hygienically prepared. Raw papaya and excessive pineapple are often advised against in early pregnancy. Limit caffeine intake and avoid packaged junk foods as much as possible.
+
+During the first trimester (first three months), you may experience fatigue, nausea, vomiting, mood swings, and food aversions. Morning sickness, despite its name, can happen at any time of the day. This is completely normal and usually settles after the first trimester. Eating small, frequent meals instead of three heavy meals can help. Dry snacks like plain biscuits, toast, or a banana may reduce nausea. Stay hydrated by drinking water, coconut water, or fresh homemade juices.
+
+As your pregnancy progresses into the second trimester, you may start feeling more energetic. This is often called the "golden period" of pregnancy. However, you may also notice body aches, mild swelling in the feet, back pain, or leg cramps. These changes happen because your body is adapting to support your growing baby. Gentle prenatal exercises, light walking, and proper posture can help reduce discomfort. Always consult your doctor before starting any exercise routine.
+
+Emotional changes are also a part of pregnancy. Hormonal fluctuations can make you feel sensitive, anxious, or overwhelmed at times. Talk openly with your partner and family about how you feel. Emotional support plays a big role in ensuring a healthy pregnancy. If you ever feel persistent sadness or anxiety, discuss it with your doctor without hesitation.
+
+Regular antenatal check-ups are extremely important throughout your pregnancy. During these visits, your doctor will monitor your blood pressure, weight, blood sugar levels, and your baby's growth. Periodic scans and blood tests help detect any concerns early. Vaccinations recommended during pregnancy, such as tetanus and others advised by your doctor, should not be missed.
+
+Avoid self-medication during pregnancy. Even common medicines for fever or cold should only be taken after consulting your doctor. Certain medications that are safe otherwise may not be suitable during pregnancy.
+
+Most importantly, listen to your body. Rest when you feel tired. Sleep adequately. Wear comfortable clothing. Avoid heavy lifting. Maintain personal hygiene and stay in a clean, safe environment.
+
+Pregnancy is not an illness it is a natural and powerful phase of life. Every pregnancy is unique, and comparisons with others are unnecessary. Trust your body's strength. Stay informed, but don't let excessive online information create fear.
+
+With proper medical guidance, balanced nutrition, emotional support, and regular check-ups, you can enjoy this precious journey with confidence. In just a few months, you will hold your little one in your arms and every step of this journey will feel worth it.
+
+You are stronger than you think. And you are not alone.`
   },
   {
     id: 5,
-    category: "Neurology",
-    featuredImage:
-      "https://tse1.mm.bing.net/th/id/OIP.dbtx8NJ4hwJ26gWdzDOJyQHaD_?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3",
-    articleTitle: "Migraine vs Headache: Know the Difference",
-    description:
-      "Many people confuse migraines with normal headaches.",
+    category: "Orthopaedics",
+    featuredImage: orthopaedicsImg,
+    articleTitle: "That Nagging Knee Pain: When to Rest and When to See a Doctor",
+    preview: "Knee pain has quietly become an unwanted companion for many. Understanding when to rest and when to seek medical help can protect your joints and maintain an active lifestyle.",
+    description: "Understanding knee pain, warning signs, treatment options, and when to consult an orthopaedic specialist.",
     authorName: "Dr. Rakesh Verma",
-    publishDate: "Jan 20, 2026",
+    publishDate: "Feb 22, 2026",
+    fullContent: `For many of us in our city, knee pain has quietly become an unwanted companion. It may begin as a mild discomfort while climbing the stairs at the local temple, squatting to do household work, or getting up after sitting cross-legged during a family function. At first, we brush it aside. "It's just age," we say. "It will go away." But when that small ache slowly becomes a daily struggle, it starts affecting not just mobility, but confidence and independence.
+
+Understanding your knee pain is the first step toward protecting your joints and maintaining an active lifestyle for years to come.
+
+The knee is one of the most hardworking joints in the human body. It acts like a hinge, allowing us to walk, bend, sit, climb, run, and even kneel. Every step we take puts pressure on it sometimes up to three to four times our body weight. Inside the joint, smooth cartilage cushions the bones and helps them glide comfortably. Strong ligaments, muscles, and tendons support movement and stability.
+
+Over time, especially after the age of 40, this cushioning cartilage can gradually wear down. This condition is commonly known as osteoarthritis. However, not all knee pain is arthritis. Sometimes, the pain arises from strained muscles, ligament injuries, vitamin deficiencies, excess weight, or even improper posture. Younger individuals may experience knee pain due to sports injuries, sudden twisting movements, or overexertion.
+
+So how do you know when knee pain is simply temporary fatigue and when it requires medical attention?
+
+If your knee feels mildly sore after a long day of walking, standing for hours, or doing physical work, it may just need rest. In such cases, simple home care can help. Elevate your leg while resting. Apply an ice pack wrapped in a cloth for 15–20 minutes to reduce inflammation. Avoid putting excessive strain on the joint for a day or two. Gentle stretching exercises can also relieve stiffness. This type of pain typically improves within 24 to 48 hours.
+
+However, certain warning signs should not be ignored.
+
+If the pain persists for several days and does not improve with rest, it is advisable to consult an orthopaedic specialist. Continuous pain is often a sign that something deeper needs evaluation. Swelling around the knee, especially if it appears suddenly, may indicate inflammation or fluid accumulation inside the joint.
+
+If the knee feels warm to the touch or appears visibly red, this could suggest infection or significant inflammation. Sharp, stabbing pain that prevents you from putting weight on the leg is another serious sign. In cases of injury, if you heard a "pop" sound at the moment of impact followed by pain and instability, it may indicate a ligament tear, such as an ACL injury.
+
+Another important symptom to notice is stiffness in the morning that lasts more than 30 minutes. Difficulty in bending or straightening the knee fully can also indicate joint damage. Ignoring these symptoms and continuing daily activities without evaluation may worsen the condition over time.
+
+The good news is that treatment for knee pain does not always mean surgery. In fact, most patients improve with conservative management. After proper examination, your orthopaedic doctor may suggest physiotherapy to strengthen the muscles around the knee. Strong thigh muscles (quadriceps and hamstrings) act as natural support for the joint, reducing pressure and improving stability.
+
+Weight management is another crucial factor. Even a small reduction in body weight can significantly decrease stress on the knees. For example, losing just 5 kilograms can reduce the load on the knee joint by several times during movement.
+
+Simple lifestyle modifications can also make a big difference. Instead of sitting cross-legged on the floor, use a chair with proper back support. Avoid using Indian-style toilets if knee pain is severe; consider using a western toilet for less strain. Wear comfortable footwear with proper cushioning rather than flat, hard sandals. Avoid high heels, which increase pressure on the knees.
+
+For early-stage arthritis, medications to reduce pain and inflammation, along with joint supplements, may be recommended. In some cases, injections may provide relief. Surgical procedures such as arthroscopy or knee replacement are considered only when conservative treatments fail and pain significantly affects quality of life.
+
+It is also important not to rely solely on painkillers bought over the counter. While they may provide temporary relief, they do not address the root cause of the problem. Prolonged unsupervised use can also lead to side effects.
+
+Knee pain should never be seen as an unavoidable part of ageing. With early diagnosis, proper treatment, and small adjustments in daily habits, most people can continue walking, travelling, working, and enjoying family life comfortably.
+
+Do not wait until the pain becomes unbearable. Listening to your body and seeking timely medical advice can prevent long-term damage and improve your quality of life. Your knees carry you through every stage of life — taking care of them today ensures they support you tomorrow.`
   },
   {
     id: 6,
-    category: "Diabetology",
-    featuredImage:
-      "https://tse3.mm.bing.net/th/id/OIP.qD5O2NLClvaG6hg5K7mwUQHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3",
-    articleTitle: "Early Signs of Diabetes You Should Not Ignore",
-    description:
-      "Recognizing early symptoms of diabetes can prevent complications.",
-    authorName: "Dr. Kavita Rao",
-    publishDate: "Jan 18, 2026",
-  },
+    category: "General Medicine",
+    featuredImage: generalMedicineImg,
+    articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
+    preview: "The monsoon brings relief from heat but also brings seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.",
+    description: "Essential tips for preventing monsoon-related illnesses and maintaining good health during rainy season.",
+    authorName: "Dr. Monica Mahajan",
+    publishDate: "Feb 20, 2026",
+    fullContent: `The first showers of the monsoon are always special, aren't they? After months of heat and dust, the cool breeze feels like a blessing. The smell of wet soil, children playing in puddles, hot tea in the evening it's a season many of us look forward to every year. But here in our city, we also know that the rainy season brings more than just relief from the summer. It quietly brings a wave of seasonal illnesses.
+
+Suddenly, someone in the family has a cold that refuses to go away. A neighbour is down with high fever. Schools report viral infections spreading among children. Pharmacies become crowded. While this may feel routine every year, it's important to understand why it happens and what we can do to protect ourselves and our loved ones.
+
+During monsoon, the air becomes humid and temperatures fluctuate frequently. This creates an ideal environment for viruses and bacteria to multiply. At the same time, waterlogging in certain areas becomes common. Stagnant water becomes a breeding ground for mosquitoes, increasing the risk of diseases like dengue and malaria. Contaminated water sources can also lead to stomach infections, typhoid, and hepatitis A.
+
+The good news is that most monsoon-related illnesses can be prevented with simple and consistent habits.
+
+Let's start with water safety one of the most important precautions during this season. Always drink boiled or properly purified water at home. Even if the water looks clean, contamination can occur due to damaged pipelines or mixing of drainage water during heavy rains. If you are travelling or outside for long hours, carry your own water bottle. Avoid consuming water or juices from roadside vendors unless you are absolutely sure of their hygiene standards.
+
+Food hygiene is equally important. During monsoon, our digestive system tends to be more sensitive. Avoid raw salads, cut fruits from street stalls, and uncovered food items that may have been exposed to flies and moisture. Instead, prefer freshly prepared, hot meals. Steam-cooked foods like idlis, upma, khichdi, or soups are gentle on the stomach. If you enjoy snacks like samosas or pakoras during rainy evenings, make sure they are freshly fried and from a trusted place. Heat helps kill many harmful microorganisms.
+
+Mosquito control should become a weekly routine at home. Take five to ten minutes every Sunday to inspect your surroundings. Empty flower pots, buckets, coolers, coconut shells, or any container that may collect rainwater. Ensure overhead tanks are covered properly. Use mosquito nets or repellents, especially for children and elderly family members. These small preventive steps can significantly reduce the risk of mosquito-borne illnesses.
+
+Personal hygiene should never be compromised. Wash your hands frequently with soap, especially before eating and after returning home. Keep your feet clean and dry to prevent fungal infections, which are common during humid weather. Change out of wet clothes as soon as possible to avoid skin infections and colds.
+
+Another important aspect is immunity. Many people fall sick during monsoon because their immunity is already low. Ensure your diet includes seasonal fruits (properly washed and peeled), green vegetables, lentils, and adequate protein. Stay hydrated, even if you don't feel as thirsty as in summer. Warm soups and herbal drinks can be comforting and beneficial. Proper sleep and regular light exercise at home can also strengthen your immune system.
+
+Despite precautions, if you develop symptoms like persistent fever, severe body pain, headache behind the eyes, vomiting, loose motions, or unusual fatigue, do not ignore them. High fever lasting more than two days needs medical evaluation. Avoid self-medication, especially antibiotics. Taking leftover medicines from a previous illness or following advice from neighbours can sometimes worsen the condition or delay proper diagnosis.
+
+Viral fevers, dengue, malaria, typhoid each requires different treatment approaches. A simple blood test and timely consultation with a physician can help identify the exact cause and start appropriate care. Early diagnosis not only ensures faster recovery but also prevents complications.
+
+Special care should be taken for children, elderly individuals, pregnant women, and people with chronic conditions like diabetes, hypertension, or asthma. Their bodies may not respond to infections as quickly, and even mild symptoms should be evaluated promptly.
+
+The monsoon season is meant to be enjoyed watching the rain from your balcony, sharing hot snacks with family, and celebrating festivals that fall during this time. Illness should not become a part of that experience.
+
+By following simple precautions safe water, hygienic food, mosquito control, good personal hygiene, and timely medical consultation you can keep most seasonal illnesses away. Prevention truly is better than cure, especially during the rainy months.
+
+Let's welcome the monsoon with awareness and care, ensuring that the only thing spreading this season is joy not infection.`
+  }
 ];
 
 /* ================= MOST READ ================= */
 
 const mostReadData = [
   {
-    id: 101,
-    featuredImage:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80",
-    articleTitle: "Simple Home Remedies For Loose Motions",
-    description:
-      "Loose motions or Diarrhea is one of the most common ailments.",
-    authorName: "Max Team In Internal Medicine",
-    publishDate: "Feb 22, 2018",
+       id: 2,
+    category: "Cardiology",
+    featuredImage: cardiologyImg,
+    articleTitle: "Protecting Your Heart: Warning Signs, Prevention, Cholesterol & Stress Management",
+    preview: "Heart disease is affecting younger people. Learn about warning signs and prevention strategies.",
+    description: "Understanding heart health, warning signs, and prevention strategies.",
+    authorName: "Dr. Rajesh Sharma",
+    publishDate: "Mar 01, 2026",
+    fullContent: `Heart disease is no longer a problem that affects only older people. In recent years, we are seeing more heart-related issues in individuals in their 30s and 40s. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health. The concerning part is that many people do not realize there is a problem until a serious event occurs.
+
+Understanding your heart and taking preventive steps early can make a life-saving difference.`
   },
   {
-    id: 102,
-    featuredImage:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80",
-    articleTitle: "Top 10 Superfoods for a Healthy Heart",
-    description:
-      "Heart healthy foods can reduce cardiovascular risks.",
-    authorName: "Cardiac Wellness Team",
-    publishDate: "Mar 10, 2023",
-  },
+    id: 6,
+    category: "General Medicine",
+    featuredImage: generalMedicineImg,
+    articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
+    preview: "Essential tips for preventing monsoon-related illnesses and staying healthy during rainy season.",
+    description: "Stay healthy during monsoon with these essential prevention tips.",
+    authorName: "Dr. Monica Mahajan",
+    publishDate: "Feb 20, 2026",
+    fullContent: `The first showers of the monsoon are always special, but they also bring seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.`
+  }
 ];
 
 /* ================= COMPONENT ================= */
@@ -115,6 +405,8 @@ export default function BlogList() {
   const [category, setCategory] = useState("All");
   const [mostPage, setMostPage] = useState(1);
   const [isHovering, setIsHovering] = useState(false);
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const RECENT_PER_PAGE = 4;
   const intervalRef = useRef(null);
@@ -178,6 +470,16 @@ export default function BlogList() {
 
   const mostItem = mostReadData[mostPage - 1];
 
+  const handleReadMore = (article) => {
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArticle(null);
+  };
+
   /* ================= UI ================= */
 
   return (
@@ -191,6 +493,13 @@ export default function BlogList() {
       </Helmet>
 
       <Header />
+
+      {/* Modal */}
+      <BlogModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        article={selectedArticle} 
+      />
 
       <main className="bg-[#fff8f0] min-h-screen">
         {/* HERO */}
@@ -256,14 +565,7 @@ export default function BlogList() {
                 {recentItems.map((item) => (
                   <article
                     key={item.id}
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(`/blog/${item.id}`)}
-                    onKeyDown={(e) =>
-                      e.key === "Enter" &&
-                      navigate(`/blog/${item.id}`)
-                    }
-                    className="cursor-pointer bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition p-5 flex flex-col"
+                    className="bg-white rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition p-5 flex flex-col"
                   >
                     <img
                       src={item.featuredImage}
@@ -281,12 +583,19 @@ export default function BlogList() {
                     </h3>
 
                     <p className="text-sm text-gray-600 mb-4 flex-grow">
-                      {item.description}
+                      {item.preview}
                     </p>
 
-                    <div className="text-xs text-gray-500 font-medium">
+                    <div className="text-xs text-gray-500 font-medium mb-4">
                       {item.authorName} | {item.publishDate}
                     </div>
+
+                    <button
+                      onClick={() => handleReadMore(item)}
+                      className="mt-auto w-full py-2 px-4 bg-[#005c52] text-white rounded-lg hover:bg-[#004d44] transition-colors font-medium text-sm"
+                    >
+                      Read More
+                    </button>
                   </article>
                 ))}
               </div>
@@ -342,12 +651,7 @@ export default function BlogList() {
                     ‹
                   </button>
 
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(`/blog/${mostItem.id}`)}
-                    className="flex flex-col md:flex-row gap-6 items-center cursor-pointer"
-                  >
+                  <div className="flex flex-col md:flex-row gap-6 items-center cursor-pointer w-full">
                     <img
                       src={mostItem.featuredImage}
                       alt={mostItem.articleTitle}
@@ -360,14 +664,21 @@ export default function BlogList() {
                       </h3>
 
                       <p className="text-gray-600 mb-4">
-                        {mostItem.description}
+                        {mostItem.preview}
                       </p>
 
-                      <div className="text-gray-500 font-semibold text-sm">
+                      <div className="text-gray-500 font-semibold text-sm mb-4">
                         {mostItem.authorName}
                         <br />
                         {mostItem.publishDate}
                       </div>
+
+                      <button
+                        onClick={() => handleReadMore(mostItem)}
+                        className="px-6 py-2 bg-[#005c52] text-white rounded-lg hover:bg-[#004d44] transition-colors font-medium"
+                      >
+                        Read Full Article
+                      </button>
                     </div>
                   </div>
 
