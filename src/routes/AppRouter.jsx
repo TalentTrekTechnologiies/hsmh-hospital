@@ -15,6 +15,10 @@ import BookAppointment from '../pages/auth/BookAppointment'
 import AppointmentHistory from '../pages/auth/AppointmentHistory'
 import Login from '../pages/auth/Login'
 import Signup from '../pages/auth/Signup'
+import PrivacyPolicy from '../commoncomponents/PrivacyPolicy'
+import TermsOfUse from '../commoncomponents/TermsOfUse'
+
+
 
 export default function AppRouter() {
   return (
@@ -33,6 +37,9 @@ export default function AppRouter() {
         <Route path="/appointments" element={<AppointmentHistory/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+
     </Routes>
   )
 }

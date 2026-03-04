@@ -10,7 +10,7 @@ export default function Footer() {
         
         {/* Hospital Info */}
         <div>
-          { /*<img src={logo2} alt="HMSH Logo" className="w-16 h-16 mb-4 mx-auto md:mx-0" /> */}
+          {/* <img src={logo2} alt="HMSH Logo" className="w-16 h-16 mb-4 mx-auto md:mx-0" /> */}
           <h2 className='text-xl font-bold mb-4'>Harsha Multi Speciality Hospital</h2>
           <p className='text-sm mt-2'>
             Providing trusted healthcare with modern facilities and compassionate care.
@@ -29,7 +29,8 @@ export default function Footer() {
             <li><Link to='/contact' className='hover:underline'>Contact Us</Link></li>
           </ul>
         </div>
-        {/* Socilas */}
+
+        {/* Socials */}
         <div>
           <h3 className='text-lg font-semibold mb-4'>Follow Us</h3>
           <ul className='space-y-2 text-sm'>
@@ -39,14 +40,15 @@ export default function Footer() {
             <li><a href="#" className="hover:text-emerald-300">LinkedIn</a></li>
           </ul>
         </div>
+
         {/* Contact Info */}
         <div className='font-medium'>
           <h2 className='text-xl font-bold mb-4'>Contact</h2>
           <p className="text-sm leading-relaxed">
-  📍 2/207, Bollavaram,<br />
-  Jammalamadugu Road,<br />
-  Proddatur
-</p>
+            📍 2/207, Bollavaram,<br />
+            Jammalamadugu Road,<br />
+            Proddatur
+          </p>
           <p className='text-sm'>📞 9640540475</p>
           <p className='text-sm'>✉️ info@hmsh.com</p>
           <div className='mt-4 flex flex-col space-y-2'>
@@ -56,9 +58,22 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar [#003330] */}
-      <div className="bg-[#333333] text-center text-xs text-white mt-12 border-t border-gray-700 py-1">
-        <p>© {new Date().getFullYear()} Harsha Multi Speciality Hospital. All rights reserved.</p>
+      {/* Bottom Bar */}
+      <div className="bg-[#333333] text-center text-xs text-white mt-12 border-t border-gray-700 py-3 space-y-1">
+        <p>
+          © {new Date().getFullYear()} Harsha Multi Speciality Hospital. All rights reserved.
+        </p>
+
+        {/* Legal Links (Required by Document) */}
+        <p className="space-x-2">
+          <Link to="/privacy-policy" className="hover:underline">
+            Privacy Policy
+          </Link>
+          <span>|</span>
+          <Link to="/terms-of-use" className="hover:underline">
+            Terms of Use
+          </Link>
+        </p>
       </div>
     </footer>
   )
