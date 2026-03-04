@@ -114,15 +114,15 @@ export default function Home() {
 
   // Updated blogs with your top 3 from the blog list
   const blog = [
-    { 
-      id: 2, 
-      title: "Protecting Your Heart: Warning Signs & Prevention", 
-      excerpt: "Heart disease is affecting people in their 30s and 40s. Learn warning signs, prevention tips, and stress management for a healthy heart.", 
-      image: cardiologyBlogImg,
-      category: "Cardiology",
-      author: "Dr. Rajesh Sharma",
-      date: "Mar 01, 2026"
-    },
+   { 
+  id: 2, 
+  title: "Understanding Brain and Nerve Health: Warning Signs & When to Seek Expert Care", 
+  excerpt: "Neurological issues can affect anyone. Learn warning signs of stroke, headache red flags, and when to consult a specialist for brain and nerve health.", 
+  image: neurologyImg,
+  category: "Neurology and Neurosurgery",
+  author: "Dr. Vikram Seth",
+  date: "Feb 18, 2026"
+},
     { 
       id: 6, 
       title: "Beating the Monsoon Blues", 

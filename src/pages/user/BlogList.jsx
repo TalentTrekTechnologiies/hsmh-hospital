@@ -8,11 +8,15 @@ import blogHero from "../../assets/Hospital blog cover.png";
 
 // Import your blog images (use your actual image names)
 import anaesthesiaImg from "../../assets/anesthesia blog.jpeg";
-import cardiologyImg from "../../assets/Cardiolody blog .jpeg";
 import paediatricsImg from "../../assets/pediatrics blog.jpeg";
 import gynaecologyImg from "../../assets/gynaecology blog.jpeg";
 import orthopaedicsImg from "../../assets/ortho.jpeg";
 import generalMedicineImg from "../../assets/General medicine blog.jpeg";
+
+// New blog images - you'll need to add these assets
+import neurologyImg from "../../assets/Neurology Blog.jpeg";
+import infertilityImg from "../../assets/infertility blog .jpeg";
+import emergencyImg from "../../assets/Emergency Blog .jpeg";
 
 
 
@@ -51,7 +55,7 @@ const BlogModal = ({ isOpen, onClose, article }) => {
             ×
           </button>
           
-                    {/* Content */}
+          {/* Content */}
           <div className="px-6 sm:px-8 pb-8 pt-16">
             {/* Category */}
             <div className="text-sm text-[#005c52] font-bold uppercase mb-2">
@@ -140,7 +144,7 @@ In recent years, patient comfort and safety have become the central focus of ana
 
 Communication is key. If you are scheduled for surgery, do not hesitate to ask questions. Inform your anaesthesiologist about any fears, previous reactions to anaesthesia, or medical conditions. Being open helps the medical team provide safer and more personalized care.
 
-It is also important not to ignore persistent pain. Many people continue suffering silently, assuming pain is a normal part of ageing or recovery. Seeking consultation early can prevent pain from becoming chronic and difficult to treat.
+It is also important not to ignore persistent pain. Many people continue suffering silently, assuming pain is a normal part of ageing or consulting a doctor. Seeking consultation early can prevent pain from becoming chronic and difficult to treat.
 
 Anaesthesia and pain medicine work quietly behind the scenes, but their role is crucial in modern healthcare. They make surgeries possible, reduce suffering, and ensure comfort during some of life's most challenging medical moments.
 
@@ -148,63 +152,6 @@ With proper evaluation, expert care, and open communication, patients can approa
   },
   {
     id: 2,
-    category: "Cardiology",
-    featuredImage: cardiologyImg,
-    articleTitle: "Protecting Your Heart: Warning Signs, Prevention, Cholesterol & Stress Management",
-    preview: "Heart disease is no longer a problem that affects only older people. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health in individuals in their 30s and 40s.",
-    description: "Learn about heart health, warning signs, prevention strategies, and managing cholesterol and stress.",
-    authorName: "Dr. Rajesh Sharma",
-    publishDate: "Mar 01, 2026",
-    fullContent: `Heart disease is no longer a problem that affects only older people. In recent years, we are seeing more heart-related issues in individuals in their 30s and 40s. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health. The concerning part is that many people do not realize there is a problem until a serious event occurs.
-
-Understanding your heart and taking preventive steps early can make a life-saving difference.
-
-Let us first talk about something everyone should be aware of the warning signs of a heart attack.
-
-A heart attack does not always begin with sudden, severe chest pain. In many cases, symptoms can be mild and confusing. The most common sign is discomfort in the chest a feeling of heaviness, pressure, tightness, or squeezing in the center of the chest. This discomfort may last for a few minutes or may come and go.
-
-Pain may also spread to the left arm, both arms, neck, jaw, shoulder, or back. Some people experience shortness of breath, unusual sweating, nausea, dizziness, or unexplained fatigue. Women and people with diabetes sometimes experience less typical symptoms such as breathlessness, indigestion-like discomfort, or extreme tiredness without obvious chest pain.
-
-These warning signs should never be ignored. The first hour after a heart attack is critical. Seeking immediate medical help can significantly reduce heart damage and improve survival chances. Delaying treatment can lead to serious complications.
-
-While recognizing symptoms is important, prevention is even more powerful especially in your 30s and 40s.
-
-Many young adults assume heart disease is something to worry about later in life. However, lifestyle patterns established in early adulthood strongly influence heart health. Sedentary jobs, excessive screen time, irregular meals, processed foods, smoking, alcohol consumption, and unmanaged stress all increase the risk of high blood pressure, diabetes, obesity, and high cholesterol.
-
-Simple preventive measures can protect your heart for decades.
-
-Regular health check-ups are essential. Even if you feel perfectly healthy, checking your blood pressure, blood sugar, and cholesterol levels once a year after the age of 30 can help detect problems early.
-
-Physical activity is one of the best gifts you can give your heart. At least 30 minutes of moderate exercise five days a week such as brisk walking, cycling, swimming, or yoga improves blood circulation and strengthens heart muscles.
-
-Healthy eating also plays a crucial role. Prefer home-cooked meals with plenty of vegetables, fruits, whole grains, pulses, and lean proteins. Reduce intake of fried foods, bakery products, excess salt, and sugary beverages. Small daily choices add up over time.
-
-Understanding cholesterol is another important step toward heart protection.
-
-Cholesterol is a fatty substance naturally present in the body. It is essential for building cells and producing certain hormones. However, problems arise when cholesterol levels become imbalanced.
-
-There are two main types: LDL and HDL.
-
-LDL, often called "bad cholesterol," can build up inside the walls of arteries, forming plaques that narrow blood vessels. This increases the risk of heart attack and stroke. HDL, known as "good cholesterol," helps remove excess cholesterol from the bloodstream and transports it to the liver for elimination.
-
-High LDL levels and low HDL levels increase cardiovascular risk. Diets high in saturated and trans fats — such as deep-fried snacks, processed foods, and certain packaged items raise LDL levels. On the other hand, regular exercise, nuts, seeds, healthy oils, and a balanced diet help improve HDL levels.
-
-Routine blood tests help monitor cholesterol levels. If lifestyle modifications are not sufficient, doctors may recommend medications to keep cholesterol under control.
-
-Another major factor that often goes unnoticed is stress.
-
-In today's fast-paced life, stress has become almost constant. Work deadlines, financial responsibilities, family pressures everything contributes. When you are stressed, your body releases hormones that temporarily increase heart rate and blood pressure. While short-term stress is manageable, long-term stress can damage blood vessels and increase the risk of heart disease.
-
-Managing stress does not require drastic changes. Simple daily practices such as deep breathing exercises, meditation, yoga, spending quality time with loved ones, and maintaining proper sleep can significantly reduce stress levels. Even taking short breaks during work hours can help relax the mind.
-
-Adequate sleep around 7 to 8 hours each night is equally important. Poor sleep habits are linked to high blood pressure and increased heart risk.
-
-Your heart works tirelessly every single moment. Taking care of it should not be postponed until a problem arises. Recognizing warning signs, adopting preventive habits early, maintaining healthy cholesterol levels, and managing stress can greatly reduce the risk of heart disease.
-
-A healthy heart is built through consistent, mindful choices made every day.`
-  },
-  {
-    id: 3,
     category: "Paediatrics",
     featuredImage: paediatricsImg,
     articleTitle: "Growing Up Strong: A Guide to Your Child's Health in the Early Years",
@@ -251,7 +198,7 @@ The early years pass quickly. The tiny hands that once held your finger will soo
 Healthy habits formed today create healthier adults tomorrow.`
   },
   {
-    id: 4,
+    id: 3,
     category: "Obstetrics & Gynaecology",
     featuredImage: gynaecologyImg,
     articleTitle: "Your First Pregnancy: A Gentle Guide for the Journey Ahead",
@@ -292,7 +239,7 @@ With proper medical guidance, balanced nutrition, emotional support, and regular
 You are stronger than you think. And you are not alone.`
   },
   {
-    id: 5,
+    id: 4,
     category: "Orthopaedics",
     featuredImage: orthopaedicsImg,
     articleTitle: "That Nagging Knee Pain: When to Rest and When to See a Doctor",
@@ -335,7 +282,7 @@ Knee pain should never be seen as an unavoidable part of ageing. With early diag
 Do not wait until the pain becomes unbearable. Listening to your body and seeking timely medical advice can prevent long-term damage and improve your quality of life. Your knees carry you through every stage of life — taking care of them today ensures they support you tomorrow.`
   },
   {
-    id: 6,
+    id: 5,
     category: "General Medicine",
     featuredImage: generalMedicineImg,
     articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
@@ -372,108 +319,220 @@ The monsoon season is meant to be enjoyed watching the rain from your balcony, s
 By following simple precautions safe water, hygienic food, mosquito control, good personal hygiene, and timely medical consultation you can keep most seasonal illnesses away. Prevention truly is better than cure, especially during the rainy months.
 
 Let's welcome the monsoon with awareness and care, ensuring that the only thing spreading this season is joy not infection.`
+  },
+  {
+    id: 6,
+    category: "Neurology and Neurosurgery",
+    featuredImage: neurologyImg,
+    articleTitle: "Understanding Brain and Nerve Health: When to Seek Expert Care",
+    preview: "Our brain and nervous system control everything we do. A sudden severe headache, weakness in one arm, or persistent back pain can be alarming. Understanding when expert care is needed can make a life-changing difference.",
+    description: "Comprehensive guide to understanding neurological conditions, warning signs, and when to consult a specialist.",
+    authorName: "Dr. Vikram Seth",
+    publishDate: "Feb 18, 2026",
+    fullContent: `Our brain and nervous system control everything we do – from thinking, speaking, and walking to breathing and feeling emotions. Yet, we often take this complex system for granted until something goes wrong. A sudden severe headache, weakness in one arm, persistent back pain, or frequent episodes of dizziness can be alarming. Understanding the role of Neurology and Neurosurgery can help you recognize when expert care is needed and how early treatment can make a life-changing difference.
+
+Neurology is the branch of medicine that deals with disorders of the brain, spinal cord, and nerves. A neurologist treats conditions using medications and non-surgical approaches. Neurosurgery, on the other hand, involves surgical treatment of problems affecting the brain, spine, and nervous system. While the two specialties are closely related, not all neurological conditions require surgery.
+
+Common neurological conditions include stroke, epilepsy (seizure disorders), migraine, Parkinson's disease, multiple sclerosis, neuropathy, memory disorders, and chronic headaches. Spine-related issues such as slipped discs and nerve compression also fall under this field. Neurosurgeons handle cases like brain tumors, spinal cord injuries, severe head injuries, certain types of stroke, and complex spine surgeries.
+
+One of the most serious neurological emergencies is a stroke. A stroke occurs when blood supply to a part of the brain is interrupted, either due to a clot or bleeding. Warning signs include sudden weakness or numbness on one side of the body, slurred speech, confusion, difficulty seeing, severe headache, or loss of balance. Stroke is a medical emergency. Immediate treatment within the first few hours can prevent permanent brain damage and disability.
+
+Head injuries are another major concern, especially due to road traffic accidents. Even a fall at home can cause serious brain injury, particularly in elderly individuals. Symptoms such as persistent vomiting, drowsiness, seizures, or loss of consciousness after a head injury require urgent medical evaluation.
+
+Not all neurological problems are sudden. Some develop gradually. For example, recurring headaches may simply be migraines, but severe or unusual headaches should not be ignored. Similarly, frequent seizures, memory loss, tremors, or changes in behavior need medical attention. Early diagnosis can prevent complications and improve quality of life.
+
+Spine problems are increasingly common due to sedentary lifestyles, long hours of sitting, and improper posture. Lower back pain radiating to the legs, neck pain spreading to the arms, tingling sensations, or weakness may indicate nerve compression or disc problems. Many of these conditions can be treated with medications, physiotherapy, and lifestyle changes. Surgery is recommended only when conservative treatment fails or if there is significant nerve damage.
+
+Modern neurology relies on advanced diagnostic tools such as MRI scans, CT scans, EEG (to study brain electrical activity), nerve conduction studies, and specialized blood tests. These investigations help identify the exact cause of symptoms and guide appropriate treatment.
+
+In neurosurgery, technological advancements have made procedures safer and more precise. Minimally invasive spine surgeries, microscopic brain surgeries, and image-guided techniques allow faster recovery and reduced hospital stay. However, surgery is always considered carefully, weighing benefits and risks.
+
+Preventive care plays a key role in brain health. Controlling blood pressure, diabetes, and cholesterol reduces the risk of stroke. Wearing helmets while riding two-wheelers and using seat belts in cars prevent head injuries. Maintaining a healthy lifestyle with regular exercise, balanced diet, adequate sleep, and stress management supports overall neurological well-being.
+
+Mental health is also closely connected to brain health. Anxiety, depression, and chronic stress can affect concentration, memory, and overall functioning. Seeking help early and discussing symptoms openly with a healthcare provider is important.
+
+Family members often feel anxious when a loved one is diagnosed with a neurological condition. Clear communication with doctors helps in understanding the condition, treatment plan, and recovery expectations. Rehabilitation therapies such as physiotherapy, speech therapy, and occupational therapy are often part of neurological recovery and significantly improve outcomes.
+
+The brain is delicate but remarkably resilient. With timely medical intervention and proper care, many neurological conditions can be managed effectively. Advances in medicine continue to improve survival rates and quality of life for patients with complex neurological disorders.
+
+Listening to your body is essential. Sudden symptoms should never be ignored, and persistent discomfort deserves evaluation. Early diagnosis not only improves treatment success but also prevents long-term disability.
+
+Neurology and Neurosurgery work together to protect and restore one of the body's most vital systems. Whether managing migraines, treating seizures, addressing spine problems, or performing life-saving brain surgery, the goal remains the same – preserving function, relieving suffering, and improving quality of life.`
+  },
+  {
+    id: 7,
+    category: "Infertility and Reproductive Medicine",
+    featuredImage: infertilityImg,
+    articleTitle: "Understanding Infertility: Hope, Options, and the Journey to Parenthood",
+    preview: "For many couples, the dream of parenthood is deeply heartfelt. Understanding that infertility is a medical condition, not a personal failure, and knowing the treatment options can bring hope and clarity.",
+    description: "Comprehensive guide to understanding infertility causes, treatment options, and emotional support for couples.",
+    authorName: "Dr. Priya Sharma",
+    publishDate: "Feb 15, 2026",
+    fullContent: `For many couples, the dream of holding their own child is one of life's most heartfelt desires. When months pass and pregnancy does not happen as expected, it can bring confusion, stress, and even self-doubt. In our communities, where family and parenthood are deeply valued, the emotional pressure can feel overwhelming. It is important to understand that infertility is a medical condition – not a personal failure – and in many cases, it is treatable.
+
+Infertility is generally defined as the inability to conceive after one year of regular, unprotected intercourse. For women above the age of 35, evaluation is recommended after six months. Both partners should be evaluated because infertility can result from factors affecting the woman, the man, or sometimes both.
+
+In women, common causes include irregular ovulation, polycystic ovarian syndrome (PCOS), thyroid disorders, blocked fallopian tubes, endometriosis, or age-related decline in egg quality. In men, low sperm count, poor sperm motility, hormonal imbalance, infections, or lifestyle factors such as smoking and alcohol use can contribute to fertility challenges.
+
+One of the biggest misconceptions is that infertility is always a woman's issue. In reality, male factors contribute to nearly half of infertility cases. That is why both partners must approach evaluation together, with openness and mutual support.
+
+The first step in infertility management is a detailed consultation. Your doctor will review your medical history, menstrual history, previous pregnancies (if any), lifestyle habits, and any underlying medical conditions. Basic investigations may include blood tests to check hormone levels, ultrasound scans to examine the uterus and ovaries, and semen analysis for the male partner.
+
+In many cases, simple treatment can make a big difference. If irregular ovulation is the issue, medications can help stimulate egg release. Hormonal imbalances such as thyroid disorders can be corrected with appropriate treatment. Lifestyle changes such as maintaining a healthy weight, reducing stress, quitting smoking, limiting alcohol, and improving diet can significantly improve fertility outcomes.
+
+For couples who need additional assistance, several advanced reproductive options are available.
+
+One commonly used treatment is Intrauterine Insemination (IUI). In this procedure, prepared sperm is placed directly into the uterus around the time of ovulation to increase the chances of fertilization. IUI is often recommended for mild male factor infertility, unexplained infertility, or ovulation-related issues.
+
+In cases where IUI is not successful or if there are more complex issues such as blocked tubes or very low sperm count, In Vitro Fertilization (IVF) may be advised. IVF involves stimulating the ovaries to produce multiple eggs, retrieving those eggs, fertilizing them with sperm in a laboratory, and then transferring the resulting embryo into the uterus. IVF has helped millions of couples worldwide achieve pregnancy.
+
+Modern reproductive medicine also offers options such as Intracytoplasmic Sperm Injection (ICSI), where a single healthy sperm is directly injected into an egg, particularly helpful in severe male infertility cases. For certain medical conditions, egg freezing, sperm freezing, or embryo freezing may be recommended.
+
+While medical treatments are important, emotional well-being is equally crucial. Infertility can bring feelings of anxiety, frustration, guilt, or isolation. Couples may face questions from relatives or social pressure, which can add to emotional strain. Open communication between partners, emotional support from family, and counseling when needed can help maintain mental strength during this journey.
+
+It is also important to remember that age plays a significant role in fertility, especially for women. Egg quality and quantity naturally decline after the age of 35. Seeking timely medical advice rather than delaying evaluation can improve treatment success rates.
+
+Not every couple requires advanced treatment. Sometimes, proper timing of intercourse based on ovulation tracking, lifestyle improvement, and minor medical corrections are enough to achieve pregnancy.
+
+Patience is essential. Fertility treatments may require multiple cycles, and success is not always immediate. However, advancements in reproductive medicine have dramatically improved outcomes, offering hope to many families who once thought parenthood was out of reach.
+
+Choosing a qualified fertility specialist and a well-equipped center ensures proper diagnosis, ethical guidance, and individualized care. Each couple's situation is unique, and treatment plans should be tailored accordingly.
+
+Infertility is a journey – sometimes challenging, often emotional, but filled with possibilities. With the right medical support, informed decisions, and emotional resilience, many couples are able to achieve their dream of becoming parents.
+
+You are not alone in this journey. Modern medicine, combined with compassionate care, offers real hope and practical solutions.`
+  },
+  {
+    id: 8,
+    category: "Emergency and Critical Care",
+    featuredImage: emergencyImg,
+    articleTitle: "When Every Second Counts: Understanding Emergency and Critical Care",
+    preview: "Medical emergencies rarely come with a warning. In such situations, what matters most is immediate medical attention. Understanding when and how to seek emergency care can save lives.",
+    description: "Essential guide to understanding emergency department functions, when to seek help, and what to expect in critical care.",
+    authorName: "Dr. Arjun Nair",
+    publishDate: "Feb 12, 2026",
+    fullContent: `Medical emergencies rarely come with a warning. One moment everything feels normal, and the next, there is panic – a sudden chest pain, a road accident, difficulty breathing, high fever with seizures, or an unconscious loved one. In such situations, what matters most is immediate medical attention. This is where the Department of Emergency and Critical Care plays a lifesaving role.
+
+The Emergency Department is often described as the "front door" of the hospital. It operates 24 hours a day, 7 days a week, ready to respond to urgent and life-threatening conditions. Whether it is a child with severe dehydration, an elderly patient with stroke symptoms, or a trauma victim from a road accident, the emergency team is trained to act quickly and efficiently.
+
+In an emergency, time is critical. The first few minutes – sometimes called the "golden minutes" – can determine outcomes. For example, in a heart attack or stroke, early treatment can prevent permanent damage and significantly improve survival chances. Quick assessment, rapid diagnosis, and prompt treatment are the foundations of emergency care.
+
+When a patient arrives at the emergency department, the first step is triage. Triage is a system used to prioritize patients based on the severity of their condition. Those with life-threatening problems are attended to immediately, while less critical cases may wait briefly. This ensures that the sickest patients receive urgent care without delay.
+
+Common emergencies treated in this department include chest pain, breathing difficulty, severe infections, high fever in infants, uncontrolled bleeding, fractures, poisoning, burns, seizures, severe allergic reactions, and sudden unconsciousness. Emergency physicians are trained to handle a wide range of medical and surgical crises. They work closely with specialists such as cardiologists, neurologists, surgeons, and intensivists when advanced care is required.
+
+Critical Care, often provided in the Intensive Care Unit (ICU), is the next level of support for patients who are severely ill or unstable. Not all emergency patients require ICU admission, but those with serious conditions such as severe infections (sepsis), major trauma, respiratory failure, organ failure, or post-major surgery complications may need close monitoring in a critical care setting.
+
+In the ICU, patients are monitored continuously. Advanced equipment tracks heart rate, blood pressure, oxygen levels, breathing patterns, and other vital signs. Some patients may require ventilators to support breathing, medications to maintain blood pressure, or dialysis if kidney function is affected. The goal of critical care is to stabilize the patient, support failing organs, and provide intensive treatment until recovery begins.
+
+Family members often feel overwhelmed when a loved one is admitted to the ICU. The environment, with its machines and alarms, can be intimidating. It is important to understand that these monitors are there to ensure safety and immediate response to any change in condition. Critical care teams consist of specially trained doctors, nurses, and technicians who work round the clock to provide expert care.
+
+Prevention and awareness also play an important role in reducing emergency situations. Recognizing warning signs early can prevent complications. For instance, sudden weakness on one side of the body, slurred speech, and facial drooping may indicate a stroke and require immediate medical attention. Persistent chest pain or pressure should never be ignored. Severe abdominal pain, high fever with rash in children, or sudden confusion in elderly individuals are also signs that urgent care may be needed.
+
+It is equally important not to delay seeking help due to fear or hesitation. Some people try home remedies or wait for symptoms to improve, losing valuable time. In emergencies, early hospital arrival can make the difference between full recovery and long-term complications.
+
+Emergency departments are also prepared for mass casualty incidents and disaster situations. Coordination, teamwork, and well-established protocols ensure organized and efficient response even during high-pressure situations.
+
+While emergency and critical care focus on urgent treatment, communication and compassion remain central to patient care. Medical teams understand that families are anxious and distressed. Clear explanations, timely updates, and emotional support are essential parts of the healing process.
+
+Modern emergency medicine combines speed with precision. Rapid diagnostic tools such as blood tests, ECG, imaging scans, and bedside ultrasound help doctors make quick and accurate decisions. Early intervention often reduces the need for prolonged hospitalization.
+
+Ultimately, the Department of Emergency and Critical Care exists to protect life during its most vulnerable moments. Whether it is stabilizing a patient after an accident, managing a sudden medical crisis, or providing intensive monitoring for a critically ill individual, the goal remains the same – to act swiftly, effectively, and compassionately.
+
+Emergencies are unpredictable, but preparedness saves lives. Knowing when to seek help and trusting trained professionals during critical moments ensures the best possible outcome for you and your loved ones.`
   }
 ];
 
 /* ================= MOST READ ================= */
 
 const mostReadData = [
-   {
-    id: 2,
-    category: "Cardiology",
-    featuredImage: cardiologyImg,
-    articleTitle: "Protecting Your Heart: Warning Signs, Prevention, Cholesterol & Stress Management",
-    preview: "Heart disease is no longer a problem that affects only older people. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health in individuals in their 30s and 40s.",
-    description: "Learn about heart health, warning signs, prevention strategies, and managing cholesterol and stress.",
-    authorName: "Dr. Rajesh Sharma",
-    publishDate: "Mar 01, 2026",
-    fullContent: `Heart disease is no longer a problem that affects only older people. In recent years, we are seeing more heart-related issues in individuals in their 30s and 40s. Long working hours, unhealthy eating habits, lack of exercise, smoking, and constant stress are silently affecting heart health. The concerning part is that many people do not realize there is a problem until a serious event occurs.
-
-Understanding your heart and taking preventive steps early can make a life-saving difference.
-
-Let us first talk about something everyone should be aware of the warning signs of a heart attack.
-
-A heart attack does not always begin with sudden, severe chest pain. In many cases, symptoms can be mild and confusing. The most common sign is discomfort in the chest a feeling of heaviness, pressure, tightness, or squeezing in the center of the chest. This discomfort may last for a few minutes or may come and go.
-
-Pain may also spread to the left arm, both arms, neck, jaw, shoulder, or back. Some people experience shortness of breath, unusual sweating, nausea, dizziness, or unexplained fatigue. Women and people with diabetes sometimes experience less typical symptoms such as breathlessness, indigestion-like discomfort, or extreme tiredness without obvious chest pain.
-
-These warning signs should never be ignored. The first hour after a heart attack is critical. Seeking immediate medical help can significantly reduce heart damage and improve survival chances. Delaying treatment can lead to serious complications.
-
-While recognizing symptoms is important, prevention is even more powerful especially in your 30s and 40s.
-
-Many young adults assume heart disease is something to worry about later in life. However, lifestyle patterns established in early adulthood strongly influence heart health. Sedentary jobs, excessive screen time, irregular meals, processed foods, smoking, alcohol consumption, and unmanaged stress all increase the risk of high blood pressure, diabetes, obesity, and high cholesterol.
-
-Simple preventive measures can protect your heart for decades.
-
-Regular health check-ups are essential. Even if you feel perfectly healthy, checking your blood pressure, blood sugar, and cholesterol levels once a year after the age of 30 can help detect problems early.
-
-Physical activity is one of the best gifts you can give your heart. At least 30 minutes of moderate exercise five days a week such as brisk walking, cycling, swimming, or yoga improves blood circulation and strengthens heart muscles.
-
-Healthy eating also plays a crucial role. Prefer home-cooked meals with plenty of vegetables, fruits, whole grains, pulses, and lean proteins. Reduce intake of fried foods, bakery products, excess salt, and sugary beverages. Small daily choices add up over time.
-
-Understanding cholesterol is another important step toward heart protection.
-
-Cholesterol is a fatty substance naturally present in the body. It is essential for building cells and producing certain hormones. However, problems arise when cholesterol levels become imbalanced.
-
-There are two main types: LDL and HDL.
-
-LDL, often called "bad cholesterol," can build up inside the walls of arteries, forming plaques that narrow blood vessels. This increases the risk of heart attack and stroke. HDL, known as "good cholesterol," helps remove excess cholesterol from the bloodstream and transports it to the liver for elimination.
-
-High LDL levels and low HDL levels increase cardiovascular risk. Diets high in saturated and trans fats — such as deep-fried snacks, processed foods, and certain packaged items raise LDL levels. On the other hand, regular exercise, nuts, seeds, healthy oils, and a balanced diet help improve HDL levels.
-
-Routine blood tests help monitor cholesterol levels. If lifestyle modifications are not sufficient, doctors may recommend medications to keep cholesterol under control.
-
-Another major factor that often goes unnoticed is stress.
-
-In today's fast-paced life, stress has become almost constant. Work deadlines, financial responsibilities, family pressures everything contributes. When you are stressed, your body releases hormones that temporarily increase heart rate and blood pressure. While short-term stress is manageable, long-term stress can damage blood vessels and increase the risk of heart disease.
-
-Managing stress does not require drastic changes. Simple daily practices such as deep breathing exercises, meditation, yoga, spending quality time with loved ones, and maintaining proper sleep can significantly reduce stress levels. Even taking short breaks during work hours can help relax the mind.
-
-Adequate sleep around 7 to 8 hours each night is equally important. Poor sleep habits are linked to high blood pressure and increased heart risk.
-
-Your heart works tirelessly every single moment. Taking care of it should not be postponed until a problem arises. Recognizing warning signs, adopting preventive habits early, maintaining healthy cholesterol levels, and managing stress can greatly reduce the risk of heart disease.
-
-A healthy heart is built through consistent, mindful choices made every day.`
-  },
-   {
+  {
     id: 6,
-    category: "General Medicine",
-    featuredImage: generalMedicineImg,
-    articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
-    preview: "The monsoon brings relief from heat but also brings seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.",
-    description: "Essential tips for preventing monsoon-related illnesses and maintaining good health during rainy season.",
-    authorName: "Dr. Monica Mahajan",
-    publishDate: "Feb 20, 2026",
-    fullContent: `The first showers of the monsoon are always special, aren't they? After months of heat and dust, the cool breeze feels like a blessing. The smell of wet soil, children playing in puddles, hot tea in the evening it's a season many of us look forward to every year. But here in our city, we also know that the rainy season brings more than just relief from the summer. It quietly brings a wave of seasonal illnesses.
+    category: "Neurology and Neurosurgery",
+    featuredImage: neurologyImg,
+    articleTitle: "Understanding Brain and Nerve Health: When to Seek Expert Care",
+    preview: "Our brain and nervous system control everything we do. A sudden severe headache, weakness in one arm, or persistent back pain can be alarming. Understanding when expert care is needed can make a life-changing difference.",
+    description: "Comprehensive guide to understanding neurological conditions, warning signs, and when to consult a specialist.",
+    authorName: "Dr. Vikram Seth",
+    publishDate: "Feb 18, 2026",
+    fullContent: `Our brain and nervous system control everything we do – from thinking, speaking, and walking to breathing and feeling emotions. Yet, we often take this complex system for granted until something goes wrong. A sudden severe headache, weakness in one arm, persistent back pain, or frequent episodes of dizziness can be alarming. Understanding the role of Neurology and Neurosurgery can help you recognize when expert care is needed and how early treatment can make a life-changing difference.
 
-Suddenly, someone in the family has a cold that refuses to go away. A neighbour is down with high fever. Schools report viral infections spreading among children. Pharmacies become crowded. While this may feel routine every year, it's important to understand why it happens and what we can do to protect ourselves and our loved ones.
+Neurology is the branch of medicine that deals with disorders of the brain, spinal cord, and nerves. A neurologist treats conditions using medications and non-surgical approaches. Neurosurgery, on the other hand, involves surgical treatment of problems affecting the brain, spine, and nervous system. While the two specialties are closely related, not all neurological conditions require surgery.
 
-During monsoon, the air becomes humid and temperatures fluctuate frequently. This creates an ideal environment for viruses and bacteria to multiply. At the same time, waterlogging in certain areas becomes common. Stagnant water becomes a breeding ground for mosquitoes, increasing the risk of diseases like dengue and malaria. Contaminated water sources can also lead to stomach infections, typhoid, and hepatitis A.
+Common neurological conditions include stroke, epilepsy (seizure disorders), migraine, Parkinson's disease, multiple sclerosis, neuropathy, memory disorders, and chronic headaches. Spine-related issues such as slipped discs and nerve compression also fall under this field. Neurosurgeons handle cases like brain tumors, spinal cord injuries, severe head injuries, certain types of stroke, and complex spine surgeries.
 
-The good news is that most monsoon-related illnesses can be prevented with simple and consistent habits.
+One of the most serious neurological emergencies is a stroke. A stroke occurs when blood supply to a part of the brain is interrupted, either due to a clot or bleeding. Warning signs include sudden weakness or numbness on one side of the body, slurred speech, confusion, difficulty seeing, severe headache, or loss of balance. Stroke is a medical emergency. Immediate treatment within the first few hours can prevent permanent brain damage and disability.
 
-Let's start with water safety one of the most important precautions during this season. Always drink boiled or properly purified water at home. Even if the water looks clean, contamination can occur due to damaged pipelines or mixing of drainage water during heavy rains. If you are travelling or outside for long hours, carry your own water bottle. Avoid consuming water or juices from roadside vendors unless you are absolutely sure of their hygiene standards.
+Head injuries are another major concern, especially due to road traffic accidents. Even a fall at home can cause serious brain injury, particularly in elderly individuals. Symptoms such as persistent vomiting, drowsiness, seizures, or loss of consciousness after a head injury require urgent medical evaluation.
 
-Food hygiene is equally important. During monsoon, our digestive system tends to be more sensitive. Avoid raw salads, cut fruits from street stalls, and uncovered food items that may have been exposed to flies and moisture. Instead, prefer freshly prepared, hot meals. Steam-cooked foods like idlis, upma, khichdi, or soups are gentle on the stomach. If you enjoy snacks like samosas or pakoras during rainy evenings, make sure they are freshly fried and from a trusted place. Heat helps kill many harmful microorganisms.
+Not all neurological problems are sudden. Some develop gradually. For example, recurring headaches may simply be migraines, but severe or unusual headaches should not be ignored. Similarly, frequent seizures, memory loss, tremors, or changes in behavior need medical attention. Early diagnosis can prevent complications and improve quality of life.
 
-Mosquito control should become a weekly routine at home. Take five to ten minutes every Sunday to inspect your surroundings. Empty flower pots, buckets, coolers, coconut shells, or any container that may collect rainwater. Ensure overhead tanks are covered properly. Use mosquito nets or repellents, especially for children and elderly family members. These small preventive steps can significantly reduce the risk of mosquito-borne illnesses.
+Spine problems are increasingly common due to sedentary lifestyles, long hours of sitting, and improper posture. Lower back pain radiating to the legs, neck pain spreading to the arms, tingling sensations, or weakness may indicate nerve compression or disc problems. Many of these conditions can be treated with medications, physiotherapy, and lifestyle changes. Surgery is recommended only when conservative treatment fails or if there is significant nerve damage.
 
-Personal hygiene should never be compromised. Wash your hands frequently with soap, especially before eating and after returning home. Keep your feet clean and dry to prevent fungal infections, which are common during humid weather. Change out of wet clothes as soon as possible to avoid skin infections and colds.
+Modern neurology relies on advanced diagnostic tools such as MRI scans, CT scans, EEG (to study brain electrical activity), nerve conduction studies, and specialized blood tests. These investigations help identify the exact cause of symptoms and guide appropriate treatment.
 
-Another important aspect is immunity. Many people fall sick during monsoon because their immunity is already low. Ensure your diet includes seasonal fruits (properly washed and peeled), green vegetables, lentils, and adequate protein. Stay hydrated, even if you don't feel as thirsty as in summer. Warm soups and herbal drinks can be comforting and beneficial. Proper sleep and regular light exercise at home can also strengthen your immune system.
+In neurosurgery, technological advancements have made procedures safer and more precise. Minimally invasive spine surgeries, microscopic brain surgeries, and image-guided techniques allow faster recovery and reduced hospital stay. However, surgery is always considered carefully, weighing benefits and risks.
 
-Despite precautions, if you develop symptoms like persistent fever, severe body pain, headache behind the eyes, vomiting, loose motions, or unusual fatigue, do not ignore them. High fever lasting more than two days needs medical evaluation. Avoid self-medication, especially antibiotics. Taking leftover medicines from a previous illness or following advice from neighbours can sometimes worsen the condition or delay proper diagnosis.
+Preventive care plays a key role in brain health. Controlling blood pressure, diabetes, and cholesterol reduces the risk of stroke. Wearing helmets while riding two-wheelers and using seat belts in cars prevent head injuries. Maintaining a healthy lifestyle with regular exercise, balanced diet, adequate sleep, and stress management supports overall neurological well-being.
 
-Viral fevers, dengue, malaria, typhoid each requires different treatment approaches. A simple blood test and timely consultation with a physician can help identify the exact cause and start appropriate care. Early diagnosis not only ensures faster recovery but also prevents complications.
+Mental health is also closely connected to brain health. Anxiety, depression, and chronic stress can affect concentration, memory, and overall functioning. Seeking help early and discussing symptoms openly with a healthcare provider is important.
 
-Special care should be taken for children, elderly individuals, pregnant women, and people with chronic conditions like diabetes, hypertension, or asthma. Their bodies may not respond to infections as quickly, and even mild symptoms should be evaluated promptly.
+Family members often feel anxious when a loved one is diagnosed with a neurological condition. Clear communication with doctors helps in understanding the condition, treatment plan, and recovery expectations. Rehabilitation therapies such as physiotherapy, speech therapy, and occupational therapy are often part of neurological recovery and significantly improve outcomes.
 
-The monsoon season is meant to be enjoyed watching the rain from your balcony, sharing hot snacks with family, and celebrating festivals that fall during this time. Illness should not become a part of that experience.
+The brain is delicate but remarkably resilient. With timely medical intervention and proper care, many neurological conditions can be managed effectively. Advances in medicine continue to improve survival rates and quality of life for patients with complex neurological disorders.
 
-By following simple precautions safe water, hygienic food, mosquito control, good personal hygiene, and timely medical consultation you can keep most seasonal illnesses away. Prevention truly is better than cure, especially during the rainy months.
+Listening to your body is essential. Sudden symptoms should never be ignored, and persistent discomfort deserves evaluation. Early diagnosis not only improves treatment success but also prevents long-term disability.
 
-Let's welcome the monsoon with awareness and care, ensuring that the only thing spreading this season is joy not infection.`
+Neurology and Neurosurgery work together to protect and restore one of the body's most vital systems. Whether managing migraines, treating seizures, addressing spine problems, or performing life-saving brain surgery, the goal remains the same – preserving function, relieving suffering, and improving quality of life.`
+  },
+  {
+    id: 1,
+    category: "Anaesthesia and Pain Medicine",
+    featuredImage: anaesthesiaImg, 
+    articleTitle: "Safe Surgery and Comfortable Recovery – Understanding Anaesthesia and Pain Care",
+    preview: "For many patients, the thought of surgery brings one major fear – 'Will I be awake?' or 'Will it hurt?' Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear.",
+    description: "Understanding anaesthesia and pain management for safe surgery and comfortable recovery.",
+    authorName: "Dr. Meenu Walia",
+    publishDate: "Mar 03, 2026",
+    fullContent: `For many patients, the thought of surgery brings one major fear "Will I be awake?" or "Will it hurt?" It is completely natural to feel anxious about anaesthesia. In fact, many people worry more about anaesthesia than the surgery itself. Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear and build confidence before any procedure.
+
+Anaesthesia is a specialized branch of medicine focused on relieving pain and ensuring patient safety during surgical or medical procedures. An anaesthesiologist is a trained doctor who carefully monitors you before, during, and after surgery. Their role is not limited to "putting you to sleep." They are responsible for managing your breathing, heart rate, blood pressure, oxygen levels, and overall stability throughout the procedure.
+
+There are different types of anaesthesia, and the choice depends on the type of surgery, your health condition, and your doctor's recommendation.
+
+The first type is general anaesthesia. This is used for major surgeries. Under general anaesthesia, you are completely unconscious and do not feel pain during the procedure. Medications are given through an injection or through a mask to make you sleep. Throughout the surgery, the anaesthesiologist continuously monitors your vital signs to ensure everything remains stable.
+
+The second type is regional anaesthesia, such as spinal or epidural anaesthesia. This is commonly used for procedures involving the lower half of the body, such as caesarean sections, orthopaedic surgeries, or certain abdominal operations. In this method, medication is injected near the spinal nerves to numb a specific part of the body. You may remain awake, but you will not feel pain in the surgical area.
+
+The third type is local anaesthesia, which is used for minor procedures like stitching a wound or removing a small lump. Only a small area is numbed, and you remain fully awake.
+
+Many patients worry about safety. It is important to know that modern anaesthesia is extremely safe. Before surgery, you will undergo a pre-anaesthesia check-up. During this consultation, the anaesthesiologist reviews your medical history, allergies, previous surgeries, ongoing medications, and existing conditions like diabetes, hypertension, asthma, or heart disease. This assessment helps plan the safest anaesthesia approach tailored specifically for you.
+
+You may be advised to avoid eating or drinking for several hours before surgery. This is to prevent complications such as vomiting while under anaesthesia. Following these instructions carefully is very important for your safety.
+
+After surgery, some patients may experience mild side effects such as nausea, sore throat, dizziness, or temporary confusion. These are usually short-lived and manageable. Serious complications are rare, especially when the procedure is conducted in a properly equipped hospital under expert supervision.
+
+Apart from surgical anaesthesia, pain medicine is another vital part of this department.
+
+Pain is not something that should simply be tolerated. Whether it is post-surgical pain, back pain, joint pain, nerve pain, or cancer-related pain, effective management improves quality of life significantly. Chronic pain can affect sleep, mood, appetite, and daily functioning. Addressing it properly allows patients to return to their normal routines faster.
+
+Modern pain medicine offers various treatment options. These include medications, nerve blocks, physiotherapy guidance, epidural injections, and minimally invasive procedures. The goal is not just to mask pain temporarily but to identify its cause and treat it appropriately.
+
+For example, patients suffering from chronic lower back pain due to slipped discs or arthritis may benefit from targeted injections that reduce inflammation around the affected nerves. Similarly, nerve blocks can help patients with severe nerve pain by interrupting pain signals.
+
+Post-operative pain management is equally important. Today, hospitals use multimodal pain relief techniques. This means combining different types of medications and methods to control pain effectively while minimizing side effects. Good pain control helps patients move earlier, breathe better, and recover faster after surgery.
+
+In recent years, patient comfort and safety have become the central focus of anaesthesia and pain care. Continuous monitoring systems, advanced medications, and trained specialists ensure high standards of care.
+
+Communication is key. If you are scheduled for surgery, do not hesitate to ask questions. Inform your anaesthesiologist about any fears, previous reactions to anaesthesia, or medical conditions. Being open helps the medical team provide safer and more personalized care.
+
+It is also important not to ignore persistent pain. Many people continue suffering silently, assuming pain is a normal part of ageing or consulting a doctor. Seeking consultation early can prevent pain from becoming chronic and difficult to treat.
+
+Anaesthesia and pain medicine work quietly behind the scenes, but their role is crucial in modern healthcare. They make surgeries possible, reduce suffering, and ensure comfort during some of life's most challenging medical moments.
+
+With proper evaluation, expert care, and open communication, patients can approach surgery and pain treatment with confidence rather than fear.`
   }
+  
 ];
 
 
