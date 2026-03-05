@@ -11,13 +11,14 @@ import BlogList from '../pages/user/BlogList'
 import BlogDetails from '../pages/user/BlogDetails'
 import Departments from '../pages/user/Departments'
 import DepartmentDetails from '../pages/user/DepartmentDetails'
+
 import BookAppointment from '../pages/auth/BookAppointment'
 import AppointmentHistory from '../pages/auth/AppointmentHistory'
 import Login from '../pages/auth/Login'
 import Signup from '../pages/auth/Signup'
-import PrivacyPolicy from '../commoncomponents/PrivacyPolicy'
-import TermsOfUse from '../commoncomponents/TermsOfUse'
 
+import PrivacyPolicy from '../pages/user/PrivacyPolicy'
+import TermsOfUse from '../pages/user/TermsOfUse'
 
 
 export default function AppRouter() {

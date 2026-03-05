@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+//import 
 
 function Signup() {
   const navigate = useNavigate();
@@ -257,15 +258,28 @@ function Signup() {
 
             {/* Terms Checkbox */}
             <div className="mb-6">
-              <label className="flex items-center gap-2 text-sm cursor-pointer">
+              <label className="flex items-start gap-2 text-sm cursor-pointer">
                 <input
                   type="checkbox"
                   checked={acceptedTerms}
                   onChange={(e) => setAcceptedTerms(e.target.checked)}
-                  className="w-4 h-4 accent-[#198754]"
+                  className="w-4 h-4 mt-1 accent-[#198754]"
                 />
                 <span className="text-gray-700">
-                  I agree to the Terms & Privacy Policy
+                  I agree to the{" "}
+                  <a
+                    href="/termsofuse"
+                    className="text-[#0f5132] font-medium underline hover:text-[#198754]"
+                  >
+                  Terms of Use
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="/privacypolicy"
+                    className="text-[#0f5132] font-medium underline hover:text-[#198754]"
+                  >
+                    Privacy Policy
+                  </a>
                 </span>
               </label>
             </div>

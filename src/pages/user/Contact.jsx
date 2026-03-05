@@ -1,5 +1,7 @@
 // src/pages/user/Contact.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   Phone,
   Mail,
@@ -305,6 +307,17 @@ export default function Contact() {
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
+                  <p className="text-xs text-gray-500 mt-3 text-center leading-relaxed">
+                    By submitting this form you agree to our{" "}
+                    <Link to="/privacy-policy" className="text-[#005c52] font-medium hover:underline">
+                      Privacy Policy
+                    </Link>{" "}
+                      and{" "}
+                    <Link to="/terms-of-use" className="text-[#005c52] font-medium hover:underline">
+                      Terms of Use
+                    </Link>.
+                  </p>
+
                 </form>
               </div>
 

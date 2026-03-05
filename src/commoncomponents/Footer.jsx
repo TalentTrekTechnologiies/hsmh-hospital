@@ -14,6 +14,7 @@ export default function Footer() {
           <h2 className='text-xl font-bold mb-4'>Harsha Multi Speciality Hospital</h2>
           <p className='text-sm mt-2'>
             Providing trusted healthcare with modern facilities and compassionate care.
+            
           </p>
         </div>
 
