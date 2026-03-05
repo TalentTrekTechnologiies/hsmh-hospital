@@ -239,7 +239,7 @@ export default function About() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               
-              {/* Left Text */}
+              {/* Left Text  */}
               <div>
                 <h2 className="text-3xl font-bold text-emerald-800 mb-6">
                   Our Journey
@@ -272,7 +272,7 @@ export default function About() {
               <div>
                 <img
                   src={doctorsGroup}
-                  alt="Doctors Group"
+                  alt="Hospital Doctors Group"
                   className="w-full h-auto rounded shadow-lg object-cover"
                   loading="lazy"
                 />
