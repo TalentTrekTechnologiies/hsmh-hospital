@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <div className="max-w-4xl mx-auto px-6 py-10 text-gray-800">
+      <div className="max-w-4xl mx-auto px-6 py-10 pt-30 text-gray-800">
         
         <h1 className="text-3xl font-bold text-emerald-800 mb-2">
           Privacy Policy

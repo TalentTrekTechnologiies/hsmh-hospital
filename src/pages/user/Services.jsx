@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
+import PageHero from "../../commoncomponents/PageHero";
 import { Play, Volume2, VolumeX } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -331,30 +332,17 @@ export default function Services() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-[#fff8f0] flex flex-col">
       <Header />
 
-      <main className="bg-[#fff8f0] min-h-screen">
+      <main className="flex-grow pt-10 md:pt-12">
         {/* HERO - Responsive */}
-        <section className="relative w-full">
-          <div className="relative h-[250px] sm:h-[320px] md:h-[380px] lg:h-[440px] w-full overflow-hidden">
-            <img
-              src={servicesHero}
-              alt="Best Hospital Services"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-[60px] sm:pt-[80px]">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white px-2">
-                World-Class Medical Services
-              </h1>
-              <p className="text-white/90 mt-2 sm:mt-4 max-w-2xl text-xs sm:text-sm md:text-base font-medium px-4">
-                Delivering safe, advanced and compassionate healthcare you can trust.
-              </p>
-            </div>
-          </div>
-        </section>
+      
+        <PageHero
+          title="Our Medical Services"
+          subtitle="Delivering safe, advanced and compassionate healthcare you can trust."
+          image={servicesHero}
+        />
 
         {/* WHY CHOOSE US - Responsive Grid */}
         <section className="bg-emerald-700 text-white py-6 sm:py-8">
@@ -542,6 +530,6 @@ export default function Services() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
