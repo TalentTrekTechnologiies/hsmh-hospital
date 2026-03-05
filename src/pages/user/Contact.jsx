@@ -1,5 +1,7 @@
 // src/pages/user/Contact.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   Phone,
   Mail,
@@ -12,6 +14,7 @@ import {
 
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
+import PageHero from "../../commoncomponents/PageHero";
 import hospitalBuilding from "../../assets/ContactUs.png";
 
 export default function Contact() {
@@ -97,41 +100,19 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8f5ef] flex flex-col">
+    <div className="min-h-screen bg-[#fff8f0] flex flex-col">
       <Header />
+      <main className="flex-grow pt-10 md:pt-12">
 
-      <main className="flex-grow">
-
-        {/* HERO SECTION */}
-        <section className="relative w-full">
-          <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden">
-            <img
-              src={hospitalBuilding}
-              alt="Hospital Building"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
-              onError={(e) => {
-                e.target.src = 'https://via.placeholder.com/1200x500?text=Hospital+Building';
-              }}
+        {/* Hero Section */}
+            
+            <PageHero
+              title="Contact Us"
+              subtitle="Your health and safety are our highest priority. Experience world-class healthcare delivered with compassion, integrity, and excellence."
+              image={hospitalBuilding}
             />
-            <div className="absolute inset-0 bg-black/40" />
 
-            {/* Centered Hero Content */}
-<div className="absolute inset-0 flex items-center justify-center">
-  <div className="text-center px-6 max-w-4xl mx-auto">
-    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-     Find Us
-    </h1>
-    <p className="text-white/90 text-base md:text-lg lg:text-xl max-w-2xl mx-auto">
-      Your health and safety are our highest priority. Experience world-class healthcare 
-      delivered with compassion, integrity, and excellence.
-    </p>
-  </div>
-</div>
-          </div>
-        </section>
-
-        {/* CONTENT SECTION */}
+            {/* CONTENT SECTION */}
         <section className="py-16">
           <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
@@ -305,6 +286,17 @@ export default function Contact() {
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
+                  <p className="text-xs text-gray-500 mt-3 text-center leading-relaxed">
+                    By submitting this form you agree to our{" "}
+                    <Link to="/privacy-policy" className="text-[#005c52] font-medium hover:underline">
+                      Privacy Policy
+                    </Link>{" "}
+                      and{" "}
+                    <Link to="/terms-of-use" className="text-[#005c52] font-medium hover:underline">
+                      Terms of Use
+                    </Link>.
+                  </p>
+
                 </form>
               </div>
 

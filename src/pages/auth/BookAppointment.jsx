@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
 
@@ -455,7 +456,16 @@ const BookConsultation = () => {
                         onChange={handleChange}
                       />
 
-                      I agree to consultation policy
+                      <span>
+                        I agree to the{" "}
+                        <Link to="/terms-of-use" className="text-green-700 hover:underline">
+                          Terms of Use
+                        </Link>{" "}
+                          and acknowledge the{" "}
+                        <Link to="/privacy-policy" className="text-green-700 hover:underline">
+                          Privacy Policy
+                        </Link>.
+                      </span>
 
                     </label>
 

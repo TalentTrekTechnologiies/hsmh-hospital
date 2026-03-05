@@ -205,9 +205,10 @@ export default function About() {
       <main className="flex-grow pt-10 md:pt-12">
 
         {/* Hero Section */}
+        
         <PageHero
           title="About Us"
-          subtitle="Your health is our priority. At Harsha Hospital, we combine experienced doctors, advanced medical technology, and compassionate care to deliver trusted and high-quality treatment for every patient."
+          subtitle="We combine experienced doctors, advanced medical technology, and compassionate care to deliver trusted and high-quality treatment for every patient."
           image={aboutImage}
         />
 
@@ -238,30 +239,20 @@ export default function About() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               
-              {/* Left Image */}
-              <div>
-                <img
-                  src={doctorsGroup}
-                  alt="Doctors Group"
-                  className="w-full h-auto rounded-2xl shadow-lg object-cover"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Text */}
+              {/* Left Text  */}
               <div>
                 <h2 className="text-3xl font-bold text-emerald-800 mb-6">
                   Our Journey
                 </h2>
 
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p className="text-m text-gray-600 leading-relaxed mb-6">
                   Harsha Multi Speciality Hospital was founded with a vision to bring
                   advanced healthcare closer to the community of Proddatur. What began
                   as a modest facility has grown into a trusted institution, serving
                   thousands of patients with compassion and expertise.
                 </p>
 
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p className="text-m text-gray-600 leading-relaxed mb-6">
                   From the very beginning, our mission has been to combine medical
                   excellence with patient-centric values. Over the years, we have
                   expanded our specialties, strengthened our team of doctors and
@@ -269,13 +260,24 @@ export default function About() {
                   patient receives the highest standard of care.
                 </p>
 
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-m text-gray-600 leading-relaxed">
                   Today, Harsha Hospital stands as one of the leading multi-speciality
                   centers in the region. Our reputation is built on consistent
                   outcomes, ethical practices, and a dedication to continuous
                   improvement.
                 </p>
               </div>
+
+              {/* Right Image */}
+              <div>
+                <img
+                  src={doctorsGroup}
+                  alt="Hospital Doctors Group"
+                  className="w-full h-auto rounded shadow-lg object-cover"
+                  loading="lazy"
+                />
+              </div>
+              
 
             </div>
           </div>
@@ -289,7 +291,7 @@ export default function About() {
               <img
                 src={missionVisionImage}
                 alt="Mission and Vision"
-                className="w-full max-w-md rounded-lg shadow-md"
+                className="h-80 w-full max-w-md rounded-lg shadow-md"
                 loading="lazy"
               />
             </div>
