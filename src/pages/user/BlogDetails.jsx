@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Header from "../../commoncomponents/Header";
 import Footer from "../../commoncomponents/Footer";
-
-import blogHero from "../../assets/Hospital blog cover.png";
+import blogHero from "../../assets/blogs.png";
 
 /* ================= DATA ================= */
 

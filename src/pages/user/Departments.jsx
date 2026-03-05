@@ -5,7 +5,7 @@ import Header from '../../commoncomponents/Header'
 import Footer from '../../commoncomponents/Footer'
 import PageHero from '../../commoncomponents/PageHero'
 
-import herodept from '../../assets/Department page.png'
+import herodept from '../../assets/Departments New.png'
 
 // IMPORT THE SAME SPECIALIST IMAGES FROM DOCTORS PAGE
 import specialist1 from '../../assets/Dr.Ganesh.png'
@@ -14,22 +14,22 @@ import specialist3 from '../../assets/Dr.Nagendra.png'
 import specialist4 from '../../assets/Dr.Revathi.png'
 import specialist5 from '../../assets/Dr.Samita.png'
 
-// Import video files - using only the available video
+
 import video1 from '../../assets/video1.mp4'
-// Comment out missing videos and use video1 as fallback
+
 const video2 = video1;
 const video3 = video1;
 
 // Import all department images based on your Downloads folder
-import anesthesiaImg from '../../assets/Anesthesia and Pain Medicine.Main.png'                    //
-import emergencyImg from '../../assets/Emergency and Critical Care main.jpg'                     //
-import infertilityImg from '../../assets/Infertility and Reproductive main 2.png'               //
-import obstetricsImg from '../../assets/Obstetrics&Gynecology main 1.jpg'                      //
-import pediatricsImg from '../../assets/Pediatrics and Neonatology Main1.png'                 //
-import orthopedicsImg from '../../assets/Orthopedics & Trauma main.png'                      //
-import generalMedicineImg from '../../assets/General Medicine main.jpg'                     //
-import generalSurgeryImg from '../../assets/General Surgery Main.jpg'                      //
-import urologyImg from '../../assets/Urology&Nephrology main.png'                         //
+import anesthesiaImg from '../../assets/Anesthesia and Pain Medicine.Main.png'                     //
+import emergencyImg from '../../assets/Emergency and Critical Care main.jpg'                      //
+import infertilityImg from '../../assets/Infertility and Reproductive main 2.png'                //
+import obstetricsImg from '../../assets/Obstetrics&Gynecology main 1.jpg'                       //
+import pediatricsImg from '../../assets/Pediatrics and Neonatology Main1.png'                  //
+import orthopedicsImg from '../../assets/Orthopedics & Trauma main.png'                       //
+import generalMedicineImg from '../../assets/General Medicine main.jpg'                      //
+import generalSurgeryImg from '../../assets/General Surgery Main.jpg'                       //
+import urologyImg from '../../assets/Urology&Nephrology main.png'                          //
 import neurologyImg from '../../assets/Neurology&Neurosurgery main 1.jpg'                 //
 import dentistryImg from '../../assets/Dentistry and Oro Maxillofacial Surgery main.jpg' //
 import oncologyImg from '../../assets/surgery Oncology main.jpg'                        //

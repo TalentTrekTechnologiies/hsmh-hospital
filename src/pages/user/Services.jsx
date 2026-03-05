@@ -6,14 +6,22 @@ import { Link } from "react-router-dom";
 
 /* IMAGES */
 import servicesHero from "../../assets/Services.jpg";
-
-
 import radiologyImg from "../../assets/radiology.png";
 import orthoImg from "../../assets/Orthopaedic.png";
 import dentalImg from "../../assets/dentalservice page.png";
 import emergencyImg from "../../assets/emergency.png";
 import pharmacyImg from "../../assets/pharmacy.jpeg";
 import homecareImg from "../../assets/homecare.png";
+
+/* INSURANCE COMPANY LOGOS - Import your logo images here */
+import vidalHealthLogo from "../../assets/vidal-health.avif";
+import vipulMedicareLogo from "../../assets/vipul-medicare 2.jpeg";
+import ericsonInsuranceLogo from "../../assets/ericson-insurance.webp";
+import sbiGeneralLogo from "../../assets/sbi-general 2.avif";
+import futureFamilyLogo from "../../assets/future-family.webp";
+import universalWestLogo from "../../assets/universal-west 2.jpeg";
+import eastWestAIGLogo from "../../assets/east-west-aig.jpg";
+import iciciLombardLogo from "../../assets/icici-lombard 2.png";
 
 /* VIDEOS (keep <5MB each) */
 import serviceVideo1 from "../../assets/video2.mp4";
@@ -96,16 +104,40 @@ export default function Services() {
   const [videosLoaded, setVideosLoaded] = useState({});
   const [isMobile, setIsMobile] = useState(false);
 
-  // Insurance Partners Data
+  // Insurance Partners Data with Logos
   const insurancePartners = [
-    "Vidal Health Insurance TPA",
-    "Vipul Medicare Insurance TPA",
-    "Ericson Insurance TPA",
-    "SBI General Insurance TPA",
-    "Future Family Health Plan (FHP) Insurance",
-    "Universal West Assistant General Insurance TPA",
-    "East West AIG General Insurance TPA",
-    "ICICI Lombard General Insurance TPA",
+    {
+      name: "Vidal Health Insurance TPA",
+      logo: vidalHealthLogo
+    },
+    {
+      name: "Vipul Medicare Insurance TPA",
+      logo: vipulMedicareLogo
+    },
+    {
+      name: "Ericson Insurance TPA",
+      logo: ericsonInsuranceLogo
+    },
+    {
+      name: "SBI General Insurance TPA",
+      logo: sbiGeneralLogo
+    },
+    {
+      name: "Future Family Health Plan (FHP) Insurance",
+      logo: futureFamilyLogo
+    },
+    {
+      name: "Universal West Assistant General Insurance TPA",
+      logo: universalWestLogo
+    },
+    {
+      name: "East West AIG General Insurance TPA",
+      logo: eastWestAIGLogo
+    },
+    {
+      name: "ICICI Lombard General Insurance TPA",
+      logo: iciciLombardLogo
+    },
   ];
 
   // Check if mobile device
@@ -402,7 +434,7 @@ export default function Services() {
           </div>
         </section>
 
-        {/* INSURANCE PARTNERS SECTION */}
+        {/* INSURANCE PARTNERS SECTION - WITH LOGOS */}
         <section className="py-12 sm:py-16 px-4 sm:px-5 bg-white">
           <div className="max-w-[1200px] mx-auto">
             {/* Section Heading */}
@@ -421,11 +453,14 @@ export default function Services() {
                 {insurancePartners.map((insurance, index) => (
                   <div
                     key={index}
-                    className="bg-white p-3 sm:p-4 md:p-5 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center border border-emerald-100 hover:border-emerald-300 hover:-translate-y-1"
+                    className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center border border-emerald-100 hover:border-emerald-300 hover:-translate-y-1 flex items-center justify-center"
                   >
-                    <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800">
-                      {insurance}
-                    </p>
+                    <img 
+                      src={insurance.logo} 
+                      alt={insurance.name}
+                      className="max-w-full max-h-16 sm:max-h-20 md:max-h-24 w-auto h-auto object-contain"
+                      loading="lazy"
+                    />
                   </div>
                 ))}
               </div>
