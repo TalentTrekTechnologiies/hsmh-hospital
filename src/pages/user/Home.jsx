@@ -14,9 +14,9 @@ import cardiologyBlogImg from '../../assets/Cardiolody blog .jpeg';
 import generalMedicineBlogImg from '../../assets/General medicine blog.jpeg';
 import orthoBlogImg from '../../assets/ortho.jpeg';
 
-// Import all department images (same as Departments.jsx)
+// Import all department images
 import orthopedicsImg from '../../assets/Orthopedics and Trauma CareHome.jpg'
-import neurologyImg from '../../assets/Neurology&Neurosurgery home.png' //
+import neurologyImg from '../../assets/Neurology&Neurosurgery home.png'
 import generalMedicineImg from '../../assets/General MedicineHome.png'
 import generalSurgeryImg from '../../assets/General SurgeryHome.png'
 import urologyImg from '../../assets/Urology and NephrologyHome.png'
@@ -27,6 +27,12 @@ import anesthesiaImg from '../../assets/Anesthesia and Pain Home.jpg'
 import infertilityImg from '../../assets/Infertility and Reproductive Home.png'
 import obstetricsImg from '../../assets/Obstetrics and GynecologyHome.jpg'
 import pediatricsImg from '../../assets/Pediatrics and NeonatologyHome.jpg'
+
+// Insurance Partner Logos
+import sbiGeneralLogo from "../../assets/sbi-general 2.avif";
+import futureFamilyLogo from "../../assets/future-family.webp";
+import universalWestLogo from "../../assets/universal-west 2.jpeg";
+import eastWestAIGLogo from "../../assets/east-west-aig.jpg";
 
 import {
   ChevronLeft,
@@ -143,9 +149,28 @@ export default function Home() {
     },
   ];
 
+  // Insurance Partners with Logos
+  const insurancePartners = [
+    {
+      name: "SBI General Insurance TPA",
+      logo: sbiGeneralLogo
+    },
+    {
+      name: "Future Family Health Plan (FHP) Insurance",
+      logo: futureFamilyLogo
+    },
+    {
+      name: "Universal West Assistant General Insurance TPA",
+      logo: universalWestLogo
+    },
+    {
+      name: "East West AIG General Insurance TPA",
+      logo: eastWestAIGLogo
+    }
+  ];
+
   // Function to handle blog click
   const handleBlogClick = (blogId, category) => {
-    // Navigate to blogs page with state to open specific blog
     navigate('/blog', { 
       state: { 
         openBlogId: blogId,
@@ -197,13 +222,6 @@ export default function Home() {
       review:
         "Visited for my child's vaccination. Doctor was friendly and explained everything clearly. Good experience overall."
     }
-  ];
-
-  const insurancePartners = [
-    "Vidal Health Insurance TPA",
-    "Vipul Medicare Insurance TPA",
-    "Ericson Insurance TPA",
-    "SBI General Insurance TPA",
   ];
 
   const heroImages = [hospital1, hospital2, hospital3, hospital4];
@@ -498,48 +516,55 @@ export default function Home() {
             </div>
           </div>
         </section>
+{/* ================= INSURANCE PARTNERS ================= */}
+<section className="bg-[#faf3e0] py-12 sm:py-16 md:py-20">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 text-center mb-2 sm:mb-4">
+      Insurance Partners
+    </h2>
+    <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-12">
+      Cashless treatment available with all major insurance providers
+    </p>
 
-        {/* ================= INSURANCE PARTNERS ================= */}
-        <section className="bg-[#faf3e0] py-12 sm:py-16 md:py-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-emerald-800 text-center mb-2 sm:mb-4">
-              Insurance Partners
-            </h2>
-            <p className="text-sm sm:text-base text-gray-600 text-center mb-8 sm:mb-12">
-              Cashless treatment available with all major insurance providers
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-              {insurancePartners.map((insurance, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-3 sm:p-4 md:p-5 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center border border-emerald-100 hover:border-emerald-300"
-                >
-                  <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800">
-                    {insurance}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center mt-8 sm:mt-10">
-              <Link to="/services#insurance-partners">
-                <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-6 sm:px-8 rounded-md transition duration-300 text-sm sm:text-base focus:ring-2 focus:ring-emerald-300 focus:outline-none">
-                  View All Insurance Partners →
-                </button>
-              </Link>
-              <p className="text-xs sm:text-sm text-gray-600 mt-4">
-                For insurance queries, contact our front office at{" "}
-                <a 
-                  href="tel:9704100136" 
-                  className="text-emerald-700 font-semibold hover:underline focus:ring-2 focus:ring-emerald-300 focus:outline-none"
-                >
-                  9704100136
-                </a>
-              </p>
-            </div>
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+      {insurancePartners.map((insurance, index) => (
+        <Link 
+          to="/services#insurance-partners"
+          state={{ selectedInsurance: insurance.name }}
+          key={index}
+        >
+          <div
+            className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 text-center border border-emerald-100 hover:border-emerald-300 flex items-center justify-center min-h-[100px] sm:min-h-[120px] cursor-pointer hover:-translate-y-1"
+          >
+            <img 
+              src={insurance.logo} 
+              alt={insurance.name}
+              className="max-w-full max-h-16 sm:max-h-20 md:max-h-24 w-auto h-auto object-contain"
+              loading="lazy"
+            />
           </div>
-        </section>
+        </Link>
+      ))}
+    </div>
+
+    <div className="text-center mt-8 sm:mt-10">
+      <Link to="/services#insurance-partners">
+        <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-6 sm:px-8 rounded-md transition duration-300 text-sm sm:text-base focus:ring-2 focus:ring-emerald-300 focus:outline-none">
+          View All Insurance Partners →
+        </button>
+      </Link>
+      <p className="text-xs sm:text-sm text-gray-600 mt-4">
+        For insurance queries, contact our front office at{" "}
+        <a 
+          href="tel:9704100136" 
+          className="text-emerald-700 font-semibold hover:underline focus:ring-2 focus:ring-emerald-300 focus:outline-none"
+        >
+          9704100136
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* ================= ELITE EMERGENCY SECTION ================= */}
         <section className="relative bg-emerald-700 py-12 sm:py-16 md:py-24 overflow-hidden">
@@ -560,15 +585,15 @@ export default function Home() {
 
               {/* Description */}
               <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed px-2">
-                Emergency & Critical Care, Obstetrics & Gynaecology, and General Medicine serving since 15 years. 
-                All other departments staffed with highly qualified and experienced doctors. 
+                Emergency & Critical Care, Obstetrics & Gynaecology, and General Medicine serving since 13 years. 
+                All other departments staffed with highly qualified and 10+ experienced doctors. 
                 Immediate medical assistance available round the clock with rapid response teams 
                 and fully equipped emergency facilities.
               </p>
 
               {/* Trust Line */}
               <p className="mt-4 sm:mt-6 text-xs sm:text-sm font-medium text-emerald-700 tracking-wide">
-                ISO Certified &nbsp; | &nbsp; NABH Accredited &nbsp; | &nbsp; 15+ Years of Excellence
+               10K+ Patients Treated &nbsp; | &nbsp; 13+ Years of Excellence
               </p>
 
               {/* CTA Section */}
