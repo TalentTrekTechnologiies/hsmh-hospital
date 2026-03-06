@@ -110,7 +110,7 @@ export const recentArticlesData = [
     articleTitle: "Safe Surgery and Comfortable Recovery – Understanding Anaesthesia and Pain Care",
     preview: "For many patients, the thought of surgery brings one major fear – 'Will I be awake?' or 'Will it hurt?' Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear.",
     description: "Understanding anaesthesia and pain management for safe surgery and comfortable recovery.",
-    authorName: "Dr. Meenu Walia",
+    // authorName: "Dr. Meenu Walia",
     publishDate: "Mar 03, 2026",
     fullContent: `For many patients, the thought of surgery brings one major fear "Will I be awake?" or "Will it hurt?" It is completely natural to feel anxious about anaesthesia. In fact, many people worry more about anaesthesia than the surgery itself. Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear and build confidence before any procedure.
 
@@ -157,7 +157,7 @@ With proper evaluation, expert care, and open communication, patients can approa
     articleTitle: "Growing Up Strong: A Guide to Your Child's Health in the Early Years",
     preview: "The first few years of a child's life are filled with wonder. Understanding nutrition, active play, vaccinations, and regular check-ups can help you make confident decisions during these important early years.",
     description: "Essential guide to nutrition, active play, vaccinations, and health check-ups for your child's early years.",
-    authorName: "Dr. Anita Desai",
+    // authorName: "Dr. Anita Desai",
     publishDate: "Feb 28, 2026",
     fullContent: `The first few years of a child's life are filled with wonder. One day they are tiny and completely dependent on you, and before you know it, they are crawling across the floor, taking their first steps, and speaking their first words. Every smile feels special. Every small achievement feels like a celebration. As parents, nothing matters more than seeing our children healthy, active, and happy.
 
@@ -204,7 +204,7 @@ Healthy habits formed today create healthier adults tomorrow.`
     articleTitle: "Your First Pregnancy: A Gentle Guide for the Journey Ahead",
     preview: "Finding out that you're pregnant is one of the most magical moments in life. Understanding nutrition, regular check-ups, and emotional well-being can help you embrace this journey with confidence.",
     description: "A comprehensive guide to nutrition, prenatal care, and emotional well-being during your first pregnancy.",
-    authorName: "Dr. Kavita Rao",
+    // authorName: "Dr. Kavita Rao",
     publishDate: "Feb 25, 2026",
     fullContent: `Finding out that you're pregnant is one of the most magical and emotional moments in life. The two lines on the test kit can bring tears of joy, excitement, nervousness, and sometimes even a little fear all at the same time. Suddenly, everything feels different. Along with happiness, a hundred questions begin to fill your mind. What should I eat? Is this discomfort normal? When should I see a doctor? Am I doing everything right?
 
@@ -245,7 +245,7 @@ You are stronger than you think. And you are not alone.`
     articleTitle: "That Nagging Knee Pain: When to Rest and When to See a Doctor",
     preview: "Knee pain has quietly become an unwanted companion for many. Understanding when to rest and when to seek medical help can protect your joints and maintain an active lifestyle.",
     description: "Understanding knee pain, warning signs, treatment options, and when to consult an orthopaedic specialist.",
-    authorName: "Dr. Rakesh Verma",
+    // authorName: "Dr. Rakesh Verma",
     publishDate: "Feb 22, 2026",
     fullContent: `For many of us in our city, knee pain has quietly become an unwanted companion. It may begin as a mild discomfort while climbing the stairs at the local temple, squatting to do household work, or getting up after sitting cross-legged during a family function. At first, we brush it aside. "It's just age," we say. "It will go away." But when that small ache slowly becomes a daily struggle, it starts affecting not just mobility, but confidence and independence.
 
@@ -288,7 +288,7 @@ Do not wait until the pain becomes unbearable. Listening to your body and seekin
     articleTitle: "Beating the Monsoon Blues: Don't Let the Rain Dampen Your Health",
     preview: "The monsoon brings relief from heat but also brings seasonal illnesses. Understanding prevention and knowing when to seek medical help can keep you and your family healthy.",
     description: "Essential tips for preventing monsoon-related illnesses and maintaining good health during rainy season.",
-    authorName: "Dr. Monica Mahajan",
+    // authorName: "Dr. Monica Mahajan",
     publishDate: "Feb 20, 2026",
     fullContent: `The first showers of the monsoon are always special, aren't they? After months of heat and dust, the cool breeze feels like a blessing. The smell of wet soil, children playing in puddles, hot tea in the evening it's a season many of us look forward to every year. But here in our city, we also know that the rainy season brings more than just relief from the summer. It quietly brings a wave of seasonal illnesses.
 
@@ -327,7 +327,7 @@ Let's welcome the monsoon with awareness and care, ensuring that the only thing 
     articleTitle: "Understanding Brain and Nerve Health: When to Seek Expert Care",
     preview: "Our brain and nervous system control everything we do. A sudden severe headache, weakness in one arm, or persistent back pain can be alarming. Understanding when expert care is needed can make a life-changing difference.",
     description: "Comprehensive guide to understanding neurological conditions, warning signs, and when to consult a specialist.",
-    authorName: "Dr. Vikram Seth",
+    // authorName: "Dr. Vikram Seth",
     publishDate: "Feb 18, 2026",
     fullContent: `Our brain and nervous system control everything we do – from thinking, speaking, and walking to breathing and feeling emotions. Yet, we often take this complex system for granted until something goes wrong. A sudden severe headache, weakness in one arm, persistent back pain, or frequent episodes of dizziness can be alarming. Understanding the role of Neurology and Neurosurgery can help you recognize when expert care is needed and how early treatment can make a life-changing difference.
 
@@ -366,7 +366,7 @@ Neurology and Neurosurgery work together to protect and restore one of the body'
     articleTitle: "Understanding Infertility: Hope, Options, and the Journey to Parenthood",
     preview: "For many couples, the dream of parenthood is deeply heartfelt. Understanding that infertility is a medical condition, not a personal failure, and knowing the treatment options can bring hope and clarity.",
     description: "Comprehensive guide to understanding infertility causes, treatment options, and emotional support for couples.",
-    authorName: "Dr. Priya Sharma",
+    // authorName: "Dr. Priya Sharma",
     publishDate: "Feb 15, 2026",
     fullContent: `For many couples, the dream of holding their own child is one of life's most heartfelt desires. When months pass and pregnancy does not happen as expected, it can bring confusion, stress, and even self-doubt. In our communities, where family and parenthood are deeply valued, the emotional pressure can feel overwhelming. It is important to understand that infertility is a medical condition – not a personal failure – and in many cases, it is treatable.
 
@@ -409,7 +409,7 @@ You are not alone in this journey. Modern medicine, combined with compassionate 
     articleTitle: "When Every Second Counts: Understanding Emergency and Critical Care",
     preview: "Medical emergencies rarely come with a warning. In such situations, what matters most is immediate medical attention. Understanding when and how to seek emergency care can save lives.",
     description: "Essential guide to understanding emergency department functions, when to seek help, and what to expect in critical care.",
-    authorName: "Dr. Arjun Nair",
+    // authorName: "Dr. Arjun Nair",
     publishDate: "Feb 12, 2026",
     fullContent: `Medical emergencies rarely come with a warning. One moment everything feels normal, and the next, there is panic – a sudden chest pain, a road accident, difficulty breathing, high fever with seizures, or an unconscious loved one. In such situations, what matters most is immediate medical attention. This is where the Department of Emergency and Critical Care plays a lifesaving role.
 
@@ -453,7 +453,7 @@ const mostReadData = [
     articleTitle: "Understanding Brain and Nerve Health: When to Seek Expert Care",
     preview: "Our brain and nervous system control everything we do. A sudden severe headache, weakness in one arm, or persistent back pain can be alarming. Understanding when expert care is needed can make a life-changing difference.",
     description: "Comprehensive guide to understanding neurological conditions, warning signs, and when to consult a specialist.",
-    authorName: "Dr. Vikram Seth",
+    // authorName: "Dr. Vikram Seth",
     publishDate: "Feb 18, 2026",
     fullContent: `Our brain and nervous system control everything we do – from thinking, speaking, and walking to breathing and feeling emotions. Yet, we often take this complex system for granted until something goes wrong. A sudden severe headache, weakness in one arm, persistent back pain, or frequent episodes of dizziness can be alarming. Understanding the role of Neurology and Neurosurgery can help you recognize when expert care is needed and how early treatment can make a life-changing difference.
 
@@ -492,7 +492,7 @@ Neurology and Neurosurgery work together to protect and restore one of the body'
     articleTitle: "Safe Surgery and Comfortable Recovery – Understanding Anaesthesia and Pain Care",
     preview: "For many patients, the thought of surgery brings one major fear – 'Will I be awake?' or 'Will it hurt?' Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear.",
     description: "Understanding anaesthesia and pain management for safe surgery and comfortable recovery.",
-    authorName: "Dr. Meenu Walia",
+    // authorName: "Dr. Meenu Walia",
     publishDate: "Mar 03, 2026",
     fullContent: `For many patients, the thought of surgery brings one major fear "Will I be awake?" or "Will it hurt?" It is completely natural to feel anxious about anaesthesia. In fact, many people worry more about anaesthesia than the surgery itself. Understanding how anaesthesia works and how modern pain medicine ensures your comfort can help reduce that fear and build confidence before any procedure.
 
